@@ -1,0 +1,710 @@
+{%- comment -%}
+  RTX PDP Snippet
+  v2-24-03-25
+{%- endcomment -%}
+
+{%- comment -%} Liquid variables with default values {%- endcomment -%}
+{%- liquid
+  assign retextionAppId = '5859381'
+  assign sellingPlanGroups = product.selling_plan_groups | where: 'app_id', retextionAppId
+  assign show_purchase_options= block.settings.show_purchase_options | default: true, allow_false: true 
+  if block == nil 
+    assign purchase_type_label = 'Purchase Type'
+    assign frequency_heading = 'Frequency'
+  else
+    assign purchase_type_label = block.settings.purchase_type_label
+    assign frequency_heading = block.settings.frequency_heading
+  endif
+  assign one_time_purchase_label = block.settings.one_time_purchase_label | default: 'One Time Purchase'
+  assign subscription_label = block.settings.subscription_label | default: sellingPlanGroups.first.name
+  assign default_to_subscription = block.settings.default_to_subscription | default: false, allow_false: true
+  assign default_to_subscription_on_variant_change = block.settings.default_to_subscription_on_variant_change | default: false, allow_false: true
+  assign subscription_label_first = block.settings.subscription_label_first | default: false, allow_false: true  
+  assign frequencyVisible = block.settings.frequency_visible | default: false, allow_false: true
+  assign show_subscription_details = block.settings.show_subscription_details | default: true, allow_false: true
+  assign icon_path = block.settings.icon_path | default: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" ><path fill="currentColor" d="M13.64 2.35C12.19 0.9 10.2 0 7.99 0C3.57 0 0 3.58 0 8C0 12.42 3.57 16 7.99 16C11.72 16 14.83 13.45 15.72 10H13.64C12.82 12.33 10.6 14 7.99 14C4.68 14 1.99 11.31 1.99 8C1.99 4.69 4.68 2 7.99 2C9.65 2 11.13 2.69 12.21 3.78L8.99 7H15.99V0L13.64 2.35Z"></path></svg>'
+  assign subscription_details_box_button_text = block.settings.subscription_details_box_button_text | default: 'Subscription Details'
+  assign subscription_details_box_title = block.settings.subscription_details_box_title | default: 'How subscriptions work'
+  assign subscription_details_box_content = block.settings.subscription_details_box_content | default: 'Products are automatically delivered on your schedule. No obligation, modify or cancel your subscription anytime.'
+  assign widget_layout = block.settings.widget_layout | default: 'standard'  
+  assign currentVariant = variant | default: product.selected_or_first_available_variant
+  assign requiresPlan = product.requires_selling_plan 
+  assign selectedAllocation = nil
+  assign selectedOrFirstAllocation = nil 
+  for allocation in currentVariant.selling_plan_allocations
+    assign group = sellingPlanGroups | where: 'id', allocation.selling_plan_group_id | first
+    if group == blank
+      continue
+    endif
+    if allocation.selling_plan.selected
+      assign selectedAllocation = allocation
+      assign selectedOrFirstAllocation = allocation
+      break
+    endif
+  endfor
+-%}
+
+{%- if sellingPlanGroups.size > 0 and show_purchase_options -%}
+  {%- comment -%} Define the selling plan options variable {%- endcomment -%}
+  {%- liquid
+    render 'rtx-api'
+    assign allocationCount = 0
+    capture sellingPlanOptions
+      for allocation in currentVariant.selling_plan_allocations
+        assign plan = allocation.selling_plan
+        assign group = sellingPlanGroups | where: 'id', allocation.selling_plan_group_id | first
+        if group == blank
+          continue
+        endif
+        
+        if selectedOrFirstAllocation == blank
+          assign selectedOrFirstAllocation = allocation
+        endif
+        
+        echo '<option'
+        if allocationCount == 0
+          echo ' selected'
+        endif
+        echo ' value="' | append: plan.id | append: '">'
+        echo plan.options[0].value | escape
+        echo '</option>'
+        assign allocationCount = allocationCount | plus: 1
+      endfor
+    endcapture
+  -%}
+  {%- comment -%} Buy Box Styles {%- endcomment -%}
+  <style type="text/css">
+    /* Variables */
+    :root {
+      --text-color: {{ block.settings.text_color | default: '#2E2A39'}};
+      --font-family: {{ block.settings.font_family.family | default: 'Montserrat'}};
+      --font-size: {{ block.settings.font_size | default: '16'}}px;
+      --border-radius: {{ block.settings.border_radius | default: '5'}}px;
+      --border-width: {{ block.settings.border_width | default: '1'}}px;
+      --border-color: {{ block.settings.border_color | default: '#2E2A39BF'}};
+      --selected-text-color: {{ block.settings.selected_text_color | default: '#000'}};
+      --selected-bg-color: {{ block.settings.selected_bg_color | default: '#f1f1f1'}};
+      --accent-color: {{ block.settings.accent_color | default: '#000'}};
+    } 
+
+    .rtx-subscription,.rtx-subcription *, .purchaseTypeLbl {
+      box-sizing: border-box;
+      color: var(--text-color)!important;
+      font-family: var(--font-family)!important;
+      font-size: var(--font-size)!important;
+    }
+    .rtx-subscription {
+      margin: 1rem 0;
+    }
+
+    .widget{
+      display: flex;
+      flex-direction: column;
+    }
+
+     /* Widget layout */
+    {% case widget_layout %}
+      {% when 'standard' %}
+          .rtx-purchase-label input{
+            display: block!important;
+          }
+      {% when 'stacked-buttons' %}
+        
+
+      {% when 'side-by-side-buttons' %}
+        .widget{
+          align-items: center;
+          flex-direction: row;
+          gap:10px;
+        }
+        .purchase-label{
+          flex-direction: column;
+          align-items: center;
+        }
+    {% endcase %}
+
+    {% if subscription_label_first %}
+      .rtx-purchase-label:last-of-type{
+        order: 1;
+      }
+      .rtx-purchase-label:first-of-type{
+        order: 2;
+      }    
+    {% endif %}
+      
+    /* Purchase labels */
+    .rtx-subscription label{
+      width: 100%;
+    }
+    
+    .purchase-label {
+      display: flex;
+      gap: 5px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+      border: var(--border-width) solid var(--border-color);
+    }
+    .sub{
+      flex-direction: column;
+    }
+    .sub-label{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .savings{
+      background-color: var(--border-color);
+      color: #333;
+      font-size: 16px;
+      padding: 2px 5px;
+      margin-left: auto;
+    }
+    .rtx-purchase-label__inner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      gap:5px;
+    }
+    .rtx-purchase-label__inner > span {
+      display: flex;
+      margin-left: 10px;
+      gap: 10px;
+    }
+    .purchase-header{
+      text-align: center;
+      padding: 8px;
+      font-size: 16px;
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+      text-transform: uppercase;
+      font-weight: 300;
+      height: 2.3em;
+      color: black;
+      font-family: 'ABC Monument Grotesk Mono Unlicensed Trial' !important;
+      background-color:  var(--border-color);
+    }
+    label.is-selected .purchase-header {      
+      background-color:  var(--selected-bg-color);
+      border-color: var(--selected-bg-color);
+      color: white;
+    }
+    label.is-selected .purchase-label{
+      border-color: var(--selected-bg-color);
+    }
+
+    
+    /* Purchase type input */
+    .rtx-purchase-label input{
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      margin: 0 8px 0 0;
+      border-radius: 50%;
+      border: 1px solid var(--accent-color);     
+      background-color: #fff;
+      display: inline-block;
+      position: relative;
+      padding:0px!important;
+    }    
+    .rtx-purchase-label input[type="radio"]:checked::before {
+        content: "";
+        width: 15px; 
+        height: 15px; 
+        background-color: var(--accent-color); 
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Price */
+    label.is-selected [data-rtx-subscription-price=''], label.is-selected [data-rtx-onetime-price='']{
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+    [data-rtx-subscription-price=''], [data-rtx-onetime-price='']{
+       color: var(--accent-color);
+    }
+    [data-rtx-subscription-price=''] s, [data-rtx-onetime-price=''] s{      
+      color: #ADADAD;
+    }
+   
+    /* Subscription box that displays the frequency selector */
+    .rtx-subscription-box {
+      display: none;
+    }
+    {% if frequencyVisible %}
+    .rtx-subscription-box.is-visible {
+      display: flex;
+      align-items: center;
+    }  
+    {% endif %}
+    select[name='rtx_selling_plan']{
+      width: fit-content;
+      padding: 5px 20px;
+      margin: 10px;
+      appearance: auto;
+      font-family: var(--font-family)!important;
+    }
+    .is-hidden[name='rtx_selling_plan'] {
+      display: none;
+    }    
+
+    /* Subscription Detail Box */
+    .rtx-modal-button{
+      padding: 0;
+      font-size: 16px;
+      background:none;
+      border:none;
+      text-transform: initial;
+      height: auto;
+      min-height: 0;
+      margin-left:0px;
+      cursor:pointer;
+      margin-top:10px;
+      color:  var(--text_color);
+      font-family: var(--font-family)!important;
+      font-size: var(--font-size)!important;
+    }
+    .rtx-modal__content {
+      position: absolute;
+      z-index:5;
+      background: white;
+      width: 100%; 
+      max-width: 40rem;
+      overflow-x: hidden;
+      padding: 1rem 2rem;
+      font-size:15px;   
+      transform: translateY(-1rem);
+      margin-top:5px;
+      margin-left:12px;
+      display: none; 
+      box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.12),
+      0px 1px 2px 0px rgba(0,0,0,0.24);
+    }
+    .rtx-modal{
+       z-index:5;
+       opacity: 0;
+       transition: opacity 0.2s ease-in;
+    }
+    .rtx-modal-button:hover ~ .rtx-modal{
+      opacity: 1;
+      transition: opacity 0.2s ease-out;
+    }
+    .rtx-modal-button:hover + .rtx-modal .rtx-modal__content{
+      display: block;
+    }
+    .subscriber-benefits{
+      padding: 0rem 0rem 0rem 2rem ;
+    }
+    .subscriber-benefits ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 8px;
+    }
+    .subscriber-benefits li {
+        position: relative;
+        padding-left: 15px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .subscriber-benefits li:before {
+        content: "\2713";
+        position: absolute;
+        left: 0;
+    }
+    .line-break {
+        width: 85%;
+        margin: 10px auto;
+    }
+    @media (max-width: 1024px) {
+    .savings {
+        font-size: smaller;
+    }
+    .rtx-purchase-label__inner > span{
+      margin-left: 0;
+      font-size: 14px;
+    }
+}
+       
+  </style>
+ 
+  {%- comment -%} Buy Box widget {%- endcomment -%}  
+  <span class="purchaseTypeLbl"> {{ purchase_type_label }} </span>
+  <div data-rtx-subscription-{{ product.id }}-{{ section.id }}-{{ block.id }} class="rtx-subscription">
+    {%- comment -%} Purchase type buttons {%- endcomment -%}
+      <div class="widget">
+        {%- unless requiresPlan -%}
+          <label for="purchaseTypeOneTime-{{ product.id }}"  class="rtx-purchase-label {% if default_to_subscription == false %}is-selected{% endif %}">
+              <div class="purchase-header"></div>
+              <div class="purchase-label">
+              <div class="rtx-purchase-label__inner">
+                <input type="radio" id="purchaseTypeOneTime-{{ product.id }}" name="purchaseType-{{ product.id }}" value="purchaseTypeOneTime-{{ product.id }}" {% if default_to_subscription == false %}checked{% endif %} />
+                <span>{{ one_time_purchase_label | escape }}</span>              
+              <span data-rtx-onetime-price>{{ currentVariant.price | money }} {% if currentVariant.compare_at_price > 0 %}<s>{{currentVariant.compare_at_price | money}}</s>{% endif %}</span>
+              </div>
+            </div>
+          </label>
+        {%- endunless -%}
+        <label class="rtx-purchase-label {% if default_to_subscription == true %}is-selected{% endif %}" for="purchaseTypeSubscription-{{ product.id }}">
+          <div class="purchase-header">BEST VALUE</div>
+          <div class="purchase-label sub">
+           <div class="sub-label">
+            <div class="rtx-purchase-label__inner">
+              <input type="radio" id="purchaseTypeSubscription-{{ product.id }}" name="purchaseType-{{ product.id }}" value="purchaseTypeSubscription" {% if default_to_subscription == true %}checked{% endif %} />
+              <span>{{ subscription_label }}
+              
+              <span data-rtx-subscription-price>
+              {{selectedOrFirstAllocation.price | money}} <s>{{ currentVariant.price | money }}</s>
+            </span>
+            </div>
+            {%- comment -%} Calculate savings from selling plan discount {%- endcomment -%}
+            <span class="savings">
+                {%- liquid 
+                    assign savings = ''
+                    assign discount = selectedOrFirstAllocation.selling_plan.price_adjustments.first
+                    if discount.value_type == 'percentage'
+                      assign savings = discount.value
+                    else
+                      assign savings = discount.value 
+                    endif
+                    if savings != blank and savings > 0
+                      if discount.value_type == 'percentage' 
+                        echo ' ' | append: savings | append: '% OFF'
+                      else 
+                          echo savings| money_without_trailing_zeros
+                      endif
+                    endif
+                  -%}
+                  </span>
+              </span> 
+            </div>
+
+            <hr class="line-break">
+            <div class="subscriber-benefits">
+                {{ subscription_details_box_content }}
+            </div>
+          </div>
+
+         </label>
+      </div>
+        
+      {%- comment -%} Subscription frequency selector {%- endcomment -%}
+      <div data-retextion-subscription-box-{{ product.id }} class="
+        rtx-subscription-box
+         {% if frequencyVisible %}
+          {% if requiresPlan or default_to_subscription == true %}
+            is-visible
+          {% endif %} 
+        {% endif %}
+      ">
+        {% if frequency_heading != blank %}<span> {{ frequency_heading }} </span>{% endif %}   
+        <select class="rtx-subscription-dropdown-{{ product.id }} " name="rtx_selling_plan"> 
+          <option {% if selectedAllocation == blank %}selected{% endif %} value="">Select frequency</option>
+          {{- sellingPlanOptions -}}
+        </select>
+      </div>
+     
+
+      {%- comment -%} Subscription Detail Box  {%- endcomment -%}
+      {%- if show_subscription_details -%}
+        <button type="button" class="rtx-modal-button" data-rtx-modal-open>
+        {{ icon_path | raw }}
+        {{ subscription_details_box_button_text }}
+        </button>
+        <div class="rtx-modal" data-rtx-modal>
+          <div class="rtx-modal__content">
+              <span>{{ subscription_details_box_title }}</span>
+              <p>{{ subscription_details_box_content }}</p>
+          </div>
+        </div>
+      {%- endif -%}
+  </div>
+
+  <script type="text/javascript">
+   document.addEventListener('DOMContentLoaded', () => {
+      ((buyBoxes) => {
+        const buyBox = {
+          boxId: "{{ product.id }}-{{ section.id }}-{{ block.id }}"
+        };
+        buyBox.product = {{ product | json }};
+        buyBox.variantId = {{ currentVariant.id | json }};
+        defaultToSubscription = {{ default_to_subscription }};
+        defaultToSubscriptionOnVariantChange = {{ default_to_subscription_on_variant_change }};
+        buyBox.requiresPlan = {{ requiresPlan }};
+        buyBox.sellingPlanGroups = {{ sellingPlanGroups | json }};
+        var prodID = buyBox.product.id;
+        buyBox.purchaseTypeLbl = document.querySelector(`.purchaseTypeLbl`);
+        buyBox.widget = document.querySelector(`div[data-rtx-subscription-${buyBox.boxId}='']`);
+        buyBox.root = document.querySelector(`[data-rtx-subscription-${buyBox.boxId}]`);      
+        buyBox.form = document.querySelector(`form[action="/cart/add"]`) || buyBox.root.closest('form[action="/cart/add"]') || buyBox.root.closest('form')  || document.documentElement;
+        buyBox.subscriptionBox = buyBox.root.querySelector(`[data-retextion-subscription-box-${prodID}]`);
+        buyBox.sellingPlanSelector = buyBox.root.querySelector(`.rtx-subscription-dropdown-${prodID}`);      
+        buyBox.purchaseType = buyBox.root.querySelectorAll(`[name="purchaseType-${prodID}"]`);
+        buyBox.labelOneTime = buyBox.root.querySelector(`[for="purchaseTypeOneTime-${prodID}"]`);
+        buyBox.labelSubscription = buyBox.root.querySelector(`[for="purchaseTypeSubscription-${prodID}"]`);
+        buyBox.cachedSellingPlanId = buyBox.sellingPlanSelector.value;
+        buyBox.sellingPlanInput = document.querySelector(`input[name="selling_plan"]`);
+        
+        // Note:
+        // Adjust these selectors as needed to match theme's structure
+        buyBox.variantSelectors = buyBox.form.querySelectorAll(`[name="id"]`);
+        buyBox.productPriceLbl = document.querySelector(`.price`);
+
+        // Remove the 'Select frequency' option from the frequency selector
+        buyBox.removeEmptyOption = () => {
+          const optEmpty = buyBox.sellingPlanSelector.querySelectorAll('[value=""]');
+          optEmpty.forEach(e => e.remove());
+        }
+        // Adds a 'Select frequency' option to the frequency selector
+        buyBox.addEmptyOption = () => {
+          let optEmpty = buyBox.sellingPlanSelector.querySelector('[value=""]');
+          if(optEmpty) return;
+          optEmpty = document.createElement('option');
+          optEmpty.value = '';
+          optEmpty.textContent = 'Select frequency';
+          buyBox.sellingPlanSelector.appendChild(optEmpty);
+        }
+        // Hide the frequency selector and calls the updateSellingPlan function
+        buyBox.hideSubscriptionBox = () => {
+          buyBox.cachedSellingPlanId = buyBox.sellingPlanSelector.value;
+          // Hide the frequency selector unless the block settings frequencyVisible is true
+          {{ frequencyVisible }} ? '' : buyBox.subscriptionBox.classList.remove('is-visible');
+          buyBox.addEmptyOption();
+          buyBox.sellingPlanSelector.value = '';
+          if(buyBox.sellingPlanInput) buyBox.sellingPlanInput.value = '';
+          buyBox.updateSellingPlan();
+          if(buyBox.labelOneTime) buyBox.labelOneTime.classList.add('is-selected');
+          if(buyBox.labelSubscription) buyBox.labelSubscription.classList.remove('is-selected');
+        }
+        // Display frequency selector and trigger updateSellingPlan function
+        buyBox.showSubscriptionBox = () => {
+          buyBox.subscriptionBox.classList.add('is-visible');
+          buyBox.sellingPlanSelector.value = buyBox.cachedSellingPlanId;
+          if(buyBox.sellingPlanInput) buyBox.sellingPlanInput.value = buyBox.cachedSellingPlanId;
+          buyBox.removeEmptyOption();
+          buyBox.sellingPlanSelector.options[0].selected = true;
+          buyBox.updateSellingPlan();
+          if(buyBox.labelOneTime) buyBox.labelOneTime.classList.remove('is-selected');
+          if(buyBox.labelSubscription) buyBox.labelSubscription.classList.add('is-selected');        
+        }
+
+        // Displays the widget based on the variant
+        buyBox.showStayWidget = (currentVariant) => {
+        
+          var sellingPlans = [];
+          let group;
+
+          // Retrieve the selling plans for the current variant
+          if(currentVariant.selling_plan_allocations.length > 0){
+            currentVariant.selling_plan_allocations.forEach((spa) => {
+                group = buyBox.sellingPlanGroups.find(g => g.id == spa.selling_plan_group_id);
+                if(group)
+                sellingPlans.push(group.selling_plans.find(sp => sp.id == spa.selling_plan_id)); 
+            }); 
+            
+            if(sellingPlans.length > 0){
+              
+                while (buyBox.sellingPlanSelector.options.length > 0) {
+                  buyBox.sellingPlanSelector.remove(0);
+                }
+                // Update subscription frequency selector and selling plans values
+                sellingPlans.forEach((sp, i) => {
+                    const newOption = document.createElement('option');
+                    newOption.textContent = sp.options[0].value;
+                    newOption.value = sp.id;
+                    buyBox.sellingPlanSelector.appendChild(newOption);
+                });
+              
+                buyBox.widget.style.display = 'block';
+                buyBox.purchaseTypeLbl.style.display = 'block';
+                
+                // If the default purchase type is subscription or the product requires a selling plan,
+                // select the subscription option
+                setTimeout(()=>{
+                 if(buyBox.defaultToSubscriptionOnVariantChange){
+                    if(!buyBox.isSubscriptionSelected())
+                        buyBox.labelSubscription.click();
+                    buyBox.showSubscriptionBox();
+                 }else{
+                  buyBox.updateSellingPlan();
+                 }
+                  
+                }, 100);
+            }
+          }else{
+            // Hide the widget if there are no selling plans available
+            buyBox.widget.style.display = 'none';
+            buyBox.purchaseTypeLbl.style.display = 'none';
+            buyBox.hideSubscriptionBox();
+          }
+
+      }
+        // Returns true if the subscription purchase type is selected 
+        buyBox.isSubscriptionSelected = () => {
+          return buyBox.labelSubscription.classList.contains('is-selected');
+        } 
+        // Returns the selling plan ID 
+        buyBox.getSellingPlanId = () => {
+          return parseInt(buyBox.sellingPlanSelector.value);
+        }     
+        // Function handling selling plan logic, updating price and selling plan value
+        buyBox.updateSellingPlan = () => {
+          let discountLabels = buyBox.root.querySelectorAll('[data-rtx-subscription-price]');
+          const fullPriceLabels = buyBox.root.querySelectorAll('[data-rtx-onetime-price]');
+          const variant = buyBox.product.variants.find(v => v.id == buyBox.variantId);
+          const sellingPlanId = buyBox.isSubscriptionSelected() ? buyBox.getSellingPlanId() : '';
+          const sellingPlanAllocation = sellingPlanId ? variant.selling_plan_allocations.find(spa => spa.selling_plan_id == sellingPlanId) : undefined;
+          const firstSellingPlanAllocation = variant.selling_plan_allocations.find(spa => spa.selling_plan_id == buyBox.getSellingPlanId()) || variant.selling_plan_allocations.find(spa => spa.selling_plan_group_id == buyBox.sellingPlanGroups[0].id) || variant.selling_plan_allocations.find(spa => spa);
+          const sellingPlanGroup = firstSellingPlanAllocation ? buyBox.sellingPlanGroups.find(spg => spg.id == firstSellingPlanAllocation.selling_plan_group_id) || undefined : undefined;
+          const sellingPlan = sellingPlanGroup ? sellingPlanGroup.selling_plans.find(sp => sp.id == firstSellingPlanAllocation.selling_plan_id) || buyBox.sellingPlanGroups[0].selling_plans[0] : undefined;
+    
+          // Calculate the discount, one-time purchase and subscription prices
+          let strDiscount = ` ${window.retextionApi.formatMoney(variant.price)}`;
+          let strFullPrice = `${window.retextionApi.formatMoney(variant.price)} ${
+              variant.compare_at_price > variant.price 
+                  ? `<s>${window.retextionApi.formatMoney(variant.compare_at_price)}</s>` 
+                  : ''
+          }`;
+          let savings = buyBox.root.querySelector('.savings');
+    
+          if(firstSellingPlanAllocation && firstSellingPlanAllocation.price != variant.price && sellingPlan) {
+            if(sellingPlan.price_adjustments[0].value_type == 'percentage' ){
+              let percentage = Math.round((1.0 - (firstSellingPlanAllocation.price / variant.price)) * 100);
+              if(percentage > 0) {
+                savings.innerHTML = `${percentage}% OFF`;
+                strDiscount = `${window.retextionApi.formatMoney(firstSellingPlanAllocation.price)} <s>${window.retextionApi.formatMoney(variant.price)}</s>`;
+              }else{
+                strDiscount = ` ${window.retextionApi.formatMoney(firstSellingPlanAllocation.price)}`;
+              }
+            }else{
+              savings.innerHTML = `${window.retextionApi.formatMoney(variant.price - firstSellingPlanAllocation.price )} OFF`;
+              strDiscount = ` ${window.retextionApi.formatMoney(firstSellingPlanAllocation.price )} <s>${window.retextionApi.formatMoney(variant.price)}</s>`;
+            } 
+          } 
+
+          // Create selling plan input and add it to the buy button form
+          if(sellingPlan){
+              var query = "form#{{ product_form_id }}[action='/cart/add']";
+              setTimeout( ()=>{
+                buyBox.form = document.querySelector(query);
+                if(!buyBox.sellingPlanInput ){
+                    let input = document.createElement('input');
+                    input.setAttribute('name', 'selling_plan');
+                    input.setAttribute('type', 'hidden');
+                    input.setAttribute('value', sellingPlan.id);
+                    buyBox.form.appendChild(input);
+                    buyBox.sellingPlanInput = document.querySelector('input[name="selling_plan"]');
+                }else{
+                    buyBox.sellingPlanInput.setAttribute('value', sellingPlan.id);
+                }
+                if(!buyBox.isSubscriptionSelected()) buyBox.sellingPlanInput.setAttribute('value', '');
+
+                // Disable frequency selection if subscription option isn't selected
+                buyBox.isSubscriptionSelected() ? buyBox.sellingPlanSelector.removeAttribute('disabled') : buyBox.sellingPlanSelector.setAttribute('disabled', true);
+
+                // Update product price label
+                if(buyBox.productPriceLbl){
+                  buyBox.productPriceLbl.innerHTML = buyBox.isSubscriptionSelected() ? strDiscount : strFullPrice;
+                }
+
+              }, 100);
+          }
+          // Update purchase type prices
+          discountLabels.forEach(dl => dl.innerHTML = strDiscount);
+          fullPriceLabels.forEach(fp => fp.innerHTML = strFullPrice);
+          if(buyBox.productPriceLbl){
+            buyBox.productPriceLbl.innerHTML = strFullPrice;
+          }
+        }
+        // Event Listeners
+        // Add event listeners to the purchase type radio buttons to display the frequency selector
+        buyBox.purchaseType.forEach(el => {
+          el.addEventListener('change', e => {
+            if(el.value.includes('purchaseTypeSubscription')) {
+              buyBox.showSubscriptionBox();
+            } else {
+              buyBox.hideSubscriptionBox();
+            }
+          });
+        });
+        // Add event listener to the frequency selector to update the selling plan
+        buyBox.sellingPlanSelector.addEventListener('change', e => {
+          buyBox.updateSellingPlan();
+        });
+
+        // Get the variant ID from the URL and update the variant
+        const updateVariant = () => {
+          const variantParam = window.location.search.match(/(?:\?|&)variant=([^&]*)/);
+          if (variantParam?.[1] && Number(variantParam[1]) !== buyBox.variantId) {
+            buyBox.variantId = Number(variantParam[1]);
+            const selectedProdVariant = buyBox.product.variants.find(v => v.id === buyBox.variantId);
+            if(selectedProdVariant) buyBox.showStayWidget(selectedProdVariant);
+          }
+        };
+
+        // Initialize URL change handling
+        const initVariantFromUrl = () => {
+          // Intercept pushState and replaceState to handle URL changes
+          ((history) => {
+            const originalPushState = history.pushState;
+            history.pushState = function (state, ...args) {
+              const returnValue = originalPushState.apply(history, [state, ...args]);
+              if (typeof history.onpushstate === "function") {
+                history.onpushstate({ state });
+              }
+              updateVariant();
+              return returnValue;
+            };
+
+            const originalReplaceState = history.replaceState;
+            history.replaceState = function (state, ...args) {
+              const returnValue = originalReplaceState.apply(history, [state, ...args]);
+              if (typeof history.onreplacestate === "function") {
+                history.onreplacestate({ state });
+              }
+              updateVariant();
+              return returnValue;
+            };
+          })(window.history);
+
+          // Add popstate event listener to handle back/forward navigation
+          window.addEventListener('popstate', (event) => {
+            updateVariant();
+          });
+
+          // Initial call to handle current URL parameters
+          updateVariant();
+        };
+
+        // Add event listener to the variant selector to update the variant and call the showStayWidget function     
+        if(buyBox.variantSelectors.length == 0){
+          buyBox.variantSelectors.forEach(variantSelector => {
+            variantSelector.addEventListener('change', e => {
+              buyBox.variantId =  Number(e.target.value);
+              const selectedVariant = buyBox.product.variants.find(variant => variant.id == buyBox.variantId);
+              if(selectedVariant) buyBox.showStayWidget(selectedVariant);
+            });
+          });
+        }else{
+          initVariantFromUrl();
+        }
+        
+        // Init
+        buyBox.showStayWidget({{currentVariant | json}});
+        if(buyBox.isSubscriptionSelected()) buyBox.removeEmptyOption();
+        window.retextionApi.productAdd({ product: buyBox.product });
+        // Export globally
+        return Object.assign(buyBoxes, {
+          [buyBox.boxId]: buyBox
+        });
+      })((window.retextionBuyBox = {}));
+   })
+  </script>
+{%- endif -%}
+

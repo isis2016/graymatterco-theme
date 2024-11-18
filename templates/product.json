@@ -60,6 +60,35 @@
             "padding_bottom": 0
           }
         },
+        "stay_ai_subscriptions_Kg6wBt": {
+          "type": "stay_ai_subscriptions",
+          "settings": {
+            "show_purchase_options": true,
+            "purchase_type_label": "",
+            "one_time_purchase_label": "One-time Purchase",
+            "subscription_label": "Subscribe & Save",
+            "default_to_subscription": true,
+            "default_to_subscription_on_variant_change": false,
+            "frequency_visible": false,
+            "frequency_heading": "Frequency:",
+            "show_subscription_details": false,
+            "subscription_details_box_button_text": "Subscription Details",
+            "icon_path": "",
+            "subscription_details_box_title": "How subscriptions work",
+            "subscription_details_box_content": "<ul><li>Save 15%+ every month after ($1.28 per serving)<\/li><li>Free Fast Shipping (Forever)<\/li><li>Pause, skip, or cancel anytime<\/li><li>Money back guarantee<\/li><\/ul>",
+            "subscription_label_first": true,
+            "widget_layout": "standard",
+            "font_family": "work_sans_n6",
+            "text_color": "#000000",
+            "font_size": 16,
+            "border_color": "#e6fda5",
+            "selected_bg_color": "#8aa665",
+            "selected_text_color": "#121212",
+            "accent_color": "#8aa665",
+            "border_width": 1,
+            "border_radius": 6
+          }
+        },
         "buttons": {
           "type": "buttons",
           "settings": {
@@ -177,6 +206,7 @@
         "description_Dk8wKn",
         "price",
         "variants",
+        "stay_ai_subscriptions_Kg6wBt",
         "buttons",
         "meta_accordion_KAEJDB",
         "ingredients_accordion_gNPW9T",

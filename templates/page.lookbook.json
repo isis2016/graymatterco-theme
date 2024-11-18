@@ -111,10 +111,6 @@
       "settings": {
         "heading": "",
         "description": "",
-        "link_text": "",
-        "link_url": "",
-        "button_type": "btn--black",
-        "button_style": "btn--outline",
         "featured_collection": "",
         "layout_desktop": "grid",
         "grid": 4,
@@ -211,10 +207,6 @@
       "settings": {
         "heading": "",
         "description": "",
-        "link_text": "",
-        "link_url": "",
-        "button_type": "btn--black",
-        "button_style": "btn--outline",
         "featured_collection": "",
         "layout_desktop": "grid",
         "grid": 4,
@@ -319,10 +311,6 @@
       "settings": {
         "heading": "",
         "description": "",
-        "link_text": "",
-        "link_url": "",
-        "button_type": "btn--black",
-        "button_style": "btn--outline",
         "featured_collection": "",
         "layout_desktop": "grid",
         "grid": 4,

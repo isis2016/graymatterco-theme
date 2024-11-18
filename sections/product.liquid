@@ -320,6 +320,9 @@
                   {%- when 'variants' -%}
                     {%- render 'product-variant-options' product: product, unique: unique, block: block, block_style: block_style, product_form_id: product_form_id, enable_size_chart: true -%}
 
+                  {%- when 'stay_ai_subscriptions' -%}
+                    {%- render 'rtx-pdp' product: product, block: block, product_form_id: product_form_id -%}
+
                   {%- when 'buttons' -%}
                     {%- render 'product-buttons' product: product, current_variant: current_variant, unique: unique, block: block, block_style: block_style, product_form_id: product_form_id, preorder: preorder -%}
 
@@ -1537,6 +1540,192 @@
           }
         ]
       },
+      {
+        "type": "stay_ai_subscriptions",
+        "name": "Stay Ai Subscriptions",
+        "limit": 1,
+        "settings": [
+        {
+            "type": "checkbox",
+            "id": "show_purchase_options",
+            "default": true,
+            "label": "Show purchase options",
+            "info": "Displays the purchase options: One time and Subscription purchase"
+        },
+            {
+            "type": "text",
+            "id": "purchase_type_label",
+            "label": "Purchase type label",
+            "default": "Purchase type:"
+        },
+        {
+            "type": "text",
+            "id": "one_time_purchase_label",
+            "label": "One-time purchase label",
+            "default": "One-Time Purchase"
+        },
+        {
+            "type": "text",
+            "id": "subscription_label",
+            "label": "Subscription label",
+            "default": "Subscribe & Save"
+        },
+        {
+            "type": "checkbox",
+            "id": "default_to_subscription",
+            "default": true,
+            "label": "Set subscription as default purchase option"
+        },
+        {
+            "type": "checkbox",
+            "id": "default_to_subscription_on_variant_change",
+            "default": false,
+            "label": "Set subscription as default purchase option when variant change"
+        },
+        {
+            "type": "checkbox",
+            "id": "frequency_visible",
+            "default": false,
+            "label": "Frequency selector visible?"
+        }, 
+        { 
+            "type": "text",
+            "id": "frequency_heading",
+            "label": "Frequency heading",
+            "default": "Frequency:"
+        },
+        {
+            "type": "header",
+            "content": "Subscription Details Box Settings"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_subscription_details",
+            "default": true,
+            "label": "Show subscription details box"
+        },
+        {
+            "type": "text",
+            "id": "subscription_details_box_button_text",
+            "label": "Subscription details box hover text",
+            "default": "Subscription Details"
+        },
+        {
+            "type": "text",
+            "id": "icon_path",
+            "label": "SVG for Subscription Details Icon",
+            "default": "<svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill='currentColor' d='M13.64 2.35C12.19 0.9 10.2 0 7.99 0C3.57 0 0 3.58 0 8C0 12.42 3.57 16 7.99 16C11.72 16 14.83 13.45 15.72 10H13.64C12.82 12.33 10.6 14 7.99 14C4.68 14 1.99 11.31 1.99 8C1.99 4.69 4.68 2 7.99 2C9.65 2 11.13 2.69 12.21 3.78L8.99 7H15.99V0L13.64 2.35Z'></path></svg>",
+            "info": "Input the SVG for your icon."
+        },
+        {
+            "type": "text",
+            "id": "subscription_details_box_title",
+            "label": "Subscription details box title",
+            "default": "How subscriptions work"
+        },
+        {
+            "type": "richtext",
+            "id": "subscription_details_box_content",
+            "label": "Subscription details box content",
+            "default": "<p>Products are automatically delivered on your schedule. No obligation, modify or cancel your subscription anytime.</p>"
+        },        
+        {
+            "type": "header",
+            "content": "Widget layout"
+        },
+            {
+            "type": "checkbox",
+            "id": "subscription_label_first",
+            "default": false,
+            "label": "Display the subscription label first"
+        },
+        {
+            "type": "select",
+            "id": "widget_layout",
+            "options": [
+            {
+                "value": "standard",
+                "label": "Stacked buttons with radio buttons"
+            },
+            {
+                "value": "stacked-buttons",
+                "label": "Stacked buttons without radio buttons"
+            },
+            {
+                "value": "side-by-side-buttons",
+                "label": "Side by side buttons"
+            }
+            ],
+            "default": "standard",
+            "label": "Select the widget layout"
+        },      
+        {
+            "type": "header",
+            "content": "Typography"
+        },
+        {
+            "type": "font_picker",
+            "id": "font_family",
+            "label": "Select the font",
+            "default": "work_sans_n6"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#000000"
+        },
+        {
+            "type": "number",
+            "id": "font_size",
+            "label": "Font size",
+            "default": 14
+        },
+        {
+            "type": "header",
+            "content": "Background and Border"
+        },
+        {
+            "type": "color",
+            "id": "border_color",
+            "label": "Border color",
+            "default": "#E0E0E0"
+        },
+        {
+            "type": "color",
+            "id": "selected_bg_color",
+            "label": "Selected background color",
+            "default": "#E0E0E0"
+        },
+        {
+            "type": "color",
+            "id": "selected_text_color",
+            "label": "Selected text color",
+            "default": "#121212"
+        },
+        {
+            "type": "color",
+            "id": "accent_color",
+            "label": "Accent color",
+            "default": "#121212"
+        },
+        {
+            "type": "number",
+            "id": "border_width",
+            "label": "Border width, set to 0 to remove border",
+            "default": 1
+        },
+        {
+            "type": "number",
+            "id": "border_radius",
+            "label": "Border radius",
+            "default": 10
+        }
+        
+
+        ]
+        
+    },
       {
         "type": "buttons",
         "name": "Buy buttons",
