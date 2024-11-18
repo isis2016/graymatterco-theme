@@ -1,0 +1,282 @@
+<section class="become-member-section" id="member-{{ section.id }}">
+  {% if section.settings.left-image %}
+    <div class="left-image desktop-image-block">
+      {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+      {% assign class = 'img-fluid' %}
+      {%- capture sizes -%}
+        (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+        (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+      {%- endcapture -%}
+      {{
+        section.settings.left-image
+        | image_url: width: 1500
+        | image_tag: sizes: sizes, widths: widths, class: class
+      }}
+    </div>
+  {% endif %}
+  {% if section.settings.left-image-mobile %}
+    <div class="left-image mobile-image-block">
+      {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+      {% assign class = 'img-fluid' %}
+      {%- capture sizes -%}
+        (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+        (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+      {%- endcapture -%}
+      {{
+        section.settings.left-image-mobile
+        | image_url: width: 1500
+        | image_tag: sizes: sizes, widths: widths, class: class
+      }}
+    </div>
+  {% endif %}
+  <div class="container">
+    <div class="max-cointent-block">
+      {% if section.settings.title != blank %}
+        <div class="cointent-title-block">{{ section.settings.title }}</div>
+      {% endif %}
+      {% if section.settings.title-bellow-image != blank %}
+        <div class="cointent-title-bellow-image-block">
+          {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+          {% assign class = 'img-fluid' %}
+          {%- capture sizes -%}
+            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+          {%- endcapture -%}
+          {{
+            section.settings.title-bellow-image
+            | image_url: width: 1500
+            | image_tag: sizes: sizes, widths: widths, class: class
+          }}
+        </div>
+      {% endif %}
+      {% if section.settings.become-member-content %}
+        <div class="become-member-content-block">
+          {{ section.settings.become-member-content }}
+        </div>
+      {% endif %}
+      {% if section.settings.btn-label %}
+        <div class="text-center">
+          <a href="{{ section.settings.btn-link }}" class="btn-label-block">{{ section.settings.btn-label }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {% if section.settings.right-image %}
+    <div class="right-image desktop-image-block">
+      {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+      {% assign class = 'img-fluid' %}
+      {%- capture sizes -%}
+        (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+        (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+      {%- endcapture -%}
+      {{
+        section.settings.right-image
+        | image_url: width: 1500
+        | image_tag: sizes: sizes, widths: widths, class: class
+      }}
+    </div>
+  {% endif %}
+  
+  {% if section.settings.right-image-mobile %}
+    <div class="right-image mobile-image-block">
+      {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+      {% assign class = 'img-fluid' %}
+      {%- capture sizes -%}
+        (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+        (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+      {%- endcapture -%}
+      {{
+        section.settings.right-image-mobile
+        | image_url: width: 1500
+        | image_tag: sizes: sizes, widths: widths, class: class
+      }}
+    </div>
+  {% endif %}
+</section>
+
+{% style %}
+  @media only screen and (min-width: 769px) {
+    #member-{{ section.id }} {
+      padding-top: {{ section.settings.padding-top }}px;
+      padding-bottom: {{ section.settings.padding-bottom }}px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    #member-{{ section.id }} {
+      padding-top: {{ section.settings.padding-top-mobile }}px;
+      padding-bottom: {{ section.settings.padding-bottom-mobile }}px;
+    }
+  }
+
+  #member-{{ section.id }} .btn-label-block {
+    background-color: {{ section.settings.bg-color }};
+    color: {{ section.settings.label-color }};
+  }
+  .btn-label-block {
+    font-family: "ABC Monument Grotesk Mono Unlicensed Trial";
+    text-transform: uppercase;
+    padding: 6px 36px;
+    border-radius: 50px;
+  }
+  .max-cointent-block {
+    max-width: 745px;
+    margin: 0 auto;
+    padding: 0 5px;
+    position: relative;
+    z-index: 1;
+  }
+  .cointent-title-block {
+    font-family: "ABC Monument Grotesk Mono Unlicensed Trial";
+    font-size: 36px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+  .cointent-title-bellow-image-block {
+    max-width: 65px;
+    margin: 0 auto;
+    padding-bottom: 15px;
+  }
+  .become-member-content-block p {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .cointent-title-block span {color: #8AA665;}
+  .become-member-content-block {
+    font-family: "ABC Monument Grotesk Mono Unlicensed Trial";
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+  .become-member-section {position: relative;}
+  .left-image {
+    position: absolute;
+    max-width: 313px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .right-image {
+    position: absolute;
+    max-width: 313px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .mobile-image-block {display: none;}
+
+  @media only screen and (max-width: 768px) {
+    .mobile-image-block {display: block; max-width: 85px; top: 55%;}
+    .desktop-image-block {display: none;}
+    .become-member-content-block {max-width: 270px; padding-bottom: 5px;}
+    .cointent-title-block {font-size: 30px;}
+  }
+{% endstyle %}
+
+
+{% schema %}
+  {
+    "name": "Become Member",
+    "settings": [
+      {
+        "type": "html",
+        "id": "title",
+        "label": "Title",
+        "info": "Highlight Word Use '<span>' tag"
+      },
+      {
+        "type": "image_picker",
+        "id": "title-bellow-image",
+        "label": "Title bellow Image"
+      },
+      {
+        "type": "richtext",
+        "id": "become-member-content",
+        "label": "Become Member Content"
+      },
+      {
+        "type": "text",
+        "id": "btn-label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "btn-link",
+        "label": "Button Link"
+      },
+      {
+        "type": "color",
+        "id": "bg-color",
+        "label": "Button Background Color"
+      },
+      {
+        "type": "color",
+        "id": "label-color",
+        "label": "Button Label Color"
+      },
+      {
+        "type": "image_picker",
+        "id": "left-image",
+        "label": "Left Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "right-image",
+        "label": "Right Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "left-image-mobile",
+        "label": "Left Image Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "right-image-mobile",
+        "label": "Right Image Mobile"
+      },
+      {
+        "type": "range",
+        "id": "padding-top",
+        "label": "Padding Top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "default": 74
+      },
+      {
+        "type": "range",
+        "id": "padding-bottom",
+        "label": "Padding Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "default": 74
+      },
+      {
+        "type": "range",
+        "id": "padding-top-mobile",
+        "label": "Padding Top Mobile",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding-bottom-mobile",
+        "label": "Padding Bottom Mobile",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "default": 60
+      }
+    ],
+    "presets": [
+      {
+        "name": "Become Member"
+      }
+    ]
+  }
+{% endschema %}

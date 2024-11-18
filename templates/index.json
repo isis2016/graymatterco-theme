@@ -1,0 +1,991 @@
+{
+  "sections": {
+    "sc_hero_XCbxE3": {
+      "type": "sc-hero",
+      "blocks": {
+        "strength_pP4XXr": {
+          "type": "strength",
+          "settings": {
+            "strength_tag": "Boost Cognition"
+          }
+        },
+        "strength_i98DQA": {
+          "type": "strength",
+          "settings": {
+            "strength_tag": "Enhance Focus & Clarity"
+          }
+        },
+        "strength_tpEUNJ": {
+          "type": "strength",
+          "settings": {
+            "strength_tag": "All Day Energy"
+          }
+        },
+        "strength_btQx7y": {
+          "type": "strength",
+          "settings": {
+            "strength_tag": "Vision Support"
+          }
+        }
+      },
+      "block_order": [
+        "strength_pP4XXr",
+        "strength_i98DQA",
+        "strength_tpEUNJ",
+        "strength_btQx7y"
+      ],
+      "settings": {
+        "hero_title": "The First Drinkable ADHD Supplement",
+        "btn-label": "",
+        "btn-link": "shopify:\/\/products\/brightmind-1",
+        "banner-image": "shopify:\/\/shop_images\/hero_image_3.svg",
+        "banner-image-mobile": "shopify:\/\/shop_images\/Mobile_Hero_1.svg",
+        "padding-top": 130,
+        "padding-bottom": 142,
+        "bg_color": "#f6f6f6",
+        "padding-top-mobile": 38,
+        "padding-bottom-mobile": 0
+      }
+    },
+    "docs": {
+      "type": "section-rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<h5>Strengthen Your Cognition<\/h5>",
+            "text_size": 4,
+            "text_style": "font-body",
+            "padding_bottom": 16
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/products\/brightmind-1",
+            "button_type": "btn--black",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "text",
+        "buttons"
+      ],
+      "settings": {
+        "width": "wrapper",
+        "align_text": "text-center",
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "show_overlay_text": false,
+        "bg_color": "#f6f6f6",
+        "color": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "accordion_section_QnpwTq": {
+      "type": "accordion-section",
+      "blocks": {
+        "accordian_LGDBka": {
+          "type": "accordian",
+          "settings": {
+            "acc-titel": "The Challenge",
+            "acc-content": "<h6>The Modern World is Destroying our Attention. <\/h6><p>Prescription Stimulants and excessive caffeine lead to anxiety and burn out.<\/p>"
+          }
+        },
+        "accordian_AE7UBM": {
+          "type": "accordian",
+          "settings": {
+            "acc-titel": "The Solution",
+            "acc-content": "<h6>Mental Nourishment to Strengthen Your Cognition<\/h6><p>The key to overcoming mental fatigue, ADHD, and distraction is a balance of science and nature. <strong>Bright Mind<\/strong> combines powerful nootropics and adaptogens to nourish your mind and help you regain focus.<\/p>"
+          }
+        },
+        "accordian_FMCFUM": {
+          "type": "accordian",
+          "settings": {
+            "acc-titel": "How BRIGHT MIND Works",
+            "acc-content": "<h6>Training Your Mind Like You Do Your Body<\/h6><p>Just like your body, your brain needs proper nourishment to perform. Bright Mind is an all natural plant-based daily supplement to increase your cognitive stamina. <\/p>"
+          }
+        },
+        "accordian_qzxRgD": {
+          "type": "accordian",
+          "settings": {
+            "acc-titel": "Peer Reviewed Research",
+            "acc-content": "<p>The ingredients in <strong>Bright Mind<\/strong> are backed by thousands of scientific studies. Peer reviewed research display effectiveness in enhancing focus, reducing stress, and improving mental clarity.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordian_LGDBka",
+        "accordian_AE7UBM",
+        "accordian_FMCFUM",
+        "accordian_qzxRgD"
+      ],
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/shape1_1f5a13ab-0c9e-4145-8924-afa74a682233.png",
+        "bg_image_mobile": "shopify:\/\/shop_images\/Frame_627223.png",
+        "tackling-img": "shopify:\/\/shop_images\/magnetic_e19ca85c-867a-4cb2-8322-3a3d35c0cea1.jpg",
+        "acc-title": "Tackling Modern <br>\nDistractions with",
+        "acc-title-subtitle": "Precision",
+        "acc-subtitle": ""
+      }
+    },
+    "sc_scientifically_FFGnw9": {
+      "type": "sc-scientifically",
+      "blocks": {
+        "slide_PBpWKn": {
+          "type": "slide",
+          "settings": {
+            "design_img": "shopify:\/\/shop_images\/logo1.png",
+            "design_title": "ADHD",
+            "design_content": "Bright Mind increases dopamine production and strengthens cognition to combat symptoms of ADHD."
+          }
+        },
+        "slide_xWqa8b": {
+          "type": "slide",
+          "settings": {
+            "design_img": "shopify:\/\/shop_images\/icon2.png",
+            "design_title": "Procrastination",
+            "design_content": "Helps you enter flow state, so you can crush that paper, board meeting prep, or coding session."
+          }
+        },
+        "slide_MqDQgF": {
+          "type": "slide",
+          "settings": {
+            "design_img": "shopify:\/\/shop_images\/icon3.png",
+            "design_title": "Brain Fog",
+            "design_content": "Feeling sluggish in the mornings? Our powerful nootropics clear brain fog for better mental performance."
+          }
+        },
+        "slide_cB9k3E": {
+          "type": "slide",
+          "settings": {
+            "design_img": "shopify:\/\/shop_images\/icon4.png",
+            "design_title": "Cognitive Decline",
+            "design_content": "Daily nootropic  supplementation can help slow and prevent Cognitive Decline."
+          }
+        },
+        "slide_YLzHcF": {
+          "type": "slide",
+          "settings": {
+            "design_img": "shopify:\/\/shop_images\/icon5.png",
+            "design_title": "Coffee Crash",
+            "design_content": "Coffee alternative for all day energy with no crash."
+          }
+        },
+        "slide_UGd4gQ": {
+          "type": "slide",
+          "settings": {
+            "design_img": "shopify:\/\/shop_images\/icon6.png",
+            "design_title": "Screen Assault",
+            "design_content": "Bright Mind carotenoids protect against harmful blue light to support vision."
+          }
+        }
+      },
+      "block_order": [
+        "slide_PBpWKn",
+        "slide_xWqa8b",
+        "slide_MqDQgF",
+        "slide_cB9k3E",
+        "slide_YLzHcF",
+        "slide_UGd4gQ"
+      ],
+      "settings": {
+        "scientifically_title": "Scientifically  Designed for...",
+        "scientifically_sub_title": "",
+        "bg_color": "linear-gradient(182deg, rgba(255, 255, 255, 1) 75%, rgba(230, 253, 165, 1) 100%)",
+        "text_color": "#242424",
+        "padding-top": 92,
+        "padding-bottom": 70,
+        "mobile-padding-top": 36,
+        "mobile-padding-bottom": 12
+      }
+    },
+    "section_rich_text_8cinKY": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_fkG6mk": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "",
+            "text_size": 3,
+            "padding_bottom": 16
+          }
+        },
+        "heading_X7L39P": {
+          "type": "heading",
+          "settings": {
+            "title": "Top Performers Trust Bright Mind",
+            "text_size": 8,
+            "padding_bottom": 16
+          }
+        },
+        "buttons_V6PnXp": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_text": "Learn more",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_fkG6mk",
+        "heading_X7L39P",
+        "buttons_V6PnXp"
+      ],
+      "disabled": true,
+      "settings": {
+        "width": "wrapper--narrow",
+        "align_text": "text-center",
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "show_overlay_text": false,
+        "bg_color": "#e6fda5",
+        "color": "#000000",
+        "padding_top": 42,
+        "padding_bottom": 0
+      }
+    },
+    "section_reviews_B6MVVd": {
+      "type": "section-reviews",
+      "blocks": {
+        "review_K3GN6R": {
+          "type": "review",
+          "settings": {
+            "slider-title": "Top performers trust us",
+            "title": "Rayshawn Jenkins",
+            "subheading": "Starting NFL Safety",
+            "review_text": "I've always been interested in finding natural ways to boost my mental game. When I discovered Bright Mind, I knew I had found something special.",
+            "featured_image": "shopify:\/\/shop_images\/Rayshawn_Headshot.webp",
+            "bio_image": "shopify:\/\/shop_images\/Rayshawn_headshot_2.webp",
+            "review_url": "shopify:\/\/products\/brightmind-1"
+          }
+        },
+        "review_CUFntC": {
+          "type": "review",
+          "settings": {
+            "slider-title": "",
+            "title": "George Demertsidis",
+            "subheading": "Fire Department Lieutenant",
+            "review_text": "Bright Mind helps me stay sharp and focused during 24hr shifts, giving me the mental clarity I need to make quick, critical decisions without the crash.",
+            "featured_image": "shopify:\/\/shop_images\/george.jpg",
+            "review_url": "shopify:\/\/products\/brightmind-1"
+          }
+        },
+        "review_NQnknj": {
+          "type": "review",
+          "settings": {
+            "slider-title": "",
+            "title": "Rae Bahn",
+            "subheading": "Travel Nurse",
+            "review_text": "I take Bright Mind in the middle of my 12 hour shifts and it powers me through  every time. It's all natural and fits my healthy lifestyle.",
+            "featured_image": "shopify:\/\/shop_images\/rae_nurse.jpg",
+            "bio_image": "shopify:\/\/shop_images\/rae_headshot.jpg",
+            "review_url": ""
+          }
+        },
+        "review_RzNnHt": {
+          "type": "review",
+          "settings": {
+            "slider-title": "",
+            "title": "Grayson Goldin",
+            "subheading": "Professional Pickleball Player",
+            "review_text": "Pickleball games are won in fast paced volleys at the net. Bright Mind fires up my reaction time and it sustains well past match point.",
+            "featured_image": "shopify:\/\/shop_images\/grayson_pickleball.jpg",
+            "bio_image": "shopify:\/\/shop_images\/goldin_headshot.webp",
+            "review_url": ""
+          }
+        },
+        "review_EWrGJw": {
+          "type": "review",
+          "settings": {
+            "slider-title": "",
+            "title": "Louis Bobelis",
+            "subheading": "Special Forces & Chief Security Officer",
+            "review_text": "When the stakes couldn't be higher Bright Mind ensures that I stay locked in.",
+            "featured_image": "shopify:\/\/shop_images\/Louie_on_tank.png",
+            "bio_image": "shopify:\/\/shop_images\/417908E6-FAB9-447C-BABD-050165FB3E1D.jpg",
+            "review_url": ""
+          }
+        },
+        "review_nwUgg8": {
+          "type": "review",
+          "settings": {
+            "slider-title": "",
+            "title": "Ashley Dunn",
+            "subheading": "GTM Leader",
+            "review_text": "Bright Mind is my go-to for starting the day with clarity and motivation. No crashes, just results—everyone should experience this.",
+            "featured_image": "shopify:\/\/shop_images\/ashley_working.jpg",
+            "bio_image": "shopify:\/\/shop_images\/Ashley_Headshot.jpg",
+            "review_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_K3GN6R",
+        "review_CUFntC",
+        "review_NQnknj",
+        "review_RzNnHt",
+        "review_EWrGJw",
+        "review_nwUgg8"
+      ],
+      "settings": {
+        "show_featured_image": true,
+        "image-text-position": "image-first",
+        "image_aspect_ratio": 1.1,
+        "show_quotation_marks": true,
+        "text_align": "text-left",
+        "text_size": 4,
+        "color": "",
+        "card_bg_color": "",
+        "bg-color": "linear-gradient(174deg, rgba(230, 253, 165, 1), rgba(255, 255, 255, 1) 40%)",
+        "padding_top": 40,
+        "padding_bottom": 50
+      }
+    },
+    "new_slider_image_text_cfRVht": {
+      "type": "new-slider-image-text",
+      "blocks": {
+        "slider_XEnDAz": {
+          "type": "slider",
+          "settings": {
+            "slider-title": "Top Performers Trust Us",
+            "content": "\"I've always been interested in finding natural ways to boost my mental game. When I discovered Bright Mind, I knew I had found something special.”",
+            "signature": "— Rayshawn Jenkins",
+            "block-image": "shopify:\/\/shop_images\/Rayshawn_Headshot.webp",
+            "block-image-mobile": "shopify:\/\/shop_images\/Rayshawn_Headshot.webp"
+          }
+        },
+        "slider_TH3iKn": {
+          "type": "slider",
+          "settings": {
+            "slider-title": "Top Performers Trust Us",
+            "content": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n<br><br>\nSales Leader",
+            "signature": "— Ashley, Sales Leader",
+            "block-image": "shopify:\/\/shop_images\/Ashley_Headshot.jpg",
+            "block-image-mobile": "shopify:\/\/shop_images\/Ashley_Headshot.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slider_XEnDAz",
+        "slider_TH3iKn"
+      ],
+      "disabled": true,
+      "settings": {
+        "image-text-position": "image-secound",
+        "bg-color": "linear-gradient(174deg, rgba(230, 253, 165, 1), rgba(255, 255, 255, 1) 40%)",
+        "label-color": "#242424",
+        "padding-top": 0,
+        "padding-bottom": 0
+      }
+    },
+    "process_progress_sec_NHCw9H": {
+      "type": "process-progress-sec",
+      "blocks": {
+        "processbox_xNVY9F": {
+          "type": "processbox",
+          "settings": {
+            "title": "First 15 Mins",
+            "processdesc": "<p>Most people experience a mental uplift within minutes.<\/p>"
+          }
+        },
+        "processbox_i79eA4": {
+          "type": "processbox",
+          "settings": {
+            "title": "Next 4-8 Hours",
+            "processdesc": "<p>Heightened flow state due to the powerful & synergistic effects of our four blends. Experience a calm, focused, long-lasting productive state of mind.<\/p>"
+          }
+        },
+        "processbox_VgnkpT": {
+          "type": "processbox",
+          "settings": {
+            "title": "No Crash Ever",
+            "processdesc": "<p>Plant-based energy & stress busting adaptogens create a steady energic state without a crash.<\/p>"
+          }
+        },
+        "processbox_tYwRHc": {
+          "type": "processbox",
+          "settings": {
+            "title": "Week 1",
+            "processdesc": "<p>You'll notice increases in productivity due to less fatigue in the afternoons and more clarity in the mornings, brain fog is a thing of the past.<\/p>"
+          }
+        },
+        "processbox_WU3cGE": {
+          "type": "processbox",
+          "settings": {
+            "title": "Week 2+",
+            "processdesc": "<p>Your cognitive stamina improves as nootropics boost acetylcholine and neurogenesis, while adaptogens enhance your mood by regulating cortisol and stress.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "processbox_xNVY9F",
+        "processbox_i79eA4",
+        "processbox_VgnkpT",
+        "processbox_tYwRHc",
+        "processbox_WU3cGE"
+      ],
+      "settings": {
+        "bgcolor": "",
+        "boxbgcolor": "#dbe5f4",
+        "textcolor": "#242424",
+        "sectitle": "Train your mind like you do your body.",
+        "process_img": "shopify:\/\/shop_images\/productimg.png",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "mobile_padding_top": 10,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "section_collection_ymBBNE": {
+      "type": "section-collection",
+      "settings": {
+        "heading": "Order Bright Mind",
+        "description": "",
+        "layout": "inline",
+        "featured_collection": "order-now",
+        "layout_desktop": "grid",
+        "grid": 2,
+        "rows": 1,
+        "width": "wrapper--full-padded",
+        "layout_mobile": "1",
+        "bg_color": "#ffffff",
+        "color": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 21,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "become_member_qka47B": {
+      "type": "become-member",
+      "settings": {
+        "title": "Subscribe and say goodbye to brain fog <span>forever<\/span>",
+        "title-bellow-image": "shopify:\/\/shop_images\/Group_1000004051.png",
+        "become-member-content": "<p>50% off First Order<\/p><p>Unlimited Free Shipping <\/p><p>30 Day Risk Free Trial <\/p><p>Save up to 25%+ every month ($1.10 per serving)<\/p><p>Easily modify, pause, skip, or cancel anytime<\/p>",
+        "btn-label": "Subcribe & Save",
+        "btn-link": "shopify:\/\/products\/brightmind-1",
+        "bg-color": "#161616",
+        "label-color": "#ffffff",
+        "left-image": "shopify:\/\/shop_images\/Graymatter_Packaging_1_4fb6d354-e810-4bee-9c37-878bacae9cde.png",
+        "right-image": "shopify:\/\/shop_images\/Graymatter_Packaging_2_302b46f9-86e4-4832-99ce-0f65970cfcec.png",
+        "left-image-mobile": "shopify:\/\/shop_images\/Graymatter_Packaging_2_1.png",
+        "right-image-mobile": "shopify:\/\/shop_images\/Graymatter_Packaging_2_2.png",
+        "padding-top": 74,
+        "padding-bottom": 74,
+        "padding-top-mobile": 34,
+        "padding-bottom-mobile": 60
+      }
+    },
+    "th_banner_slider_7UeQaq": {
+      "type": "th-banner-slider",
+      "blocks": {
+        "slider_LWATid": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-562.png",
+            "title": "Flow: Adaptogens for Stress Management",
+            "content": "<p>Lower cortisol levels, and induce a flow state for better focus and calm.<\/p>",
+            "content-1": "<p><em><strong>Includes:<\/strong><\/em><em> Red Panax Ginseng, Cordyceps, Lion’s Mane Mushroom, Ashwagandha, Rhodiola.<\/em><\/p>"
+          }
+        },
+        "slider_QcdTxz": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1000004043.png",
+            "title": "Go Blend: Sustainable, Crash-Free Energy",
+            "content": "<p>plant-based energy fuel keeps you energized without the crash.<\/p>",
+            "content-1": "<p><em><strong>Includes:<\/strong><\/em><em> Maca Root, Green Tea, Korean Matcha, Guarana.<\/em><\/p>"
+          }
+        },
+        "slider_CYkVcX": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-5689.png",
+            "title": "BrainX: Nootropics for Enhanced Cognition",
+            "content": "<p>Supports brain health & improves cognition by boosting synapse connections over time.<\/p>",
+            "content-1": "<p><em><strong>Includes:<\/strong><\/em><em> Nitrosigine, L-Tyrosine, Alpha GPC, Phosphatidylserine, Huperzine A.<\/em><\/p>"
+          }
+        },
+        "slider_E9yb6H": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1000004047.png",
+            "title": "VisionDefense: Eye Protection for Screen Time",
+            "content": "<p>Protects eyes from blue light & reduces eye strain with natural carotenoids.<\/p>",
+            "content-1": "<p><em><strong>Includes:<\/strong><\/em><em> Vitamin C & E, Lutein, Zeaxanthin, Astaxanthin.<\/em><\/p>"
+          }
+        },
+        "slider_iJ9WCH": {
+          "type": "slider",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-562.png",
+            "title": "Flow blend",
+            "content": "<p>Flow Blend™ is a precise formulation of adaptogens including lion's mane, rhodiola, red panax ginseng, cordyceps, and ashwagandha to promote clarity and focus.<\/p>",
+            "content-1": ""
+          }
+        },
+        "slider_Fapq3B": {
+          "type": "slider",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-562.png",
+            "title": "Flow blend",
+            "content": "<p>Flow Blend™ is a precise formulation of adaptogens including lion's mane, rhodiola, red panax ginseng, cordyceps, and ashwagandha to promote clarity and focus.<\/p>",
+            "content-1": ""
+          }
+        }
+      },
+      "block_order": [
+        "slider_LWATid",
+        "slider_QcdTxz",
+        "slider_CYkVcX",
+        "slider_E9yb6H",
+        "slider_iJ9WCH",
+        "slider_Fapq3B"
+      ],
+      "settings": {
+        "title": "Coffee doesn’t stack up to bright mind",
+        "sub-title": "Plant-based drink mix of 4 functional blends backed by rigorous research and PhD Molecular Biologists.",
+        "button-title": "See science ingredients",
+        "btn-link": "shopify:\/\/pages\/science",
+        "bg-image": "shopify:\/\/shop_images\/bg-image.jpg",
+        "bg-image-mobile": "shopify:\/\/shop_images\/Rectangle_6678.png",
+        "padding-top": 70,
+        "padding-bottom": 70,
+        "bg-color": "#161616",
+        "color": "#ffffff"
+      }
+    },
+    "th_compare_section_cW6tTn": {
+      "type": "th-compare-section",
+      "blocks": {
+        "table_header_gwbJQL": {
+          "type": "table-header",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1000004098.png",
+            "title-1": "Coffee & Energy Drinks",
+            "title-2": "Rx Stimulants",
+            "title-3": ""
+          }
+        },
+        "table_content_bqCyjU": {
+          "type": "table-content",
+          "settings": {
+            "title": "Energy Duration",
+            "label1": "4-8 Hours calm energy",
+            "label2": "1-3 Hours jittery energy",
+            "label3": "Can't Sleep",
+            "label4": ""
+          }
+        },
+        "table_content_kWNbY3": {
+          "type": "table-content",
+          "settings": {
+            "title": "Better Focus",
+            "label1": "Yes",
+            "label2": "No",
+            "label3": "Yes",
+            "label4": ""
+          }
+        },
+        "table_true_false_jAiDDN": {
+          "type": "table-true-false",
+          "settings": {
+            "title": "No Crash",
+            "icon-1": "<svg width=\"28\" height=\"21\" viewbox=\"0 0 28 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.29894\" y1=\"10.9091\" x2=\"10.2989\" y2=\"19.9091\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<line x1=\"8.17762\" y1=\"19.9091\" x2=\"26.1776\" y2=\"1.90907\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-1": "",
+            "icon-2": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-2": "",
+            "icon-3": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-3": "",
+            "icon-4": "",
+            "icon-title-4": ""
+          }
+        },
+        "table_true_false_xQMdEQ": {
+          "type": "table-true-false",
+          "settings": {
+            "title": "Eliminates Brain Fog",
+            "icon-1": "<svg width=\"28\" height=\"21\" viewbox=\"0 0 28 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.29894\" y1=\"10.9091\" x2=\"10.2989\" y2=\"19.9091\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<line x1=\"8.17762\" y1=\"19.9091\" x2=\"26.1776\" y2=\"1.90907\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-1": "",
+            "icon-2": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-2": "",
+            "icon-3": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-3": "",
+            "icon-4": "",
+            "icon-title-4": ""
+          }
+        },
+        "table_true_false_NenVU6": {
+          "type": "table-true-false",
+          "settings": {
+            "title": "Plant-Based Energy",
+            "icon-1": "<svg width=\"28\" height=\"21\" viewbox=\"0 0 28 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.29894\" y1=\"10.9091\" x2=\"10.2989\" y2=\"19.9091\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<line x1=\"8.17762\" y1=\"19.9091\" x2=\"26.1776\" y2=\"1.90907\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-1": "",
+            "icon-2": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-2": "",
+            "icon-3": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-3": "",
+            "icon-4": "",
+            "icon-title-4": ""
+          }
+        },
+        "table_true_false_xGGQLp": {
+          "type": "table-true-false",
+          "settings": {
+            "title": "No Jitters",
+            "icon-1": "<svg width=\"28\" height=\"21\" viewbox=\"0 0 28 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.29894\" y1=\"10.9091\" x2=\"10.2989\" y2=\"19.9091\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<line x1=\"8.17762\" y1=\"19.9091\" x2=\"26.1776\" y2=\"1.90907\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-1": "",
+            "icon-2": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-2": "",
+            "icon-3": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-3": "",
+            "icon-4": "",
+            "icon-title-4": ""
+          }
+        },
+        "table_true_false_pGi9Ti": {
+          "type": "table-true-false",
+          "settings": {
+            "title": "Daily Vision Support",
+            "icon-1": "<svg width=\"28\" height=\"21\" viewbox=\"0 0 28 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.29894\" y1=\"10.9091\" x2=\"10.2989\" y2=\"19.9091\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<line x1=\"8.17762\" y1=\"19.9091\" x2=\"26.1776\" y2=\"1.90907\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-1": "",
+            "icon-2": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-2": "",
+            "icon-3": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-3": "",
+            "icon-4": "",
+            "icon-title-4": ""
+          }
+        },
+        "table_true_false_NHccVJ": {
+          "type": "table-true-false",
+          "settings": {
+            "title": "Advanced Nootropics",
+            "icon-1": "<svg width=\"28\" height=\"21\" viewbox=\"0 0 28 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.29894\" y1=\"10.9091\" x2=\"10.2989\" y2=\"19.9091\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<line x1=\"8.17762\" y1=\"19.9091\" x2=\"26.1776\" y2=\"1.90907\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-1": "",
+            "icon-2": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-2": "",
+            "icon-3": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-3": "",
+            "icon-4": "",
+            "icon-title-4": ""
+          }
+        },
+        "table_true_false_THPEtF": {
+          "type": "table-true-false",
+          "settings": {
+            "title": "Adaptogens",
+            "icon-1": "<svg width=\"28\" height=\"21\" viewbox=\"0 0 28 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.29894\" y1=\"10.9091\" x2=\"10.2989\" y2=\"19.9091\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<line x1=\"8.17762\" y1=\"19.9091\" x2=\"26.1776\" y2=\"1.90907\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-1": "",
+            "icon-2": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-2": "",
+            "icon-3": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-3": "",
+            "icon-4": "",
+            "icon-title-4": ""
+          }
+        },
+        "table_true_false_4KgrMp": {
+          "type": "table-true-false",
+          "settings": {
+            "title": "Money-Back Guarantee",
+            "icon-1": "<svg width=\"28\" height=\"21\" viewbox=\"0 0 28 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.29894\" y1=\"10.9091\" x2=\"10.2989\" y2=\"19.9091\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<line x1=\"8.17762\" y1=\"19.9091\" x2=\"26.1776\" y2=\"1.90907\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-1": "",
+            "icon-2": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-2": "",
+            "icon-3": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-3": "",
+            "icon-4": "",
+            "icon-title-4": ""
+          }
+        }
+      },
+      "block_order": [
+        "table_header_gwbJQL",
+        "table_content_bqCyjU",
+        "table_content_kWNbY3",
+        "table_true_false_jAiDDN",
+        "table_true_false_xQMdEQ",
+        "table_true_false_NenVU6",
+        "table_true_false_xGGQLp",
+        "table_true_false_pGi9Ti",
+        "table_true_false_NHccVJ",
+        "table_true_false_THPEtF",
+        "table_true_false_4KgrMp"
+      ],
+      "settings": {
+        "title": "#1 Natural ADULT ADHD Alternative",
+        "bg-color": "#f5f5f5",
+        "table-bg-color": "#7197c3",
+        "table-color": "#ffffff",
+        "padding-top": 66,
+        "padding-bottom": 40,
+        "padding-top-mobile": 40,
+        "padding-bottom-mobile": 40
+      }
+    },
+    "th_image_text_mKHRke": {
+      "type": "th-Image-text",
+      "settings": {
+        "image-position": "left",
+        "content-block": "<p><strong>Letter from the CEO:<\/strong><em><br\/>\"I started my entrepreneurial journey young, but the constant grind led to burnout. Relying on stimulants and coffee gave me anxiety and crashes. I needed a better solution, so I studied natural ways to boost cognition. Nootropics and adaptogens transformed my productivity. We created <\/em><em><strong>Graymatter Labs<\/strong><\/em><em> to increase the awareness of their benefits. With my Co-Founder and a PhD Molecular Biologist, we formulated <\/em><em><strong>Bright Mind<\/strong><\/em><em>—a plant-based drink mix that enhances focus, boosts energy, and avoids anxiety or crashes. It changed my life, and I hope it can do the same for you.\"<\/em><\/p>",
+        "siganature": "shopify:\/\/shop_images\/Vector.png",
+        "siganature-label": "Jim Phillips, Co-Founder CEO",
+        "image": "shopify:\/\/shop_images\/cropped_founder_photo.jpg",
+        "mobile-image": "shopify:\/\/shop_images\/founder_photo.jpg",
+        "font-size": 13
+      }
+    },
+    "th_banner_image_AdxkqN": {
+      "type": "th-banner-image",
+      "settings": {
+        "section-title": "<p>Brain fuel designed to make everyone feel <em>super human.<\/em><\/p>",
+        "bg_image": "shopify:\/\/shop_images\/Group_1000004007.jpg",
+        "bg_image-mobile": "shopify:\/\/shop_images\/person-practicing-yoga-meditation-outdoors-nature_1_d696d410-08b7-47fc-8479-fc67cb1c6402.jpg",
+        "padding-top": 74,
+        "padding-bottom": 74,
+        "padding-top-mobile": 60,
+        "padding-bottom-mobile": 60
+      }
+    },
+    "section_text_row_NLmxWE": {
+      "type": "section-text-row",
+      "blocks": {
+        "icon_PBYNBk": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-star",
+            "icon_size": 40,
+            "icon_color": "#545454",
+            "title": "Save 50%",
+            "heading_size": 4,
+            "text": "<p>Get 50% Off 1st Order and 15%+ On going<\/p>",
+            "text_size": 3
+          }
+        },
+        "icon_6FtnPP": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-smile",
+            "icon_size": 40,
+            "icon_color": "#545454",
+            "title": "No Commitment",
+            "heading_size": 4,
+            "text": "<p>Easily modify, pause, skip, or cancel anytime<\/p>",
+            "text_size": 3
+          }
+        },
+        "icon_P9dkHb": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-fast-shipment",
+            "icon_size": 40,
+            "icon_color": "#545454",
+            "title": "Fast Free Shipping",
+            "heading_size": 4,
+            "text": "<p>Enjoy free shipping on every order<\/p>",
+            "text_size": 3
+          }
+        },
+        "icon_WPa8Lh": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-gift",
+            "icon_size": 40,
+            "icon_color": "#545454",
+            "title": "Be Rewarded",
+            "heading_size": 4,
+            "text": "<p>Expect exclusive gifts and discounts<\/p>",
+            "text_size": 3
+          }
+        }
+      },
+      "block_order": [
+        "icon_PBYNBk",
+        "icon_6FtnPP",
+        "icon_P9dkHb",
+        "icon_WPa8Lh"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Why Subscribe?",
+        "heading_size": 5,
+        "layout": "grid",
+        "grid": 4,
+        "align_heading": "text-left",
+        "align_text": "text-left",
+        "icon_alignment": "icon--top",
+        "align_columns": "flex-align-top",
+        "width": "wrapper--full-padded",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 35,
+        "padding_bottom": 0,
+        "layout_mobile": "2"
+      }
+    },
+    "subscriber_rewards_wFQDeA": {
+      "type": "subscriber-rewards",
+      "blocks": {
+        "subscriber_4MyX4g": {
+          "type": "subscriber",
+          "settings": {
+            "title": "50% Off",
+            "sub-title": "",
+            "month_text": "Month",
+            "month_number": "1",
+            "month_icon": ""
+          }
+        },
+        "subscriber_jpLwYh": {
+          "type": "subscriber",
+          "settings": {
+            "title": "15% Off",
+            "sub-title": "+Free Shaker Bottle",
+            "month_text": "Month",
+            "month_number": "2",
+            "month_icon": ""
+          }
+        },
+        "subscriber_M7rb9A": {
+          "type": "subscriber",
+          "settings": {
+            "title": "17% Off",
+            "sub-title": "",
+            "month_text": "Month",
+            "month_number": "3",
+            "month_icon": ""
+          }
+        },
+        "subscriber_gAhd4B": {
+          "type": "subscriber",
+          "settings": {
+            "title": "20% Off",
+            "sub-title": "",
+            "month_text": "Month",
+            "month_number": "4-5",
+            "month_icon": ""
+          }
+        },
+        "subscriber_6Th7iL": {
+          "type": "subscriber",
+          "settings": {
+            "title": "25% Off",
+            "sub-title": "+Free Gifts",
+            "month_text": "Month",
+            "month_number": "6+",
+            "month_icon": ""
+          }
+        }
+      },
+      "block_order": [
+        "subscriber_4MyX4g",
+        "subscriber_jpLwYh",
+        "subscriber_M7rb9A",
+        "subscriber_gAhd4B",
+        "subscriber_6Th7iL"
+      ],
+      "disabled": true,
+      "settings": {
+        "box_bg_color": "#e6fda5",
+        "box_text_color": "#242424",
+        "main_title": "Subscriber VIP Rewards + Discounts",
+        "shipping_label": "Free Shipping",
+        "padding-top": 74,
+        "padding-bottom": 74,
+        "padding-top-mobile": 34,
+        "padding-bottom-mobile": 34
+      }
+    },
+    "icon_with_text_fLEpcU": {
+      "type": "Icon-with-text",
+      "blocks": {
+        "icon_text_ya9yWB": {
+          "type": "icon-text",
+          "settings": {
+            "svg-icon": "shopify:\/\/shop_images\/icon4_6e5b06bd-2a32-40ac-944e-37f1e815d132.png",
+            "icon-title": "Save 50%",
+            "icon-label": "Subscribe & lock in 50% off"
+          }
+        },
+        "icon_text_RTpJmk": {
+          "type": "icon-text",
+          "settings": {
+            "svg-icon": "shopify:\/\/shop_images\/icon3_6a433eef-3888-4d97-bb10-2d65085fc7b5.png",
+            "icon-title": "No Commitment",
+            "icon-label": "Easily modify, pause, skip, or cancel anytime"
+          }
+        },
+        "icon_text_VAJrLq": {
+          "type": "icon-text",
+          "settings": {
+            "svg-icon": "shopify:\/\/shop_images\/icon2_18f46bbc-d220-417e-843a-b9fbf9597c70.png",
+            "icon-title": "Be Rewarded",
+            "icon-label": "We love our subscriber community. Expect exclusivegifts and discounts."
+          }
+        },
+        "icon_text_9qLzKt": {
+          "type": "icon-text",
+          "settings": {
+            "svg-icon": "shopify:\/\/shop_images\/icon5_dfc22a62-1c7d-4282-87b4-6cddf5c62f87.png",
+            "icon-title": "Free Shipping Always",
+            "icon-label": "As a subscriber you will enjoy unlimited free shipping"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_ya9yWB",
+        "icon_text_RTpJmk",
+        "icon_text_VAJrLq",
+        "icon_text_9qLzKt"
+      ],
+      "disabled": true,
+      "settings": {
+        "bottom-title": "Try Risk Free",
+        "bottom-subtitle": "<p>All new subscribers get a <a href=\"#\" title=\"#\">30 Day Risk Free<\/a> Trial<\/p>",
+        "bg_color": "",
+        "box-bg_color": "#e6fda5",
+        "label_color": "#242424",
+        "padding-top": 6,
+        "padding-bottom": 80,
+        "padding-top-mobile": 40,
+        "padding-bottom-mobile": 40
+      }
+    }
+  },
+  "order": [
+    "sc_hero_XCbxE3",
+    "docs",
+    "accordion_section_QnpwTq",
+    "sc_scientifically_FFGnw9",
+    "section_rich_text_8cinKY",
+    "section_reviews_B6MVVd",
+    "new_slider_image_text_cfRVht",
+    "process_progress_sec_NHCw9H",
+    "section_collection_ymBBNE",
+    "become_member_qka47B",
+    "th_banner_slider_7UeQaq",
+    "th_compare_section_cW6tTn",
+    "th_image_text_mKHRke",
+    "th_banner_image_AdxkqN",
+    "section_text_row_NLmxWE",
+    "subscriber_rewards_wFQDeA",
+    "icon_with_text_fLEpcU"
+  ]
+}

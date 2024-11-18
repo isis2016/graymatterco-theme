@@ -1,0 +1,80 @@
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-0": {
+          "type": "newsletter",
+          "settings": {
+            "title": "JOIN THE BIG BRAIN CLUB",
+            "text": "<p>Get ADHD & Cognitive Health news straight to your inbox. <\/p>",
+            "show_name": false,
+            "button_text": "Join",
+            "show_arrow": false,
+            "terms": false,
+            "button_type": "btn--black",
+            "button_size": "btn--small",
+            "button_style": "btn--solid",
+            "show_social_links": true,
+            "column_width": 36
+          }
+        },
+        "footer-1": {
+          "type": "linklist",
+          "settings": {
+            "linklist": "header-menu-2-0",
+            "title": "Menu",
+            "column_width": 18,
+            "enable_accordion": false
+          }
+        },
+        "linklist_36iqMk": {
+          "type": "linklist",
+          "settings": {
+            "linklist": "footer",
+            "title": "-",
+            "column_width": 20,
+            "enable_accordion": false
+          }
+        }
+      },
+      "block_order": [
+        "footer-0",
+        "footer-1",
+        "linklist_36iqMk"
+      ],
+      "settings": {
+        "logo_image_width": 50,
+        "border_color": "#212121",
+        "padding_top": 30,
+        "padding_bottom": 14
+      }
+    },
+    "footer-full-logo": {
+      "type": "footer-logo-section",
+      "settings": {
+        "footer-logo": "shopify:\/\/shop_images\/Graymatter_1.png"
+      }
+    },
+    "supporting-menu": {
+      "type": "section-supporting-menu",
+      "settings": {
+        "linklist": "",
+        "footer_payment_enable": true,
+        "show_locale_selector": true,
+        "show_country_selector": true,
+        "show_country_name": false,
+        "show_country_flag": true,
+        "padding_top": 11,
+        "padding_bottom": 11
+      }
+    }
+  },
+  "order": [
+    "footer",
+    "footer-full-logo",
+    "supporting-menu"
+  ]
+}

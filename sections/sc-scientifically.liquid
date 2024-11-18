@@ -1,0 +1,260 @@
+{% style %}
+  .section-{{ section.id }} {
+    padding-top: {{ section.settings.padding-top }}px;
+    padding-bottom: {{ section.settings.padding-bottom }}px;
+    background: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+  }
+  @media only screen and (max-width: 576px) {
+    .section-{{ section.id }} {
+      padding-top: {{ section.settings.mobile-padding-top }}px;
+      padding-bottom: {{ section.settings.mobile-padding-bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<section class="sc_scientifically section-{{ section.id }}" data-header-height data-aos="fade">
+  <div class="container">
+    {% if section.settings.scientifically_title != blank %}
+      <div class="scientifically_title">
+        <div class="main_title text-center">{{ section.settings.scientifically_title }}</div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.scientifically_sub_title != blank %}
+      <div class="scientifically_sub_title">
+        <div class="sub_title text-center">{{ section.settings.scientifically_sub_title }}</div>
+      </div>
+    {% endif %}
+    
+    <div class="swiper-container main-slider">
+      
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide col-lg-4">
+            <div class="scientifically_image">
+              {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+              {% assign class = 'img-fluid' %}
+              {%- capture sizes -%}
+                  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                  (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                {%- endcapture -%}
+              {{
+                block.settings.design_img
+                | image_url: width: 1500
+                | image_tag: sizes: sizes, widths: widths, class: class
+              }}
+            </div>
+            <div class="design_title">
+              {{ block.settings.design_title }}
+            </div>
+            <div class="design_content">
+              <p>{{ block.settings.design_content }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="slider-swiper-pagination"></div>
+      
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Scientifically",
+  "settings": [
+    {
+      "type": "text",
+      "id": "scientifically_title",
+      "label": "Scientifically Title"
+    },
+    {
+      "type": "text",
+      "id": "scientifically_sub_title",
+      "label": "Scientifically Mobile Sub Title"
+    },
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color"
+    },
+    {
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding Top",
+      "min": 70,
+      "max": 200,
+      "step": 2,
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding Bottom",
+      "min": 70,
+      "max": 200,
+      "step": 2,
+      "default": 194
+    },
+    {
+      "type": "range",
+      "id": "mobile-padding-top",
+      "label": "Mobile Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile-padding-bottom",
+      "label": "Mobile Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 40
+    }
+  ],
+ 	"blocks": [
+   {
+     "name": "Slide",
+     "type": "slide",
+     "settings": [
+       {
+         "type": "image_picker",
+         "id": "design_img",
+         "label": "Image"
+       },
+       {
+         "type": "text",
+         "id": "design_title",
+         "label": "Title"
+       },
+       {
+         "type": "textarea",
+         "id": "design_content",
+         "label": "Content"
+       }
+     ]
+   }
+  ],
+  "presets": [
+    {
+      "name": "Scientifically"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .sc_scientifically .container {
+    max-width: 1250px;
+  }
+  .sc_scientifically .col-lg-4 {
+    width: 33.33%;
+    text-align: center;
+    padding: 30px;
+  }
+  .sc_scientifically .scientifically_image {
+    max-width: 100px;
+    margin: 0 auto;
+  }
+  .sc_scientifically .scientifically_title .main_title {
+    font-family: 'Exposure[+40]';
+    font-size: 32px;
+    line-height: 38px;
+    margin: 0px;
+  }
+  .sc_scientifically .scientifically_title {
+    padding-bottom: 46px;
+  }
+  .sc_scientifically .design_title {
+    font-family: 'Exposure[+40]';
+    font-size: 24px;
+    font-style: italic;
+    line-height: 30px;
+    margin: 18px 0;
+    /* color: #8aa665; */
+  }
+  .sc_scientifically .design_content p {
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+    font-weight: 400;
+    margin: 0px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .sc_scientifically .col-lg-4:nth-child(3) {
+    border-right: 0;
+  }
+  .sc_scientifically .col-lg-4:last-child {
+    border: 0;
+  }
+  .sc_scientifically .col-lg-4:nth-last-child(-n+3) {
+    border-bottom: 0;
+  }
+  .sc_scientifically .scientifically_sub_title {
+    display: none;
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+  }
+  .sc_scientifically .main_slider {
+    overflow: hidden;
+    margin-left: 0;
+    margin-right: -15px;
+  }
+  .sc_scientifically .slider_dots {
+     text-align: center;
+     padding-top: 20px;
+  }
+  .swiper-pagination-clickable .swiper-pagination-bullet {
+      cursor: pointer;
+      background: transparent;
+      border: 1px solid #000000;
+      opacity: 1;
+      width: 10px;
+      height: 10px;
+      margin-right: 21px;
+  }
+  .sc_scientifically .swiper-pagination-bullet-active {
+     background: #161616;
+  }
+  @media only screen and (max-width: 767px) {
+     .sc_scientifically .col-lg-4 {
+        width: 50%;
+     }
+  }
+
+  @media only screen and (max-width: 576px) {
+    .sc_scientifically .scientifically_title {
+      padding-bottom: 18px;
+    }
+    .sc_scientifically .scientifically_sub_title {
+      display: block;
+      padding-bottom: 40px;
+      font-size: 18px;
+
+    }
+    .desktop_block {
+      display: none;
+    }
+    .sc_scientifically .col-lg-4 {
+       padding: 0;
+       border-right: 0 !important;
+       border-bottom: 0 !important;
+     }
+    .sc_scientifically .design_content p {
+      font-size: 18px;
+      line-height: 25px;
+    }
+    .sc_scientifically .design_title {
+      font-size: 27px;
+      line-height: 33px;
+      margin: 0 0 20px;
+    }
+  }
+</style>

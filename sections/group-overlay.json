@@ -1,0 +1,81 @@
+{
+  "type": "aside",
+  "name": "Overlay",
+  "sections": {
+    "cookie": {
+      "type": "overlay-cookie",
+      "disabled": true,
+      "settings": {
+        "show_cookies_popup": false,
+        "position": "popup-cookies--left"
+      }
+    },
+    "cart-drawer": {
+      "type": "cart-drawer",
+      "blocks": {
+        "cart-message": {
+          "type": "cart-message",
+          "settings": {
+            "cart_custom_message_text": "<h5>Your Brain is Starving. Feed it.<\/h5>",
+            "cart_custom_message_color": "",
+            "pin_to_bottom": false
+          }
+        },
+        "title": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "title": "Your brain is starving. Feed it."
+          }
+        },
+        "products": {
+          "type": "products",
+          "settings": {
+            "pin_to_bottom": false
+          }
+        },
+        "upsell-products": {
+          "type": "upsell-products",
+          "settings": {
+            "upsell_auto_open": true,
+            "pin_to_bottom": false
+          }
+        },
+        "checkout-buttons": {
+          "type": "checkout-buttons",
+          "settings": {
+            "enable_additional_buttons": true,
+            "show_view_cart_button": false,
+            "pin_to_bottom": true
+          }
+        },
+        "product_list_gjhxMH": {
+          "type": "product-list",
+          "settings": {
+            "product_list": [
+              "bright-mind-nootropics-travel-packs",
+              "shaker-bottle",
+              "graymatter-hoodie"
+            ],
+            "title": "Buy it with",
+            "upsell_auto_open": true,
+            "pin_to_bottom": false
+          }
+        }
+      },
+      "block_order": [
+        "cart-message",
+        "title",
+        "products",
+        "upsell-products",
+        "checkout-buttons",
+        "product_list_gjhxMH"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "cookie",
+    "cart-drawer"
+  ]
+}

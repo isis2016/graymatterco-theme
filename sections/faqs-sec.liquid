@@ -1,0 +1,348 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    {% if section.settings.bgcolor != blank %}
+      background-color:{{section.settings.bgcolor}};
+    {% endif %}
+    {% if section.settings.textcolor != blank %}
+      color:{{section.settings.textcolor}};
+    {% endif %}
+  }
+  
+  {% if section.settings.textcolor != blank %}
+    #shopify-section-{{ section.id }} .sectitle,
+    #shopify-section-{{ section.id }} .secdesc{
+      color:{{section.settings.textcolor}};
+    }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} .sitebtn{
+    background-color: {{section.settings.btnbgcolor}};
+    color: {{section.settings.btntextcolor}};
+  }
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+  }
+
+/* FAQs Section CSS */
+.faqs-content-head {
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.faqs-content-head .sectitle {
+    font-family: 'Exposure[+40]';
+    font-size: 40px;
+    line-height: 48px;
+    margin: 0;
+    font-weight: 500;
+}
+.faqs-content-head .secdesc {
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+  
+.accordion_container .accordian {
+  padding-bottom: 15px;
+}
+.accordion_container .accordian .acctitle {
+    position: relative;
+    padding: 22px 45px 22px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #242424;
+    text-transform: uppercase;
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+.accordion_container .acccontent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.accordion_container .faqdesc p {
+    margin: 0;
+}
+.accordion_container .faqdesc {
+    padding: 0 24px 22px;
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+.accordion_container .accordian .accicon:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    background: #242424;
+    width: 18px;
+    height: 2px;
+    border-radius: 100px;
+    top: -1px;
+}
+.accordion_container .accordian .accicon:after {
+    left: -10px;
+    content: "";
+    position: absolute;
+    background: #242424;
+    width: 2px;
+    height: 18px;
+    border-radius: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.accordian .accicon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.accordion_container .acctitle.active .accicon:after {
+    opacity: 0;
+}
+.faqs-sec .sitebtn {
+    font-family: "ABC Monument Grotesk Mono Unlicensed Trial";
+    text-transform: uppercase;
+    padding: 8px 36px;
+    border-radius: 50px;
+    display: inline-block;
+    font-size: 18px;
+}
+.faqs-sec .sitebtn:hover{
+  opacity:0.9;
+}
+.accordion_container .accordian .acctitle {
+  border-radius: 25px;
+}
+.accordion_container .accordian .acctitle.active {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+a.acctitle.active + .acccontent {
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+@media screen and (max-width:767px){
+  .faqs-sec .col-12 {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  .faqs-content-head {
+    margin-bottom: 24px;
+  }
+}
+
+  #shopify-section-{{ section.id }} .accordion_container .accordian .acctitle,
+  #shopify-section-{{ section.id }} .accordion_container .acccontent {
+    color: {{ section.settings.btntextcolor }};
+    background-color: {{ section.settings.btnbgcolor }};
+  }
+  #shopify-section-{{ section.id }} .accordion_container .accordian .accicon:before,
+  #shopify-section-{{ section.id }} .accordion_container .accordian .accicon:after {
+    background-color: {{ section.settings.btntextcolor }};
+  }
+  
+{% endstyle %}
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-6 col-12">
+        {% if section.settings.sectitle != blank or section.settings.secdesc != blank or section.settings.btntext != blank %}
+          <div class="faqs-content-head">
+            {% if section.settings.sectitle != blank %}
+              <h2 class="sectitle">{{ section.settings.sectitle }}</h2>
+            {% endif %}
+            {% if section.settings.secdesc != blank %}
+              <div class="secdesc">{{ section.settings.secdesc }}</div>
+            {% endif %}
+            {% if section.settings.btntext != blank %}
+              <div class="btn_container">
+                <a class="sitebtn" href="{{ section.settings.btnlink }}">{{ section.settings.btntext }}</a>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="col-md-6 col-12">
+        {% assign count = 0 %}
+        {% for block in section.blocks %}
+          {% assign count = count | plus: 1 %}
+        {% endfor %}
+        {% if count >= 0 %}
+        <div class="accordion_container">
+          {% for block in section.blocks %}
+            {% if block.settings.title != blank %}
+              <div class="accordian">
+                <a href="javascript:void(0);" class="acctitle">
+                    <span>{{ block.settings.title }}</span>
+                    <div class="accicon"></div>
+                </a>
+                <div class="acccontent">
+                    <div class="faqdesc">
+                        {{ block.settings.faqdesc }}
+                    </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var atTitles = document.querySelectorAll(".acctitle");
+    atTitles.forEach(function (atTitle) {
+        atTitle.addEventListener("click", function () {
+            for (var atTab = this.nextElementSibling, isActive = this.classList.contains("active"), parent = this.parentElement, siblings = parent.parentNode.children, i = 0; i < siblings.length; i++) {
+                var siblingTab = siblings[i].querySelector(".acccontent");
+                (siblingTab.style.maxHeight = null), siblings[i].querySelector(".acctitle").classList.remove("active"), siblings[i].classList.remove("currentopen");
+            }
+            isActive || (this.classList.add("active"), parent.classList.add("currentopen"), (atTab.style.maxHeight = atTab.scrollHeight + "px"));
+        });
+    });
+});
+</script>
+
+{% schema %}
+{
+  "name": "FAQs Section",
+  "tag": "section",
+  "class": "faqs-sec",
+  "settings": [
+      {
+        "type": "color",
+        "id": "bgcolor",
+        "label": "Background Color"
+      },
+      {
+        "type": "color",
+        "id": "textcolor",
+        "label": "Text Color"
+      },
+      {
+        "type": "text",
+        "id": "sectitle",
+        "label": "Section Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "secdesc",
+        "label": "Section Description"
+      },
+      {
+        "type": "header",
+        "content": "Button Settings"
+      },
+      {
+        "type": "text",
+        "id": "btntext",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "btnlink",
+        "label": "Button Link"
+      },
+      {
+        "type": "color",
+        "id": "btnbgcolor",
+        "label": "Button/FAQ Background Color",
+        "default": "#161616"
+      },
+      {
+        "type": "color",
+        "id": "btntextcolor",
+        "label": "Button/FAQ Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Desktop Padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Mobile Padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      }
+  ],
+  "blocks": [
+    {
+      "type": "faqblock",
+      "name": "FAQ Block",
+      "settings": [
+        {
+          "type": "text",
+          "label": "FAQ Title",
+          "id": "title"
+        },
+        {
+          "type": "richtext",
+          "label": "FAQ Desc",
+          "id": "faqdesc"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "FAQs Section"
+    }
+  ]
+}
+{% endschema %}

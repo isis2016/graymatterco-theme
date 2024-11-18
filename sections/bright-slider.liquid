@@ -1,0 +1,446 @@
+{% style %}
+  .mind-work-img img {
+    width: 100%;
+  }
+  .work-number {
+    font-family: "Exposure[0]";
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    color: #242424;
+    background: #E6FDA5;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  .work-content .work-title-block {
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 148.3%;
+    text-align: center;
+    color: #242424;
+    margin: 0px;
+  }
+  .work-content p {
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #8D8D8D;
+    margin:0px;
+  }
+  .bright-slider .inner-box {
+    padding: 17px 0px 88px;
+  }
+  .mind-work-img {
+    vertical-align: middle;
+    display: flex;
+  }
+  .bright-slider {
+    overflow: hidden;
+    position: relative;
+  }
+  .mind-work-img {
+    vertical-align: middle;
+    display: flex;
+  }
+  .bright-slider  .row {
+    margin: 0px;
+  }
+  .bg-imgages {
+    position: absolute;
+    width: 100%;
+    max-width: 600px;
+    bottom: 0px;
+    z-index: -1;
+    left: 0;
+  }
+  .work-info {
+    border: 1px solid #000;
+    background: #ffff;
+    display: flex;
+    flex-direction: column;
+  }
+  .inner-title h3 {
+    font-family: "Exposure[0]";
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    color: #242424;
+    width: 100%;
+    max-width: 197px;
+    margin: 0px;
+  }
+  .inner-title {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+  }
+  .work-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  .bright-slider::after {
+    position: absolute;
+    content: '';
+    width: 16%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(245, 245, 245, 0) 29.36%, rgba(245, 245, 245, 0) 69.33%, #F5F5F5 100%);
+    top: 0px;
+    right: 0;
+    z-index: 1;
+  }
+  .Inner-works-box .work-info {
+    width: 46%;
+  }
+  .Inner-works-box {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .mind-works-mobile{
+    display:none;
+  }
+  .bright-slider .swiper-wrapper {
+      display: flex;
+  }
+  .bright-slider .swiper-slide {
+      height: unset;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .work-info {
+      border: 1px solid #000;
+      background: #ffff;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .bright-slider .col-md-4 {
+      width: 100%;
+    }
+    .bright-slider {
+      background: #F5F5F5;
+    }
+    .work-info {
+      height: unset;
+    }
+    .inner-title h3 {
+      max-width: 100%;
+      font-size: 32px;
+      line-height: 35px;
+      text-align: center;
+      color: #242424;
+    }
+    .work-number {
+      font-size: 15px;
+      line-height: 24px;
+      width: 28px;
+      height: 28px;
+      top: 10px;
+      left: 10px;
+    }
+    .inner-slider,.bg-imgages,.bright-slider::after{
+      display:none;
+    }
+    .bright-slider .inner-box {
+      padding: 40px 0 66px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .Inner-works-box {gap: 10px;}
+    .work-content {
+      padding: 10px;
+    }
+    .mind-works-mobile {
+      display: block;
+      padding: 0 10px;
+    }
+    .work-content .work-title-block {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    .work-content p {
+      font-size: 14px;
+      line-height: 23px;
+    }
+    .mind-work-img {
+      position: relative;
+    }
+    .inner-title h3 {
+      font-size: 24px;
+      line-height: 27px;
+    }
+    .mind-work-img img{
+      width:100%;
+    }
+  }
+{% endstyle %}
+
+
+{% capture slider_column %}
+  {% for block in section.blocks %}
+    <div class="swiper-slide work-info">
+      <div class="mind-work-img">
+        <div class="work-number">{{ forloop.index }}</div>
+        {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+        {% assign class = 'img-fluid' %}
+        {%- capture sizes -%}
+          (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+          (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+        {%- endcapture -%}
+        {{
+          block.settings.image
+          | image_url: width: 1500
+          | image_tag: sizes: sizes, widths: widths, class: class
+        }}
+      </div>
+      <div class="work-content">
+        <div class="work-title-block">{{ block.settings.title }}</div>
+        {% if block.settings.subtitle %}
+          <p>{{ block.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+{% endcapture %}
+
+<div class="bright-slider">
+  <div class="inner-box">
+    {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+    {% assign class = 'img-fluid bg-imgages' %}
+    {%- capture sizes -%}
+      (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+      (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+    {%- endcapture -%}
+    {{
+      section.settings.bg_image
+      | image_url: width: 1500
+      | image_tag: sizes: sizes, widths: widths, class: class
+    }}
+
+    <div class="row">
+      {% if section.settings.title %}
+      <div class="col-md-4 col-12">
+        <div class="inner-title">
+          <h3>{{ section.settings.title }}</h3>
+        </div>
+      </div>
+      {% endif %}
+      <div class="col-md-8 col-12">
+        <div class="inner-slider">
+          <div class="swiper-container bright-slider">
+            <div class="swiper-wrapper">
+              {{ slider_column }}
+              
+              {% comment %}<div class="swiper-slide">
+                <div class="work-info">
+                  <div class="mind-work-img">
+                    <div class="work-number">1</div>
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0606/9773/9516/files/work1_2e5d6f46-b471-437a-859d-e72c78825460.jpg?v=1726749323"
+                      class="img-fluid"
+                    >
+                  </div>
+                  <div class="work-content">
+                    <h6>Tear open or scoop (half or one) serving of Bright Mind</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="work-info">
+                  <div class="mind-work-img">
+                    <div class="work-number">2</div>
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0606/9773/9516/files/img.jpg?v=1726811567"
+                      class="img-fluid"
+                    >
+                  </div>
+                  <div class="work-content">
+                    <h6>Pour pouch or scoop into 10-12oz of ice-cold water.</h6>
+                    <p>(Feel free to mix with your favorite beverages)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="work-info">
+                  <div class="mind-work-img">
+                    <div class="work-number">3</div>
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0606/9773/9516/files/work3.jpg?v=1726811023"
+                      class="img-fluid"
+                    >
+                  </div>
+                  <div class="work-content">
+                    <h6>Shake or stir thoroughly.</h6>
+                    <p>
+                      Remember Bright Mind is all-natural and herb-based so there may be sediment that falls to the
+                      bottom.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="work-info">
+                  <div class="mind-work-img">
+                    <div class="work-number">4</div>
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0606/9773/9516/files/work4.jpg?v=1726811023"
+                      class="img-fluid"
+                    >
+                  </div>
+                  <div class="work-content">
+                    <h6>
+                      Enjoy focus, calm energy, and supercharged productivity with our delicious super tea elixir.
+                    </h6>
+                    <p>Drink Responsibly.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="work-info">
+                  <div class="mind-work-img">
+                    <div class="work-number">5</div>
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0606/9773/9516/files/work5.jpg?v=1726811023"
+                      class="img-fluid"
+                    >
+                  </div>
+                  <div class="work-content">
+                    <h6>Always take a break after 5 consecutive days for recovery and maximum effect</h6>
+                  </div>
+                </div>
+              </div>{% endcomment %}
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"><svg width="35" height="9" viewBox="0 0 35 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.884728 4.94975C0.689466 4.75449 0.689466 4.4379 0.884728 4.24264L4.06671 1.06066C4.26197 0.865398 4.57855 0.865398 4.77381 1.06066C4.96908 1.25592 4.96908 1.5725 4.77381 1.76777L1.94539 4.59619L4.77382 7.42462C4.96908 7.61988 4.96908 7.93647 4.77382 8.13173C4.57855 8.32699 4.26197 8.32699 4.06671 8.13173L0.884728 4.94975ZM34.2383 5.09619L1.23828 5.09619L1.23828 4.09619L34.2383 4.09619L34.2383 5.09619Z" fill="#161616"/></svg></div>
+            <div class="swiper-button-next"><svg width="34" height="9" viewBox="0 0 34 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M33.5918 4.94975C33.7871 4.75449 33.7871 4.4379 33.5918 4.24264L30.4099 1.06066C30.2146 0.865398 29.898 0.865398 29.7027 1.06066C29.5075 1.25592 29.5075 1.5725 29.7027 1.76777L32.5312 4.59619L29.7027 7.42462C29.5075 7.61988 29.5075 7.93647 29.7027 8.13173C29.898 8.32699 30.2146 8.32699 30.4099 8.13173L33.5918 4.94975ZM0.238281 5.09619L33.2383 5.09619L33.2383 4.09619L0.238281 4.09619L0.238281 5.09619Z" fill="#161616"/></svg></div>
+            <div class="slider-swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mind-works-mobile">
+      <div class="Inner-works-box">
+        {{ slider_column }}
+        {% comment %}
+        <div class="work-info">
+          <div class="mind-work-img">
+            <div class="work-number">1</div>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0606/9773/9516/files/work1_2e5d6f46-b471-437a-859d-e72c78825460.jpg?v=1726749323"
+              class="img-fluid"
+            >
+          </div>
+          <div class="work-content">
+            <h6>Tear open or scoop (half or one) serving of Bright Mind</h6>
+          </div>
+        </div>
+        <div class="work-info">
+          <div class="mind-work-img">
+            <div class="work-number">2</div>
+            <img src="https://cdn.shopify.com/s/files/1/0606/9773/9516/files/img.jpg?v=1726811567" class="img-fluid">
+          </div>
+          <div class="work-content">
+            <h6>Pour pouch or scoop into 10-12oz of ice-cold water.</h6>
+            <p>(Feel free to mix with your favorite beverages)</p>
+          </div>
+        </div>
+        <div class="work-info">
+          <div class="mind-work-img">
+            <div class="work-number">3</div>
+            <img src="https://cdn.shopify.com/s/files/1/0606/9773/9516/files/work3.jpg?v=1726811023" class="img-fluid">
+          </div>
+          <div class="work-content">
+            <h6>Shake or stir thoroughly.</h6>
+            <p>Remember Bright Mind is all-natural and herb-based so there may be sediment that falls to the bottom.</p>
+          </div>
+        </div>
+        <div class="work-info">
+          <div class="mind-work-img">
+            <div class="work-number">4</div>
+            <img src="https://cdn.shopify.com/s/files/1/0606/9773/9516/files/work4.jpg?v=1726811023" class="img-fluid">
+          </div>
+          <div class="work-content">
+            <h6>Enjoy focus, calm energy, and supercharged productivity with our delicious super tea elixir.</h6>
+            <p>Drink Responsibly.</p>
+          </div>
+        </div>
+        <div class="work-info">
+          <div class="mind-work-img">
+            <div class="work-number">5</div>
+            <img src="https://cdn.shopify.com/s/files/1/0606/9773/9516/files/work5.jpg?v=1726811023" class="img-fluid">
+          </div>
+          <div class="work-content">
+            <h6>Always take a break after 5 consecutive days for recovery and maximum effect</h6>
+          </div>
+        </div>
+        {% endcomment %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bright Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slider",
+      "name": "Slider",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "bright-slider"
+    }
+  ]
+}
+{% endschema %}

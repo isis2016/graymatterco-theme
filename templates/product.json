@@ -1,0 +1,1205 @@
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "text_e9UYcn": {
+          "type": "text",
+          "settings": {
+            "title": "{{ product.metafields.custom.subtitle.value }}",
+            "text": "",
+            "layout": "left",
+            "padding_bottom": 16
+          }
+        },
+        "tag_WWHzBK": {
+          "type": "tag",
+          "settings": {
+            "title": "{{ product.metafields.custom.tag | metafield_text }}"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "subheading_option": "none",
+            "text_size": 6,
+            "padding_bottom": 2
+          }
+        },
+        "judge_me_reviews_preview_badge_geRzAh": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "flewer_N49iqE": {
+          "type": "flewer",
+          "settings": {
+            "flewer": "{{ product.metafields.custom.flavour_name.value }}",
+            "flewer-color": "#8aa665"
+          }
+        },
+        "description_Dk8wKn": {
+          "type": "description",
+          "settings": {
+            "show_read_more": true,
+            "padding_bottom": 0
+          }
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {
+            "padding_bottom": 16
+          }
+        },
+        "variants": {
+          "type": "variants",
+          "settings": {
+            "info_page": "",
+            "size_chart_style": "text",
+            "subscriptions_enable_selectors": false,
+            "padding_bottom": 0
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "show_quantity": true,
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
+            "padding_bottom": 18
+          }
+        },
+        "meta_accordion_KAEJDB": {
+          "type": "meta-accordion",
+          "settings": {
+            "acc_title_1": "Graymatter 101",
+            "acc_description_1": "<p>Everyone can strengthen their cognitive stamina with the right mental nourishment.<\/p><p>Our proprietary formula combines 27 active ingredients selected by science-backed research to improve your mental function.<\/p>",
+            "acc_title_2": "Natural ADHD Alternative",
+            "acc_description_2": "<p>Prescribed stimulants, or feel symptoms of ADHD? You came to the right place. Bright Mind contains  natural pre-cursors to dopamine production to mimic the effects of prescription stimulants. Drink Bright Mind as an alternative to harsh and harmful prescription stimulants.<\/p>",
+            "acc_title_3": "Backed by Science",
+            "acc_description_3": "<p>Formulated with rigorous research over the course of 2 years by PhD Molecular Biologists. Every ingredient in Bright Mind is backed by thousands of peer reviewed research studies. We harness the power of plants and nootropics to help you reach your full potential.<\/p>",
+            "acc_title_4": "Shipping & Returns",
+            "acc_description_4": "<p>Fast Free Shipping for subscriber members. Ships within 1 business day. 30 day returns.<\/p>",
+            "acc_title_5": "",
+            "acc_description_5": "",
+            "acc_title_6": "",
+            "acc_description_6": "",
+            "acc_title_7": "",
+            "acc_description_7": "",
+            "acc_title_8": "",
+            "acc_description_8": "",
+            "acc_title_9": "",
+            "acc_description_9": "",
+            "acc_title_10": "",
+            "acc_description_10": ""
+          }
+        },
+        "ingredients_accordion_gNPW9T": {
+          "type": "ingredients-accordion",
+          "settings": {
+            "acc_title": "Ingredients",
+            "heading": "Nutritional information",
+            "right_label": "Per 100g",
+            "information": "<p><strong>Vitamin Complex<\/strong><\/p><p>Vitamin C, 90mg<\/p><p>Vitamin D3, 12.5mcg<\/p><p>Vitamin B1, 600mcg<\/p><p>Vitamin B2, 65mcg<\/p><p>Vitamin B3, 2.5mg<\/p><p>Vitamin B6, 7.5mg<\/p><p>Vitamin B12, 375mcg<\/p><p>Vitamin B5, 7.5mg<\/p><p><strong>BrainX Blend <\/strong><\/p><p>(Nitrosigine\/ Alpha GPC\/ Phosphatidylserine\/ LTyrosine\/ HuperzineA), 925mg<\/p><p><strong>Go Blend <\/strong><\/p><p>(Organic Korean Matcha\/ Maca Root\/ Green Tea Extract\/ Guarana), 674mg<\/p><p><strong>Flow Blend<\/strong> <\/p><p>(Red Panax Ginseng\/ Cordyceps\/ Lion's Mane\/ Ashwagandha\/ Rhodiola), 575mg<\/p><p><strong>VisionDefense<\/strong> <\/p><p>(Lutein\/ Marigold Extract\/ Astaxanthin), 12mg<\/p><p>Vitamin E, 3.75mg<\/p>"
+          }
+        },
+        "tabs": {
+          "type": "tab_richtext",
+          "disabled": true,
+          "settings": {
+            "show_description": true,
+            "show_read_more": false,
+            "title_1": "Tab",
+            "raw_content_1": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "title_2": "Info",
+            "raw_content_2": "<p>You can use product metafields to assign content to this tab that is unique to an individual product.  Use tabs to highlight unique features, sizing information, or other sales information.<\/p>",
+            "title_3": "",
+            "raw_content_3": "",
+            "title_4": "",
+            "raw_content_4": "",
+            "title_5": "",
+            "raw_content_5": "",
+            "padding_bottom": 0
+          }
+        },
+        "divider_1": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 16
+          }
+        },
+        "upsell": {
+          "type": "upsell",
+          "disabled": true,
+          "settings": {
+            "upsell_product": "",
+            "upsell_product_list": [],
+            "show_avaialable_upsell_only": false,
+            "bg_color": "",
+            "padding_bottom": 16
+          }
+        },
+        "icon_1": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "icon-email",
+            "icon_size": 20,
+            "icon_color": "#545454",
+            "title": "Free 30 Days Returns",
+            "text_size": 3,
+            "width": "full",
+            "padding_bottom": 16
+          }
+        },
+        "icon_2": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "icon-truck",
+            "icon_size": 20,
+            "icon_color": "#545454",
+            "title": "Free subscription shipping",
+            "text_size": 3,
+            "width": "full",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "text_e9UYcn",
+        "tag_WWHzBK",
+        "title",
+        "judge_me_reviews_preview_badge_geRzAh",
+        "flewer_N49iqE",
+        "description_Dk8wKn",
+        "price",
+        "variants",
+        "buttons",
+        "meta_accordion_KAEJDB",
+        "ingredients_accordion_gNPW9T",
+        "tabs",
+        "divider_1",
+        "upsell",
+        "icon_1",
+        "icon_2"
+      ],
+      "settings": {
+        "product_sticky_enable": true,
+        "variant_image_scroll": true,
+        "image_layout": "thumbnails-left",
+        "image_size": "normal",
+        "show_cart_bar": true,
+        "enable_zoom": true,
+        "enable_video_looping": false,
+        "mobile_image_style": "slider",
+        "padding_top": 25,
+        "padding_bottom": 30
+      }
+    },
+    "section_text_row_WfzJFd": {
+      "type": "section-text-row",
+      "blocks": {
+        "icon_A4z6qG": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-star",
+            "icon_size": 40,
+            "icon_color": "#545454",
+            "title": "Save 50%",
+            "heading_size": 3,
+            "text": "<p>Lock in 50% off on 1st order and 15%+ ongoing<\/p>",
+            "text_size": 2
+          }
+        },
+        "icon_hx7V6c": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-smile",
+            "icon_size": 40,
+            "icon_color": "#545454",
+            "title": "No Commitment",
+            "heading_size": 3,
+            "text": "<p>Easily modify, pause, skip, or cancel anytime<\/p>",
+            "text_size": 2
+          }
+        },
+        "icon_VXnJpx": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-fast-shipment",
+            "icon_size": 40,
+            "icon_color": "#545454",
+            "title": "Free Shipping",
+            "heading_size": 3,
+            "text": "<p>Fast Free Shipping for all orders<\/p>",
+            "text_size": 2
+          }
+        },
+        "icon_RA3LJ9": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-gift",
+            "icon_size": 40,
+            "icon_color": "#545454",
+            "title": "Be Rewarded",
+            "heading_size": 3,
+            "text": "<p> Expect exclusive gifts and discounts. <\/p>",
+            "text_size": 2
+          }
+        }
+      },
+      "block_order": [
+        "icon_A4z6qG",
+        "icon_hx7V6c",
+        "icon_VXnJpx",
+        "icon_RA3LJ9"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Why Subscribe?",
+        "heading_size": 5,
+        "layout": "grid",
+        "grid": 4,
+        "align_heading": "text-left",
+        "align_text": "text-left",
+        "icon_alignment": "icon--top",
+        "align_columns": "flex-align-top",
+        "width": "wrapper--full-padded",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 10,
+        "padding_bottom": 0,
+        "layout_mobile": "2"
+      }
+    },
+    "subscriber_rewards_tdPckc": {
+      "type": "subscriber-rewards",
+      "blocks": {
+        "subscriber_waFpMh": {
+          "type": "subscriber",
+          "settings": {
+            "title": "50% Off",
+            "sub-title": "",
+            "month_text": "Month",
+            "month_number": "1",
+            "month_icon": ""
+          }
+        },
+        "subscriber_Yjt7iL": {
+          "type": "subscriber",
+          "settings": {
+            "title": "15% Off",
+            "sub-title": "+Free Shaker Bottle",
+            "month_text": "Month",
+            "month_number": "2",
+            "month_icon": ""
+          }
+        },
+        "subscriber_RBhiAf": {
+          "type": "subscriber",
+          "settings": {
+            "title": "17% Off",
+            "sub-title": "",
+            "month_text": "Month",
+            "month_number": "3",
+            "month_icon": ""
+          }
+        },
+        "subscriber_QyqgCp": {
+          "type": "subscriber",
+          "settings": {
+            "title": "20% Off",
+            "sub-title": "",
+            "month_text": "Month",
+            "month_number": "4-5",
+            "month_icon": ""
+          }
+        },
+        "subscriber_gzj6Dx": {
+          "type": "subscriber",
+          "settings": {
+            "title": "25% Off",
+            "sub-title": "+Free Gifts",
+            "month_text": "Month",
+            "month_number": "6+",
+            "month_icon": ""
+          }
+        }
+      },
+      "block_order": [
+        "subscriber_waFpMh",
+        "subscriber_Yjt7iL",
+        "subscriber_RBhiAf",
+        "subscriber_QyqgCp",
+        "subscriber_gzj6Dx"
+      ],
+      "disabled": true,
+      "settings": {
+        "box_bg_color": "#e6fda5",
+        "box_text_color": "#242424",
+        "main_title": "Subscriber VIP Rewards + Discounts",
+        "shipping_label": "Free Shipping",
+        "padding-top": 74,
+        "padding-bottom": 74,
+        "padding-top-mobile": 34,
+        "padding-bottom-mobile": 34
+      }
+    },
+    "section_hero_fBRpdR": {
+      "type": "section-hero",
+      "blocks": {
+        "heading_KNKdcC": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Image banner",
+            "heading_size": 11
+          }
+        },
+        "text_N3Kffg": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "description": "Tell your brand's story through images.",
+            "text_size": 5,
+            "text_style": "font-body"
+          }
+        },
+        "button_miPM6k": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "link_text": "View products",
+            "link": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_KNKdcC",
+        "text_N3Kffg",
+        "button_miPM6k"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "image-height",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/discount_sequence_2.png",
+        "link": "",
+        "mobile_height": "image-height--mobile",
+        "mobile_image": "shopify:\/\/shop_images\/discount_sequence_2.png",
+        "flex_align_desktop": "align--middle-center-desktop",
+        "flex_align_mobile": "align--middle-center-mobile",
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "show_overlay_text": false,
+        "bg_color": "",
+        "color": "#ffffff",
+        "show_placeholder": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "faq": {
+      "type": "section-accordion",
+      "blocks": {
+        "faq-1": {
+          "type": "text",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this to answer some common questions you hear from your customers. You could discuss product details, size fit, shipping policies, or anything you think would help merchants make an informed decision about your products. This section will appear across all products.<\/p>"
+          }
+        },
+        "faq-2": {
+          "type": "text",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this to answer some common questions you hear from your customers. You could discuss product details, size fit, shipping policies, or anything you think would help merchants make an informed decision about your products. This section will appear across all products.<\/p>"
+          }
+        },
+        "faq-3": {
+          "type": "text",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this to answer some common questions you hear from your customers. You could discuss product details, size fit, shipping policies, or anything you think would help merchants make an informed decision about your products. This section will appear across all products.<\/p>"
+          }
+        },
+        "faq-4": {
+          "type": "text",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this to answer some common questions you hear from your customers. You could discuss product details, size fit, shipping policies, or anything you think would help merchants make an informed decision about your products. This section will appear across all products.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "faq-4"
+      ],
+      "disabled": true,
+      "settings": {
+        "default_open": false,
+        "title": "FAQ",
+        "show_icon": false,
+        "icon_name": "icon-award",
+        "icon_size": 20,
+        "icon_color": "#545454",
+        "bg_color": "",
+        "color": "",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 30,
+        "padding_bottom": 0
+      }
+    },
+    "shipping": {
+      "type": "section-accordion",
+      "blocks": {
+        "shipping-0": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-fast-shipment",
+            "icon_size": 20,
+            "icon_color": "#545454",
+            "title": "Fast shipping",
+            "icon_alignment": "left",
+            "text": "<p>Use this to answer some common questions you hear from your customers. You could discuss product details, size fit, shipping policies, or anything you think would help merchants make an informed decision about your products. This section will appear across all products.<\/p>",
+            "text_alignment": "text-left"
+          }
+        },
+        "shipping-1": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-box",
+            "icon_size": 20,
+            "icon_color": "#545454",
+            "title": "Order tracking",
+            "icon_alignment": "left",
+            "text": "<p>Use this to answer some common questions you hear from your customers. You could discuss product details, size fit, shipping policies, or anything you think would help merchants make an informed decision about your products. This section will appear across all products.<\/p>",
+            "text_alignment": "text-left"
+          }
+        },
+        "shipping-2": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-chat",
+            "icon_size": 20,
+            "icon_color": "#545454",
+            "title": "Get in touch",
+            "icon_alignment": "left",
+            "text": "<p>Use this to answer some common questions you hear from your customers. You could discuss product details, size fit, shipping policies, or anything you think would help merchants make an informed decision about your products. This section will appear across all products.<\/p>",
+            "text_alignment": "text-left"
+          }
+        }
+      },
+      "block_order": [
+        "shipping-0",
+        "shipping-1",
+        "shipping-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "default_open": false,
+        "title": "Shipping",
+        "show_icon": false,
+        "icon_name": "icon-award",
+        "icon_size": 20,
+        "icon_color": "#545454",
+        "bg_color": "",
+        "color": "",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "about": {
+      "type": "section-accordion",
+      "blocks": {
+        "about-0": {
+          "type": "image",
+          "settings": {
+            "title": "Image heading",
+            "text": "<p>Use this to answer some common questions you hear from your customers. You could discuss product details, size fit, shipping policies, or anything you think would help merchants make an informed decision about your products. This section will appear across all products.<\/p>",
+            "aspect_ratio": 0.6
+          }
+        },
+        "about-1": {
+          "type": "image",
+          "settings": {
+            "title": "Image heading",
+            "text": "<p>Use this to answer some common questions you hear from your customers. You could discuss product details, size fit, shipping policies, or anything you think would help merchants make an informed decision about your products. This section will appear across all products.<\/p>",
+            "aspect_ratio": 0.6
+          }
+        },
+        "about-2": {
+          "type": "image",
+          "settings": {
+            "title": "Image heading",
+            "text": "<p>Use this to answer some common questions you hear from your customers. You could discuss product details, size fit, shipping policies, or anything you think would help merchants make an informed decision about your products. This section will appear across all products.<\/p>",
+            "aspect_ratio": 0.6
+          }
+        }
+      },
+      "block_order": [
+        "about-0",
+        "about-1",
+        "about-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "default_open": false,
+        "title": "About us",
+        "show_icon": false,
+        "icon_name": "icon-award",
+        "icon_size": 20,
+        "icon_color": "#545454",
+        "bg_color": "",
+        "color": "",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 30
+      }
+    },
+    "custom": {
+      "type": "section-custom-content",
+      "blocks": {
+        "custom-0": {
+          "type": "image",
+          "settings": {
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "show_overlay_text": false,
+            "title": "",
+            "heading_size": 7,
+            "description": "",
+            "text_size": 3,
+            "flex_align": "align--middle-center",
+            "bg_color": "",
+            "color": "#ffffff",
+            "link_text": "",
+            "link": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false
+          }
+        },
+        "custom-1": {
+          "type": "text",
+          "settings": {
+            "subheading": "Introducing",
+            "subheading_size": 3,
+            "title": "Product feature",
+            "heading_size": 8,
+            "text": "<p>Use this section to create unique side-by-side layouts with various content blocks. Pair text with images, newsletter blocks, products, videos, testimonials and more.<\/p>",
+            "text_size": 4,
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "show_social_links": false,
+            "text_columns": 1,
+            "align_text": "text-left",
+            "bg_color": "#f7f7f7",
+            "color": ""
+          }
+        }
+      },
+      "block_order": [
+        "custom-0",
+        "custom-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "screen-height-one-half",
+        "mobile_height": "screen-height-one-half--mobile",
+        "width": "wrapper--full-padded",
+        "borders": false,
+        "gutters": false,
+        "reverse_blocks": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "imgtxt": {
+      "type": "section-custom-content",
+      "blocks": {
+        "imgtxt-0": {
+          "type": "text",
+          "settings": {
+            "subheading": "Introducing",
+            "subheading_size": 3,
+            "title": "Another feature",
+            "heading_size": 8,
+            "text": "<p>Use this section to create unique side-by-side layouts with various content blocks. Pair text with images, newsletter blocks, products, videos, testimonials and more.<\/p>",
+            "text_size": 4,
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "show_social_links": false,
+            "text_columns": 1,
+            "align_text": "text-left",
+            "bg_color": "#f7f7f7",
+            "color": ""
+          }
+        },
+        "imgtxt-1": {
+          "type": "image",
+          "settings": {
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "show_overlay_text": false,
+            "title": "",
+            "heading_size": 7,
+            "description": "",
+            "text_size": 3,
+            "flex_align": "align--middle-center",
+            "bg_color": "",
+            "color": "#ffffff",
+            "link_text": "",
+            "link": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false
+          }
+        }
+      },
+      "block_order": [
+        "imgtxt-0",
+        "imgtxt-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "screen-height-one-half",
+        "mobile_height": "screen-height-one-half--mobile",
+        "width": "wrapper--full-padded",
+        "borders": false,
+        "gutters": false,
+        "reverse_blocks": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "related": {
+      "type": "related",
+      "blocks": {
+        "related": {
+          "type": "related",
+          "settings": {
+            "product_recommendations_heading": "Related products",
+            "limit": 4
+          }
+        },
+        "recent": {
+          "type": "recent",
+          "settings": {
+            "product_recently_heading": "Recently viewed",
+            "product_recently_limit": 4
+          }
+        }
+      },
+      "block_order": [
+        "related",
+        "recent"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_tabs": true,
+        "heading_alignment": "text-center",
+        "heading_size": 4,
+        "layout_mobile": "slider",
+        "bg_color": "",
+        "color": "",
+        "border_color": "",
+        "padding_top": 30,
+        "padding_bottom": 0
+      }
+    },
+    "benefits_section_AHhDzz": {
+      "type": "benefits-section",
+      "blocks": {
+        "logo_Pn7dC6": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/icon1.png"
+          }
+        },
+        "logo_6Abnyn": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/icon2_f6ca411e-ad8d-4b9a-bcbd-3ba278d60732.png"
+          }
+        },
+        "logo_a6nVCE": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/icon3_9bd04fd2-5d50-4af5-a061-b8cfa33ce774.png"
+          }
+        },
+        "logo_bGHBLc": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/icon4_9e590e49-a23f-4a60-a241-5f0693d53065.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_Pn7dC6",
+        "logo_6Abnyn",
+        "logo_a6nVCE",
+        "logo_bGHBLc"
+      ],
+      "disabled": true,
+      "settings": {
+        "bg-image": "shopify:\/\/shop_images\/shape1_1f5a13ab-0c9e-4145-8924-afa74a682233.png",
+        "section-title": "Benefits you can Feel",
+        "section-subtitle": "3rd Party Tested & Nothing Artificial",
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
+    },
+    "we_keep_selling_section_R6NrRH": {
+      "type": "we-keep-selling-section",
+      "blocks": {
+        "selling_slider_8gVbxJ": {
+          "type": "selling_slider",
+          "settings": {
+            "selling_img": "shopify:\/\/shop_images\/sachet__bottle_2_bf610f07-7683-4c1b-ae82-f363ddb5286d.jpg",
+            "selling_desc": "<p>I take half a scoop before the gym every morning. My workouts have been great and I haven’t noticed my self crashing at all during the work day. Definitely recommend!<\/p>",
+            "selling_title": "Griffin A. | La Grange, IL"
+          }
+        },
+        "selling_slider_tRAD9m": {
+          "type": "selling_slider",
+          "settings": {
+            "selling_img": "shopify:\/\/shop_images\/IMG_0514.jpg",
+            "selling_desc": "<p>Replaced my 2nd cup of coffee<br\/>Bright Mind instead of more coffee in the afternoon gives me a longer period of sustained productivity and doesn’t affect my sleep. <\/p>",
+            "selling_title": "George P. | Miami, FL"
+          }
+        },
+        "selling_slider_3aYdP7": {
+          "type": "selling_slider",
+          "settings": {
+            "selling_img": "shopify:\/\/shop_images\/IMG_0731.jpg",
+            "selling_desc": "<p>It provides the similar focus and energy boost as adderall but w\/o any of the harsh side effects or crash. You feel sharp and productive, but in a natural, healthy way.<\/p>",
+            "selling_title": "Olivia P. | Austin, TX"
+          }
+        },
+        "selling_slider_P4CjmB": {
+          "type": "selling_slider",
+          "settings": {
+            "selling_img": "shopify:\/\/shop_images\/slider-3.jpg",
+            "selling_desc": "<p>No More Coffee! My fiancé just said “now that I’ve been doing this Bright Mind in the morning, coffee doesn’t even sound appealing anymore” ...We love Graymatter!<\/p>",
+            "selling_title": "Laura K. | Louisville, KY"
+          }
+        },
+        "selling_slider_GN7b7U": {
+          "type": "selling_slider",
+          "settings": {
+            "selling_img": "shopify:\/\/shop_images\/IMG_6542.jpg",
+            "selling_desc": "<p>Amazing!! This is the real deal guys! Absolutely replaced coffee & energy drinks for me. I’m blown away, as an ADHD sufferer this really helps me get through my days without feeling like crap in a few hours.<\/p>",
+            "selling_title": "Mandy T. | Mahopec, NY"
+          }
+        },
+        "selling_slider_8DHVff": {
+          "type": "selling_slider",
+          "settings": {
+            "selling_img": "shopify:\/\/shop_images\/sample_ugc.jpg",
+            "selling_desc": "<p><strong>Skeptical, but results speak for themselves. <\/strong>Always struggled with Adderall being too much and coffee making me crash. Took Bright Mind and felt completely in the zone mentally. <\/p>",
+            "selling_title": "Sarah S. | Chicago, IL"
+          }
+        }
+      },
+      "block_order": [
+        "selling_slider_8gVbxJ",
+        "selling_slider_tRAD9m",
+        "selling_slider_3aYdP7",
+        "selling_slider_P4CjmB",
+        "selling_slider_GN7b7U",
+        "selling_slider_8DHVff"
+      ],
+      "settings": {
+        "bgcolor": "#ffffff",
+        "textcolor": "#242424",
+        "sectitle": "We keep selling out",
+        "show_slider_arrow": false,
+        "padding_top": 16,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "process_progress_sec_LtcQzY": {
+      "type": "process-progress-sec",
+      "blocks": {
+        "processbox_nfBXJy": {
+          "type": "processbox",
+          "settings": {
+            "title": "First 15 Mins",
+            "processdesc": "<p>Most people experience a mental uplift within minutes.<\/p>"
+          }
+        },
+        "processbox_mHwGjJ": {
+          "type": "processbox",
+          "settings": {
+            "title": "Next 4-8 Hours",
+            "processdesc": "<p>Heightened flow state due to the powerful & synergistic effects our four blends. Experience a calm, focused, long-lasting productive state of mind.<\/p>"
+          }
+        },
+        "processbox_rrHnNE": {
+          "type": "processbox",
+          "settings": {
+            "title": "No Crash Ever",
+            "processdesc": "<p>Plant-based energy & stress busting adaptogens create a steady energic state without a crash.<\/p>"
+          }
+        },
+        "processbox_cUQQjr": {
+          "type": "processbox",
+          "settings": {
+            "title": "Week 1",
+            "processdesc": "<p>You'll notice increases in productivity due to less fatigue in the afternoons and more clarity in the mornings. Brain fog is a thing of the past.<\/p>"
+          }
+        },
+        "processbox_69hU7Y": {
+          "type": "processbox",
+          "settings": {
+            "title": "Week 2+",
+            "processdesc": "<p>Your cognitive stamina improves as nootropics boost acetylcholine and neurogenesis, while adaptogens enhance your mood by regulating cortisol and stress.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "processbox_nfBXJy",
+        "processbox_mHwGjJ",
+        "processbox_rrHnNE",
+        "processbox_cUQQjr",
+        "processbox_69hU7Y"
+      ],
+      "settings": {
+        "bgcolor": "",
+        "boxbgcolor": "#dbe5f4",
+        "textcolor": "#242424",
+        "sectitle": "Train your mind like you do your body.",
+        "process_img": "shopify:\/\/shop_images\/productimg.png",
+        "padding_top": 70,
+        "padding_bottom": 44,
+        "mobile_padding_top": 14,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "new_benefits_section_air37x": {
+      "type": "new-benefits-section",
+      "blocks": {
+        "icon_text_KNRBCr": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Group_9db99fca-5450-41de-959f-6e3e8e038933.png",
+            "icon-text-label": "Pre-cursor to dopamine increases working memory and attention"
+          }
+        },
+        "icon_text_PUahaX": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Group_ab687dc7-4cbf-4c43-adb2-56898be78c31.png",
+            "icon-text-label": "Calm Energy with matcha green tea extract guarana and maca"
+          }
+        },
+        "icon_text_p688mp": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Vector_663ac200-4e7b-4dc5-b44a-ad7bc771bd83.png",
+            "icon-text-label": "Focused flow state with adaptogenic mushrooms"
+          }
+        },
+        "icon_text_pEbD98": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Vector_7ecb0147-60f1-44c5-a2fb-b7f69418009e.png",
+            "icon-text-label": "Enhance Brain Function & Memory with nootropics"
+          }
+        },
+        "icon_text_QVF6rM": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Group_1000003943_7a555573-588e-40e1-8ba0-3209dfdd3de9.png",
+            "icon-text-label": "Vision Support"
+          }
+        },
+        "icon_text_NAAtkT": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Vector_35235c94-8360-45d7-9d1c-6d4eab75f610.png",
+            "icon-text-label": "Decrease Stress"
+          }
+        },
+        "icon_text_4VhypW": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Vector_3bb37ca7-8461-4e86-bce4-90707c639eb4.png",
+            "icon-text-label": "Cognitive Control"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_KNRBCr",
+        "icon_text_PUahaX",
+        "icon_text_p688mp",
+        "icon_text_pEbD98",
+        "icon_text_QVF6rM",
+        "icon_text_NAAtkT",
+        "icon_text_4VhypW"
+      ],
+      "settings": {
+        "title": "Benefits you can feel",
+        "sub-title": "All ingredients backed by thousands of peer reviewed scientific studies.",
+        "padding-top": 44,
+        "padding-bottom": 86,
+        "padding-top-mobile": 20,
+        "padding-bottom-mobile": 40
+      }
+    },
+    "bright_slider_TRfBGR": {
+      "type": "bright-slider",
+      "blocks": {
+        "slider_VfLThd": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2024-10-13_at_5.26.26_AM.png",
+            "title": "Tear open or scoop (half or one) serving of Bright Mind",
+            "subtitle": ""
+          }
+        },
+        "slider_HrkCGa": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2024-10-13_at_5.29.05_AM.png",
+            "title": "Pour pouch or scoop into 10-12oz of ice-cold water.",
+            "subtitle": ""
+          }
+        },
+        "slider_KhFcQT": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2024-10-13_at_5.30.02_AM.png",
+            "title": "Shake or stir thoroughly.",
+            "subtitle": ""
+          }
+        },
+        "slider_nTaXfV": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2024-10-13_at_5.33.00_AM.png",
+            "title": "Enjoy a clear calm focus for hours.",
+            "subtitle": ""
+          }
+        },
+        "slider_78BJQX": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/New_Project_1.png",
+            "title": "Always take a break after 5 consecutive days for recovery and maximum effect",
+            "subtitle": ""
+          }
+        }
+      },
+      "block_order": [
+        "slider_VfLThd",
+        "slider_HrkCGa",
+        "slider_KhFcQT",
+        "slider_nTaXfV",
+        "slider_78BJQX"
+      ],
+      "settings": {
+        "title": "How Bright  Mind Works",
+        "bg_image": "shopify:\/\/shop_images\/Radius_1.png"
+      }
+    },
+    "th_banner_slider_ThaMhn": {
+      "type": "th-banner-slider",
+      "blocks": {
+        "slider_NGpgbM": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-562.png",
+            "title": "Flow: Adaptogens for Stress Management",
+            "content": "<p>Lower cortisol levels, and induce a flow state for better focus and calm.<\/p>",
+            "content-1": "<p><em><strong>Includes:<\/strong><\/em><em> Red Panax Ginseng, Cordyceps, Lion’s Mane Mushroom, Ashwagandha, Rhodiola.<\/em><\/p>"
+          }
+        },
+        "slider_yUyijg": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1000004043.png",
+            "title": "Go Blend: Sustainable, Crash-Free Energy",
+            "content": "<p>A plant-based energy fuel keeps you energized without the crash.<\/p>",
+            "content-1": "<p><em><strong>Includes:<\/strong><\/em><em> Maca Root, Green Tea, Korean Matcha, Guarana.<\/em><\/p>"
+          }
+        },
+        "slider_e93DXL": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1000004047.png",
+            "title": "VisionDefense: Eye Protection for Screen Time",
+            "content": "<p>Protects your eyes from blue light and reduces eye strain with natural carotenoids.<\/p>",
+            "content-1": "<p><em><strong>Includes:<\/strong><\/em><em> Vitamin C & E, Lutein, Zeaxanthin, Astaxanthin.<\/em><\/p>"
+          }
+        },
+        "slider_UAFMwD": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-5689.png",
+            "title": "BrainX: Nootropics for Enhanced Cognition",
+            "content": "<p>Supports brain health and improves cognition by boosting synapse connections over time.<\/p>",
+            "content-1": "<p><em><strong>Includes:<\/strong><\/em><em> Nitrosigine, L-Tyrosine, Alpha GPC, Phosphatidylserine, Huperzine A.<\/em><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "slider_NGpgbM",
+        "slider_yUyijg",
+        "slider_e93DXL",
+        "slider_UAFMwD"
+      ],
+      "settings": {
+        "title": "Coffee doesn’t stack up to bright mind",
+        "sub-title": "Plant-based drink mix of 4 functional blends backed by rigorous research and PhD Molecular Biologists.",
+        "button-title": "See Ingredients",
+        "btn-link": "shopify:\/\/pages\/science",
+        "bg-image": "shopify:\/\/shop_images\/bg-image.jpg",
+        "bg-image-mobile": "shopify:\/\/shop_images\/Rectangle_6678.png",
+        "padding-top": 70,
+        "padding-bottom": 70,
+        "bg-color": "#161616",
+        "color": "#ffffff"
+      }
+    },
+    "faqs_sec_RKWmmX": {
+      "type": "faqs-sec",
+      "blocks": {
+        "faqblock_9gW4kq": {
+          "type": "faqblock",
+          "settings": {
+            "title": "WHAT ARE NOOTROPICS?",
+            "faqdesc": "<p>Also known as “smart drugs” are powerful natural compounds that boost cognition by increasing acetylcholine and other helpful neurotransmitters. They can enhance mood, motivation, clear brain fog, increase focus, and improve reaction time.<\/p><p>Long term nootropic supplementation improves composition of brain health by providing the building blocks needed for increased synapse connections. <\/p>"
+          }
+        },
+        "faqblock_4wPU47": {
+          "type": "faqblock",
+          "settings": {
+            "title": "DOES BRIGHT MIND ACTUALLY WORK?",
+            "faqdesc": "<p>Most people will feel a mental uplift within 5-10 minutes, this can be intense, but it levels out into a heightened flow state for the next 3-6 hours.<\/p><p>This feeling varies based on your tolerance and experience with nootropics. If your body ends up requiring a loading phase, don’t get discouraged. Continue taking Bright Mind and the benefits will compound overtime.<\/p>"
+          }
+        },
+        "faqblock_L3NDYR": {
+          "type": "faqblock",
+          "settings": {
+            "title": "HOW OFTEN CAN I TAKE BRIGHT MIND?",
+            "faqdesc": "<p>Bright mind is designed for daily mental nourishment. We recommend that you take a day off each week.<\/p><p>For demanding days it is safe to take twice in a day. We recommend taking the first dose an hour upon waking, and the next shortly after lunch. Don't take more than 3 doses in 24 hours.<\/p>"
+          }
+        },
+        "faqblock_NqXPYF": {
+          "type": "faqblock",
+          "settings": {
+            "title": "CAN I STILL DRINK COFFEE?",
+            "faqdesc": "<p>Sure! But you might find that you don't need to. Also, some Bright Mind users drink it in the afternoon instead of a second cup of coffee.<\/p>"
+          }
+        },
+        "faqblock_GThMPj": {
+          "type": "faqblock",
+          "settings": {
+            "title": "WHAT ARE ADAPTOGENS?",
+            "faqdesc": "<p>Adaptogens are herbs or plants that help the body adapt to stress and improve overall physical and mental performance. They are believed to work by balancing and regulating various bodily functions. Research shows that adaptogens can reduce stress, improve attention, increase endurance, and fight fatigue.<\/p>"
+          }
+        },
+        "faqblock_QdiDm8": {
+          "type": "faqblock",
+          "settings": {
+            "title": "WHEN SHOULD I TAKE BRIGHT MIND?",
+            "faqdesc": "<p>Most customers drink Bright Mind in the morning to get their day started. On days you need an extra boost, it is safe to take another packet after lunch.<\/p>"
+          }
+        },
+        "faqblock_GPbTYR": {
+          "type": "faqblock",
+          "settings": {
+            "title": "DOES BRIGHT MIND CONTAIN CAFFEINE?",
+            "faqdesc": "<p>Yes! Bright Mind contains 75mg caffeine per serving from natural sources including Matcha, Guarana, and Green Tea Extract. The key is that Green Tea derived caffeine contains L-Theanine which helps level out the jitters that you otherwise would get from coffee or synthetic caffeine.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faqblock_9gW4kq",
+        "faqblock_4wPU47",
+        "faqblock_L3NDYR",
+        "faqblock_NqXPYF",
+        "faqblock_GThMPj",
+        "faqblock_QdiDm8",
+        "faqblock_GPbTYR"
+      ],
+      "settings": {
+        "bgcolor": "#ffffff",
+        "textcolor": "#000000",
+        "sectitle": "FAQs",
+        "secdesc": "Find the most frequently asked questions below.",
+        "btntext": "",
+        "btnlink": "#",
+        "btnbgcolor": "#161616",
+        "btntextcolor": "#ffffff",
+        "padding_top": 62,
+        "padding_bottom": 60,
+        "mobile_padding_top": 30,
+        "mobile_padding_bottom": 30
+      }
+    },
+    "172675028918469e2b": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_8XRXhe": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_8XRXhe"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_text_row_WfzJFd",
+    "subscriber_rewards_tdPckc",
+    "section_hero_fBRpdR",
+    "faq",
+    "shipping",
+    "about",
+    "custom",
+    "imgtxt",
+    "related",
+    "benefits_section_AHhDzz",
+    "we_keep_selling_section_R6NrRH",
+    "process_progress_sec_LtcQzY",
+    "new_benefits_section_air37x",
+    "bright_slider_TRfBGR",
+    "th_banner_slider_ThaMhn",
+    "faqs_sec_RKWmmX",
+    "172675028918469e2b"
+  ]
+}

@@ -1,0 +1,121 @@
+.index-product .product__wrapper--stretch .product__images {
+  margin-top: var(--MT);
+}
+@media only screen and (min-width: 990px) {
+  .index-product .form__width {
+    max-width: 560px;
+    margin-left: 0;
+    padding-left: 0px;
+  }
+}
+@media only screen and (max-width: 990px) {
+  #Product--template--18168339038460__main {
+    --PT: 30px !important;
+  }
+  .product-soldout-notification span.btn__text {
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
+}
+.index-product .product__text .product__heading {
+  font-family: "Exposure[0]" !important;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0;
+  padding-bottom: 12px;
+  color: #242424;
+}
+
+.index-product .product__tag .product__heading {
+  font-family: "ABC Monument Grotesk Mono Unlicensed Trial";
+  font-size: 12px;
+  font-weight: 400;
+  color: #242424;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.index-product .product__title__wrapper .product__title {
+  font-family: "Exposure[0]";
+  font-weight: 500;
+  padding-bottom: 8px;
+  font-size: 28px;
+  line-height: 34px;
+  margin: 0;
+}
+
+.index-product .jdgm-prev-badge__text {
+  padding-left: 15px;
+}
+.index-product .product__block-flewer.product__flewer {
+  font-family: "ABC Monument Grotesk Mono Unlicensed Trial";
+  font-size: 12px;
+  font-weight: 400;
+  padding-bottom: 4px;
+}
+.index-product .jdgm-prev-badge {
+  padding-bottom: 16px;
+}
+.index-product .product__block--lines {
+  border-top: 1px solid #242424;
+}
+.index-product .product__description {
+  padding-bottom: 28px;
+}
+.index-product .product__description .product__description__content {
+  font-family: "ABC Monument Grotesk Mono Unlicensed Trial";
+  font-weight: 400;
+  font-size: 12px;
+}
+.index-product .select-popout > .quantity-selector {
+  display: block;
+}
+.index-product .select-popout > .quantity-selector input {
+  font-family: "ABC Monument Grotesk Mono Unlicensed Trial";
+  border-color: #242424;
+  background-color: #f8f8f8;
+}
+.index-product .shopify-cleanslate .kqsiVA9Jf8LJAbxw8Bau {
+  border-radius: 50px;
+}
+.index-product .product__submit__item .btn {
+  font-family: "ABC Monument Grotesk Mono Unlicensed Trial";
+  background: #e6fda5;
+  border-color: #e6fda5;
+  color: #161616;
+}
+.index-product .btn--solid:after,
+.index-product .shopify-payment-button__button--unbranded:after {
+  background-color: transparent;
+  color: #fff;
+}
+
+@media only screen and (max-width: 989px) {
+  .index-product .product__page {
+    display: flex;
+    row-gap: 16px;
+    flex-direction: column;
+  }
+  .index-product .product__content {padding: 0; margin-top: -20px;}
+  .index-product .product__wrapper--stretch .product__images {margin: 0;}
+  .index-product .product__block-flewer.product__flewer {padding-bottom: 16px;}
+}
+
+/* reviews */
+h2.jdgm-rev-widg__title {
+  text-align: left;
+}
+#shopify-block-judge_me_reviews_review_widget_8XRXhe {
+  background: #dbe5f4;
+  padding: 53px 0px;
+}
+.jdgm-widget.jdgm-widget .jdgm-rev-widg {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.jdgm-rev__body p,
+.jdgm-rev__author,
+.jdgm-rev__location {
+  font-family: ABC Monument Grotesk Mono Unlicensed Trial;
+}

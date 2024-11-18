@@ -1,0 +1,1103 @@
+{% style %}
+    .section-{{ section.id }} {
+      padding-top: {{ section.settings.padding-top }}px;
+      padding-bottom: {{ section.settings.padding-bottom }}px;
+      background-color: {{ section.settings.bg_color }};
+      color: {{ section.settings.text_color }};
+    }
+    .section-{{ section.id }} .container {
+      background-color: {{ section.settings.bg_color }};
+    }
+    .section-{{ section.id }} .pgd_inner_col,
+    .section-{{ section.id }} .pgd_inner_col a {
+      background-color: {{ section.settings.box_bg_color }};
+    }
+    .section-{{ section.id }} .pgd_tag {
+      background-color: {{ section.settings.tag_bg_color }};
+      color: {{ section.settings.tag_text_color }};
+      border: 1px solid {{section.settings.tag_text_color}};
+    }
+    .section-{{ section.id }} .product_grid_popup {
+      background-color: {{ section.settings.popup_bg_color }};
+    }
+    @media only screen and (max-width: 767px) {
+      .section-{{ section.id }} {
+        padding-top: {{ section.settings.mobile-padding-top }}px;
+        padding-bottom: {{ section.settings.mobile-padding-bottom }}px;
+      }
+    }
+{% endstyle %}
+
+<div class="section-{{ section.id }}" id="sec-{{ forloop.index }}" > 
+
+  <section class="product_detailed_section">
+      <div class="container">
+          <div class="main_ingredient">
+            {% if section.settings.ingredient_main_title != blank %}
+              <h2 class="title">{{ section.settings.ingredient_main_title }}</h2>
+            {% endif %}
+          </div>
+        
+          <div class="product_detailed_row flex">
+            
+            {% for block in section.blocks %}
+                 {% if block.type == 'ingredient' %}
+                   {% if block.settings.ingredient_img != blank or block.settings.ingredient_title != blank %}
+                  <div class="product_detailed_col">
+                  <div class="product_detailed_inner">
+                      <div class="product_grid_detailed">
+                          <div class="pgd_inner_col">
+                              <div class="pgd_top">
+                                  <a href="#">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none">
+                                          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.5 0.00878906H13.5V13.5088H0V17.5088H13.5V31.0088H17.5V17.5088H31V13.5088H17.5V0.00878906Z" fill="#7197C3"/>
+                                      </svg>
+                                  </a>
+                              </div>
+                              <div class="pgd_center">
+                                  {% if block.settings.ingredient_img != blank %}
+                                    <div class="pgd_center_img">
+                                      {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                                      {% assign class = 'img-fluid' %}
+                                      {%- capture sizes -%}
+                                        (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                                        (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                                      {%- endcapture -%}
+                                      {{
+                                        block.settings.ingredient_img
+                                        | image_url: width: 1500
+                                        | image_tag: sizes: sizes, widths: widths, class: class
+                                      }}
+                                    </div>
+                                  {% endif %}
+                              </div>
+                              {% if block.settings.ingredient_title != blank %}                                          
+                                <div class="pgd_name">
+                                  <div class="pgd_name-block">{{ block.settings.ingredient_title }}</div>
+                                </div>
+                              {% endif %}
+
+                              {% if block.settings.ingredient_tag != blank %}              
+                                 <div class="pgd_tag">
+                                    <div class="pgd_name-block">{{ block.settings.ingredient_tag }}</div>
+                                 </div>
+                              {% endif %}  
+                          </div>
+                      </div>
+                   
+                      <div class="product_grid_popup">
+                          <div class="product_popup_inner">
+                              <div  class="product_popup_col">
+                                  <div class="product_close_image">
+                                      <div class="popup_close_wrap">
+                                          <a href="#">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.8744 2.95396L22.0459 0.125531L12.5 9.67147L2.95406 0.125531L0.125632 2.95396L9.67157 12.4999L0.125632 22.0458L2.95406 24.8743L12.5 15.3283L22.0459 24.8743L24.8744 22.0458L15.3284 12.4999L24.8744 2.95396Z" fill="#7197C3"/></svg>
+                                          </a>
+                                      </div>
+                                      <div class="popup_image">
+                                          <div class="popup_image_col">
+                                              {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                                              {% assign class = 'img-fluid' %}
+                                              {%- capture sizes -%}
+                                                (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                                                (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                                              {%- endcapture -%}
+                                              {{
+                                                block.settings.ingredient_img
+                                                | image_url: width: 1500
+                                                | image_tag: sizes: sizes, widths: widths, class: class
+                                              }}
+                                          </div>
+                                      </div>
+                                  </div>
+                   
+                                  {% comment %}<div class="product_popup_details">
+                                      <div class="popup_details_top">
+                                          <h3>What are nootropics?</h3>
+                                          <p>Also known as “smart drugs” are powerful natural compounds that boost cognition and productivity. They help enhance mood, motivation, clear brain fog, increase focus, and improve reaction time.</p>
+                                          <p>The impacts of long term nootropic supplementation compound overtime. Results are improved composition of brain health by providing the building blocks needed for increased synapse connections.</p>
+                                      </div>
+                                      <div class="popup_details_bottom">
+                                          <h6>Key Focus Areas</h6>
+                                          <ul>
+                                              <li>Enhance Mood</li>
+                                              <li>Motivation</li>
+                                              <li>Clear Brain Fog</li>
+                                              <li>Increase Focus</li>
+                                              <li>Improve reaction time</li>
+                                          </ul>
+                                      </div>
+                                  </div> {% endcomment %}
+
+                                                
+                                  <div class="product_popup_details">  
+                                    {% if block.settings.popup_title != blank and block.settings.popup_desc != blank %}
+                                      <div class="popup_details_top">
+                                        <h3>{{ block.settings.popup_title }}</h3>
+                                        <div class="popup_desc">
+                                          {{ block.settings.popup_desc }}
+                                        </div>
+                                      </div>
+                                    {% endif %}
+                                    {% if block.settings.popup_bottom_title != blank and block.settings.popup_bottom_desc != blank %}
+                                    <div class="popup_details_bottom">
+                                     <h6>{{ block.settings.popup_bottom_title }}</h6>
+                                    {{ block.settings.popup_bottom_desc }}
+                                    </div>
+                                    {% endif %}
+                                  </div>
+                                  {% comment %} {{ block.settings.popup_description }} {% endcomment %}
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+                 {% endif %}
+               {% endif %}                                  
+            {% endfor %}
+                                                
+                                                
+             {% comment %} <div class="product_detailed_col">
+                  <div class="product_detailed_inner">
+                      <div class="product_grid_detailed">
+                          <div class="pgd_inner_col">
+                              <div class="pgd_top">
+                                  <a href="#">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none">
+                                          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.5 0.00878906H13.5V13.5088H0V17.5088H13.5V31.0088H17.5V17.5088H31V13.5088H17.5V0.00878906Z" fill="#7197C3"/>
+                                      </svg>
+                                  </a>
+                              </div>
+                              <div class="pgd_center">
+                                  <div class="pgd_center_img">
+                                      <img src="./images/product-img-1.jpg" alt="product-img-1">
+                                  </div>
+                              </div>
+                              <div class="pgd_name">
+                                  <h6>What are nootropics?</h6>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="product_grid_popup">
+                          <div class="product_popup_inner">
+                              <div  class="product_popup_col">
+                                  <div class="product_close_image">
+                                      <div class="popup_close_wrap">
+                                          <a href="#">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.8744 2.95396L22.0459 0.125531L12.5 9.67147L2.95406 0.125531L0.125632 2.95396L9.67157 12.4999L0.125632 22.0458L2.95406 24.8743L12.5 15.3283L22.0459 24.8743L24.8744 22.0458L15.3284 12.4999L24.8744 2.95396Z" fill="#7197C3"/></svg>
+                                          </a>
+                                      </div>
+                                      <div class="popup_image">
+                                          <div class="popup_image_col">
+                                              <img src="./images/product-img-1.jpg" alt="product-img-1">
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="product_popup_details">
+                                      <div class="popup_details_top">
+                                          <h3>What are nootropics?</h3>
+                                          <p>Also known as “smart drugs” are powerful natural compounds that boost cognition and productivity. They help enhance mood, motivation, clear brain fog, increase focus, and improve reaction time.</p>
+                                          <p>The impacts of long term nootropic supplementation compound overtime. Results are improved composition of brain health by providing the building blocks needed for increased synapse connections.</p>
+                                      </div>
+                                      <div class="popup_details_bottom">
+                                          <h6>Key Focus Areas</h6>
+                                          <ul>
+                                              <li>Enhance Mood</li>
+                                              <li>Motivation</li>
+                                              <li>Clear Brain Fog</li>
+                                              <li>Increase Focus</li>
+                                              <li>Improve reaction time</li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div> {% endcomment %}
+                                      
+          </div>
+                                                {% if section.settings.loadmore_btn_text != blank %}                                      
+             <button class="btn view_more_btn">{{ section.settings.loadmore_btn_text }}</button>
+            {% endif %}
+      </div>
+  </section>
+</div>                                                
+{% schema %}
+  {
+    "name": "ingredients",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color"
+      },
+      {
+        "type": "color",
+        "id": "box_bg_color",
+        "label": "Box Background Color"
+      },
+      {
+        "type": "color",
+        "id": "tag_text_color",
+        "label": "Tag Text Color"
+      },
+      {
+        "type": "color",
+        "id": "tag_bg_color",
+        "label": "Tag Background Color"
+      },
+      {
+        "type": "color",
+        "id": "popup_bg_color",
+        "label": "Popup Background Color"
+      },
+      {
+        "type": "text",
+         "id": "loadmore_btn_text",
+         "label": "Button Text"
+      },
+      {
+        "type": "range",
+        "id": "padding-top",
+        "label": "Padding Top",
+        "min": 50,
+        "max": 200,
+        "step": 2,
+        "default": 120
+      },
+      {
+        "type": "range",
+        "id": "padding-bottom",
+        "label": "Padding Bottom",
+        "min": 50,
+        "max": 200,
+        "step": 2,
+        "default": 120
+      },
+      {
+        "type": "range",
+        "id": "mobile-padding-top",
+        "label": "Mobile Padding Top",
+        "min": 30,
+        "max": 200,
+        "step": 2,
+        "default": 50
+      },
+      {
+        "type": "range",
+        "id": "mobile-padding-bottom",
+        "label": "Mobile Padding Bottom",
+        "min": 30,
+        "max": 200,
+        "step": 2,
+        "default": 50
+      },
+      {
+        "type": "text",
+        "id": "ingredient_main_title",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "ingredient",
+        "name": "Ingredient",
+         "settings": [
+          {
+            "type": "image_picker",
+            "id": "ingredient_img",
+            "label": "Ingredient Image"
+          },
+          {
+            "type": "text",
+            "id": "ingredient_title",
+            "label": "Ingredient Title"
+          },
+          {
+            "type": "text",
+            "id": "ingredient_tag",
+            "label": "Ingredient Tag"
+          },
+          {
+            "type": "text",
+            "id": "popup_title",
+            "label": "Popup Title"
+          },
+          {
+            "type": "richtext",
+            "id": "popup_desc",
+            "label": "Popup Description"
+          },
+          {
+            "type": "text",
+            "id": "popup_bottom_title",
+            "label": "Popup Bottom Title"
+          },
+          {
+            "type": "richtext",
+            "id": "popup_bottom_desc",
+            "label": "Popup Bottom Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Ingredients"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  *,
+:after,
+::before {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+:focus,
+:active {
+    outline: none !important;
+}
+:root{
+    --color1: #000000;
+    --color2: #ffffff;
+    --color3: #DBE5F4;
+    --color4: #D9D9D9;
+    --color5:#242424;
+    --primary-font: 'ABC Monument Grotesk Mono';
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,     
+p,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    list-style: none;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    outline: none;
+    scroll-behavior: smooth;
+}
+body {
+    color:var(--color5);
+    font-family: var(--primary-font);
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+}
+a,
+a:hover,
+a:focus,
+button,
+button:focus {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+    color:var(--color1);
+}
+::selection {
+    background: rgba(127, 131, 51, 0.2);
+}
+::-moz-selection {
+    background: rgba(127, 131, 51, 0.2);
+}
+.flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.no-wrap {
+    flex-wrap: nowrap;
+}
+.align-start {
+    align-items: flex-start;
+}
+.align-end {
+    align-items: flex-end;
+}
+.align-center {
+    align-items: center;
+}
+.justify-around {
+    justify-content: space-around;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-end {
+    justify-content: flex-end;
+}
+.direction-column {
+    flex-direction: column;
+    -ms-flex-direction: column;
+}
+.row-reverse {
+    flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+}
+.flex-shrink {
+    flex-shrink: 0;
+}
+.only_mobile {
+    display: none;
+}
+.only_desktop {
+    display: block;
+}
+.position-relative {
+    position: relative;
+}
+.position-absolute {
+    position: absolute;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+/* ------------- Container  -------------*/
+.container {
+    max-width: 1231px;
+    width:100%;
+    margin:0 auto;
+    padding:0 20px; 
+}
+.overflow_hidden {
+    overflow: hidden;
+}
+/* ==========================================================
+                        START POPUP DESIGN HERE
+============================================================= */
+/* .product_detailed_section {
+    padding:90px 0;
+} */
+.product_detailed_row {
+    margin:-10px -15px;
+}
+.product_detailed_col {
+    max-width: 50%;
+    width: 100%;
+    padding: 10px 15px;
+}
+.product_detailed_inner {
+    position: relative;
+}
+.product_detailed_section .main_ingredient .title {
+    margin-bottom: 47px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 60px;
+    font-family: 'Exposure[+40]';
+    font-weight: 500;
+} 
+.product_detailed_section .pgd_tag {
+  display: inline-block;
+  border-radius: 50px;
+  padding: 5px 15px;
+  margin-top: 10px;
+}
+.product_detailed_section .pgd_tag .pgd_name-block {
+  font-family: 'ABC Monument Grotesk Mono';
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+}
+.pgd_inner_col {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background:var(--color3);
+    border-radius:20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+    padding: 24px 24px 38px;
+}
+.pgd_top, .popup_close_wrap {
+    position: absolute;
+    right: 23px;
+    top: 23px;
+    width: 78px;
+    height:78px;
+    z-index:2;
+}
+.popup_close_wrap {
+    top:0;
+    right:0;
+}
+.pgd_top a, .popup_close_wrap a {
+    width:100%;
+    height:100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 0px 20px;
+    -webkit-border-radius: 0px 0px 0px 20px;
+    -moz-border-radius: 0px 0px 0px 20px;
+    -ms-border-radius: 0px 0px 0px 20px;
+    -o-border-radius: 0px 0px 0px 20px;
+    background-color:var(--color3);
+}
+.pgd_top a svg path {
+    transition:0.3s all ease-in-out;
+    -webkit-transition:0.3s all ease-in-out;
+    -moz-transition:0.3s all ease-in-out;
+    -ms-transition:0.3s all ease-in-out;
+    -o-transition:0.3s all ease-in-out;
+}
+.pgd_top a:hover svg path {
+    fill: var(--color2);
+}
+.pgd_center_img, .popup_image_col {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding-bottom:72.5%;
+    border-radius:20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+}
+.pgd_center_img img, .popup_image_col img {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    left:0;
+    top:0;
+    position: absolute;
+}
+.pgd_center {
+    padding:0 0 37px 0;
+}
+.pgd_name .pgd_name-block {
+    font:normal 400 30px/148.3% var(--primary-font);
+}
+.product_grid_popup {
+    position: fixed;
+    right:0;
+    top:0;
+    height:100vh;
+    max-width:657px;
+    width: 100%;
+    background-color: var(--color2);
+    z-index:99;
+    border-radius:40px 0 0 40px;
+    -webkit-border-radius:40px 0 0 40px;
+    -moz-border-radius:40px 0 0 40px;
+    -ms-border-radius:40px 0 0 40px;
+    -o-border-radius:40px 0 0 40px;
+    overflow: hidden;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transition:0.3s all ease-in-out;
+    -webkit-transition:0.3s all ease-in-out;
+    -moz-transition:0.3s all ease-in-out;
+    -ms-transition:0.3s all ease-in-out;
+    -o-transition:0.3s all ease-in-out;
+    opacity:0;
+    visibility: hidden;
+}
+.product_popup_inner {
+    height: 100%;
+    overflow: auto;
+    padding:30px;
+}
+.product_popup_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 532px;
+    width: 100%;
+    margin: 0 auto;
+}
+.product_close_image {
+    position: relative;
+    overflow: hidden;
+    border-radius:20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+    margin-bottom:62px;
+}
+.popup_details_top h3 {
+    margin-bottom:30px;
+    /* font:normal 400 35px/148.3% var(--primary-font); */
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 44px;
+}
+.popup_details_top p {
+    /* font:normal 400 18px/148.3% var(--primary-font); */
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+    font-size: 18px;
+    font-weight: 400;
+}
+.popup_details_top p:not(:last-child) {
+    margin-bottom:20px;
+}
+.popup_details_top {
+    padding-bottom:38px;
+    border-bottom:1px solid #161616;
+    margin-bottom:38px;
+}
+.popup_details_bottom h6 {
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+    margin-bottom:18px;
+    /* font:normal 400 18px/148.3% var(--primary-font); */
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+.popup_details_bottom ul {
+    margin:-10px -12px;
+}
+.popup_details_bottom ul li {
+    display: inline-block;
+    padding:10px 12px 10px 23px;
+    position: relative;
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+}
+.popup_details_bottom ul li::before {
+    content:'';
+    position: absolute;
+    left:0;
+    top:50%;
+    width:14px;
+    height:9px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    /* background-image: url(../images/icon.png); */
+    background-image: url(https://cdn.shopify.com/s/files/1/0606/9773/9516/files/icon_5957bd8c-ee99-44a1-acd7-853b97284275.png?v=1726894847);
+    background-position: center;
+    background-size: 14px;
+    background-repeat: no-repeat;
+}
+.product_detailed_col.is-open .product_grid_popup {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    opacity:1;
+    visibility: visible;
+}
+.pgd_inner_col .pgd_name .pgd_name-block {
+  font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+  font-size: 30px;
+  font-weight: 400;
+  word-wrap: break-word;
+} 
+.product_detailed_section .btn.view_more_btn {
+  display: none;
+}  
+.btn.view_more_btn {
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+    color: #161616;
+    border: 1px solid #161616;
+    padding: 5px 40px;
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+  }  
+
+
+/* -----------------------------------------------------------------------
+
+--------------------------------------------------------------------------*/
+@media only screen and (max-width: 1366px) {    
+    /* .pgd_inner_col {
+        padding: 15px 15px 30px;
+    } */
+    .pgd_center {
+        padding: 0 0 29px 0;
+    } 
+    /* .pgd_name h6, .popup_details_top h3 {
+        font:normal 400 24px/120% var(--primary-font);
+    }
+    .pgd_top, .popup_close_wrap {
+        right: 15px;
+        top: 14px;
+        width: 60px;
+        height: 60px;
+    }
+    .product_detailed_col {
+        padding: 10px;
+    }
+    .product_detailed_row {
+        margin:-10px;
+    } */
+    /* .product_detailed_section {
+        padding:60px 0;
+    } */
+    .popup_close_wrap {
+        right: 0px;
+        top: 0px;
+    }
+    .popup_details_top p:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    .popup_details_top {
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+    }
+    .popup_details_bottom h6 {
+        margin-bottom: 15px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .product_detailed_section .main_ingredient .title {
+      font-size: 34px;
+      line-height: normal;
+      margin-bottom: 24px;
+    }
+    .popup_details_top h3 {
+      font-size: 22px;
+      line-height: 30px;
+      margin-bottom: 15px;
+    }
+    .product_detailed_col {
+      max-width: calc(50% - 8px);
+      padding: 0px;
+      margin-bottom: 15px;
+    }
+    .product_detailed_section .product_detailed_row {
+      column-gap: 16px;
+      margin: 0px;
+    }
+    .pgd_center_img {
+        padding-bottom: 110%;
+    }
+    .popup_image_col {
+        padding-bottom: 62.5%;
+    }
+    .pgd_inner_col {
+        padding: 20px 20px 20px;
+    }
+    .product_grid_popup {
+        max-width: 100%;
+        border-radius:0;
+        -webkit-border-radius:0;
+        -moz-border-radius:0;
+        -ms-border-radius:0;
+        -o-border-radius:0;
+    }
+    .pgd_inner_col .pgd_top {
+      width: 34px;
+      height: 34px;
+      right: 20px;
+      top: 20px;
+    }
+    .pgd_top a, 
+    .popup_close_wrap a {
+      -webkit-border-radius: 0px 0px 0px 10px;
+      -moz-border-radius: 0px 0px 0px 10px;
+      -ms-border-radius: 0px 0px 0px 10px;
+      -o-border-radius: 0px 0px 0px 10px;
+      border-radius: 0px 0px 0px 10px;
+    }
+    .pgd_top a svg, .popup_close_wrap a svg {
+        width: 10px;
+        height: 10px;
+    }
+    .product_detailed_col  .popup_details_bottom ul li {
+        width: 100%;
+        font-size: 14px;
+        padding: 5px 6px 5px 23px;
+    } 
+    /* .product_detailed_col  .popup_details_bottom {
+      font-size: 18px;
+    } */
+    .product_detailed_row .product_detailed_col:last-child {
+      margin-bottom: 0 !important;
+    }
+    .product_detailed_section .view_more_btn {
+      display: block;
+    }
+    .product_grid_popup .product_close_image {
+      margin-bottom: 15px;
+    }
+    .product_grid_popup .product_popup_col {
+      height: auto;
+    }
+    .pgd_center {
+       padding :0 0 20px 0 !important;
+    } 
+   .pgd_inner_col .pgd_name .pgd_name-block {
+     font-size: 16px;
+     line-height: normal;
+   }
+   .popup_details_top p {
+     font-size: 14px;
+   }
+  .product_detailed_section .pgd_tag .pgd_name-block {font-size: 14px;}
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".pgd_top").forEach(function(element) {
+    element.addEventListener("click", function() {
+        this.closest(".product_detailed_col").classList.add("is-open");
+        document.body.classList.add("overflow_hidden");
+    });
+  });
+
+  document.querySelectorAll(".popup_close_wrap").forEach(function(element) {
+    element.addEventListener("click", function() {
+        this.closest(".product_detailed_col").classList.remove("is-open");
+        document.body.classList.remove("overflow_hidden");
+    });
+  });
+
+
+
+
+
+  document.addEventListener('click', function(event) {
+  // Check if the click target is within the product_popup_inner
+  if (!event.target.closest('.product_popup_inner')) {
+    // Remove the class is-open from product_detailed_col
+    document.querySelectorAll('.product_detailed_col').forEach(function(element) {
+      element.classList.remove('is-open');
+      document.body.classList.remove("overflow_hidden");
+    });
+  }
+});
+
+// Handle clicks on pgd_top to open the product detail column
+document.querySelectorAll('.pgd_top').forEach(function(element) {
+  element.addEventListener('click', function(event) {
+    // Prevent the click event from bubbling up to the document
+    event.stopPropagation();
+    
+    // Add the class is-open to the closest product_detailed_col
+    let productDetailedCol = this.closest('.product_detailed_col');
+    if (productDetailedCol) {
+      productDetailedCol.classList.add('is-open');
+      document.body.classList.add("overflow_hidden");
+    }
+  });
+});
+
+
+
+  /* View More Functionality */
+if (window.innerWidth <= 767) {  
+  const items_data = document.querySelectorAll('.section-{{ section.id }} .product_detailed_col');
+  const viewMoreBtn = document.querySelector('.view_more_btn');
+  const itemsPerPage = 16;
+  let currentPage = 1;
+  
+  // Function to show items
+  function showItems() {
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      console.log(end)
+  
+      items_data.forEach((item, index) => {
+          // Show items for the current page
+          if (index < end) {
+              item.style.display = 'block'; // Show the items for the current page
+          } else {
+              item.style.display = 'none'; // Hide items that are not in the current page range
+          }
+      });
+  
+      // Hide the button if all items are displayed
+      if (end >= items_data.length) {
+          viewMoreBtn.style.display = 'none';
+      } else {
+          viewMoreBtn.style.display = 'block'; // Show the button if more items are available
+      }
+  }
+  
+  // Event listener for the "View More" button
+  viewMoreBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      currentPage++;
+      showItems();
+  });
+  
+  // Initialize display
+  showItems();
+
+  window.addEventListener('resize', function() {
+    showItems.update();
+  });
+  
+  }
+  
+  });
+
+</script>
+
+<style>
+  .pgd_top a:hover svg path {
+    fill: #7796c2;
+  }
+  .btn.view_more_btn {
+    font-family: ABC Monument Grotesk Mono Unlicensed Trial;
+    color: #161616;
+    border: 1px solid #161616;
+    padding: 5px 40px;
+    font-size: 18px;
+    line-height: 33px !important;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+  }
+  body.overflow_hidden:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(0 0 0 / 50%);
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+  }
+</style>

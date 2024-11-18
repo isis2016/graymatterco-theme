@@ -1,0 +1,93 @@
+<section class="bottom-banner section-banner-{{ section.id }}" data-aos="fade">
+  <div class="container">
+    <div class="setion-title">
+      <div class="setion-title-block">{{ section.settings.section-title }}</div>
+    </div>
+  </div>
+</section>
+
+{% style %}
+  @media (max-width: 1920px) and (min-width: 750px) {
+    .section-banner-{{ section.id }} {
+      background-image: url({{ section.settings.bg_image | img_url: 'master' }});
+      padding-top: {{section.settings.padding-top}}px;
+      padding-bottom: {{section.settings.padding-bottom}}px;
+      height: 734px;
+    }
+  }
+  @media (max-width: 1920px) and (min-width: 1450px) {
+    .section-banner-{{ section.id }} {height: 970px;}
+  }
+  @media (max-width: 749px) {
+    .section-banner-{{ section.id }} {
+      background-image: url({{ section.settings.bg_image-mobile | img_url: 'master' }});
+      padding-top: {{section.settings.padding-top-mobile}}px;
+      padding-bottom: {{section.settings.padding-bottom-mobile}}px;
+      height: 734px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Section Banner Image",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "section-title",
+      "label": "Section Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image-mobile",
+      "label": "Background Image Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 74
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 74
+    },
+    {
+      "type": "range",
+      "id": "padding-top-mobile",
+      "label": "Padding Top Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom-mobile",
+      "label": "Padding Bottom Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Banner Image"
+    }
+  ]
+}
+{% endschema %}

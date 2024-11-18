@@ -1,0 +1,104 @@
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "announcement": {
+      "type": "announcement",
+      "blocks": {
+        "text_N7qXFe": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>New customers save 50% off with Subscription<\/strong><\/p>",
+            "target_url_enabled": false,
+            "target_url": "shopify:\/\/products\/brightmind-1",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        }
+      },
+      "block_order": [
+        "text_N7qXFe"
+      ],
+      "settings": {
+        "btn-link": "shopify:\/\/products\/brightmind-1",
+        "show_border": false,
+        "layout": "slider",
+        "slider_speed": 7,
+        "text_alignment": "center",
+        "show_arrows": false,
+        "marquee_speed": 100,
+        "message_spacing": 10,
+        "text_size": 2,
+        "bg_color": "#e6fda5",
+        "color": "#000000",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "toolbar": {
+          "type": "toolbar",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Toolbar<\/p>",
+            "menu": "",
+            "show_border": false,
+            "border_opacity": 50,
+            "show_social_links": true,
+            "show_gift_card": true,
+            "show_locale_selector": true,
+            "show_country_selector": true,
+            "show_country_name": false,
+            "show_country_flag": true,
+            "bg_color": "#fafafa",
+            "color": "",
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "toolbar"
+      ],
+      "settings": {
+        "header_sticky": false,
+        "header_style": "logo_center_menu_left",
+        "show_separator_line": true,
+        "separator_opacity": 10,
+        "show_icons": true,
+        "icon_as_circle": false,
+        "cart_icon_family": "cart",
+        "logo": "shopify:\/\/shop_images\/Graymatter.svg",
+        "logo_max_limit": 200,
+        "logo_max_limit_mobile": 155,
+        "main_menu_linklist": "header-menu-2-0",
+        "mobile_menu_linklist": "header-menu-2-0",
+        "enable_search": true,
+        "show_social_icons": false,
+        "button_text": "Get Started",
+        "button_link": "shopify:\/\/products\/brightmind-1",
+        "show_country_selector": false,
+        "show_country_name": false,
+        "show_country_flag": false,
+        "highlight_item": "Sale",
+        "highlight_item_color": "#d02e2e",
+        "transparent_product_page": false,
+        "transparent_collection": false,
+        "transparent_article": false,
+        "transparent_page": false,
+        "secondary_menu_linklist": "",
+        "tertiary_menu_linklist": "",
+        "padding_top": 39,
+        "padding_bottom": 39
+      }
+    }
+  },
+  "order": [
+    "announcement",
+    "header"
+  ]
+}

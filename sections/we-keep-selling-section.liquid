@@ -1,0 +1,394 @@
+{% style %}
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      {% if section.settings.bgcolor != blank %}
+        background-color:{{section.settings.bgcolor}};
+      {% endif %}
+      {% if section.settings.textcolor != blank %}
+        color:{{section.settings.textcolor}};
+      {% endif %}
+    }
+
+    {% if section.settings.textcolor != blank %}
+      #shopify-section-{{ section.id }} .sectitle{
+        color:{{section.settings.textcolor}};
+      }
+    {% endif %}
+
+    @media screen and (max-width: 767px) {
+      #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.mobile_padding_top }}px;
+        padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+      }
+    }
+
+
+  /* We keep selling section CSS */
+    
+    .wks-title-wrapper .sectitle {
+      margin: 0px 0px 15px;
+      font-family: 'Exposure[+40]';
+      font-weight: 300;
+      font-size: 48px;
+      line-height: 54px;
+    }
+    .rating_box img {
+      width: 100%;
+      max-width: 100px;
+    }
+    .rating_box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-family: ABC Monument Grotesk Mono Unlicensed Trial;
+        font-size: 12px;
+    }
+    .wks-sec-box {padding: 0 15px;}
+    .wks-title-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 50px;
+      width:100%;
+    }
+    /*.selling_slider:before,
+    .selling_slider:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20%;
+      height: 100%;
+      z-index: 10;
+      background: rgb(255,255,255);
+      background: -moz-linear-gradient(90deg, rgba(255,255,255,1) 10%, rgba(0,0,0,0) 100%);
+      background: -webkit-linear-gradient(90deg, rgba(255,255,255,1) 10%, rgba(0,0,0,0) 100%);
+      background: linear-gradient(90deg, rgba(255,255,255,1) 10%, rgba(0,0,0,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#000000",GradientType=1);
+    }
+    .selling_slider:after {
+        content: "";
+        left: auto;
+        right:0;
+        background: rgb(255,255,255); 
+        background: -moz-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 90%);
+        background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 90%);
+        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 90%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#ffffff",GradientType=1);
+      }*/
+    .selling_slider {
+      overflow: hidden;
+    }
+    .selling_slider .scientifically_image img {
+      vertical-align: middle;
+    }
+    .scientifically_image {
+      height: 400px;
+      flex-grow: 1;
+    }
+    .scientifically_image img {
+      height: 400px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .review_content {
+      border: 1px solid #000;
+      padding: 15px;
+      flex-grow: 1;
+      height: 100%;
+    }
+    .rating_star img {
+      width: 100%;
+      max-width: 100px;
+      vertical-align: middle;
+    }
+    .rating_star {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .review_content p,
+    .review_content .design_title{
+      font-family: ABC Monument Grotesk Mono Unlicensed Trial;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+      margin: 0px !important;
+    }
+    .design_content p:empty{
+      display:none;
+    }
+    .review_content .design_title {
+      margin-top: 15px !important;
+      color: #8D8D8D;
+    }
+    .selling_slider_wrapper{
+      margin: 0px;
+    }
+    .selling_slider .swiper-slide {
+      display: flex;
+      flex-direction: column;
+    }
+    .selling_slider_wrapper {
+      margin: 0px;
+      position: relative;
+    }
+    .swiper-arrow-button {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(-15px, -50%);
+      z-index: 1;
+      cursor:pointer;
+    }
+    .swiper-arrow-button.swiper-button-next-unique {
+      right: 0;
+      left: auto;
+      transform: translate(15px, -50%);
+    }
+    .selling_slider_wrapper .slider__controls.slider_dots {
+        padding-top: 15px;
+        /*position: absolute;
+        left: 0;
+        right: 0;*/
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .selling_slider_wrapper .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        opacity: 1;
+        visibility: visible;
+        margin: 0 3px;
+        border: 1px solid #161616;
+        background: transparent;
+    }
+    .selling_slider_wrapper .swiper-pagination-bullet-active {
+        background-color: #161616;
+    }
+    /* .keep-selling-sec .wks-sec-box-block {padding-bottom: 67px;} */
+  @media screen and (max-width:992px){
+    .review_content p, .review_content .design_title {
+      font-family: ABC Monument Grotesk Mono Unlicensed Trial;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+    }
+    .scientifically_image,
+    .scientifically_image img {height: auto;}
+  }
+  @media screen and (max-width:768px) {
+    .wks-title-wrapper .sectitle {
+      margin: 0px 0px 15px;
+      font-size: 36px;
+      line-height: 44px;
+      text-align: center;
+    }
+    .rating_box {
+        gap: 4px;
+    }
+    .wks-title-wrapper {
+      margin-bottom: 30px;
+    }
+    .selling_slider_wrapper {padding: 0;}
+    .selling_slider:before,
+    .selling_slider:after {display: none;}
+    .scientifically_image {
+      height: auto;
+      flex-grow: 0;
+    }
+    .review_content {
+      flex-grow: 0;
+      height: auto;
+    }
+  }
+{% endstyle %}
+
+<div class="wks-sec-box-block">
+  <div class="wks-sec-box">
+    <div class="wks-title-wrapper">
+      {% if section.settings.sectitle != blank %}
+        <h2 class="sectitle">{{ section.settings.sectitle }}</h2>
+        <div class="rating_box">
+          <img src="https://cdn.shopify.com/s/files/1/0606/9773/9516/files/rating_star.svg?v=1726744783"> 4.6+/5 Avg.
+          Verified Reviews
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="selling_slider_wrapper">
+      <div class="swiper-container selling_slider col-12">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% if block.settings.selling_img != blank or block.settings.selling_title %}
+              <div class="swiper-slide col-lg-4">
+                <div class="scientifically_image">
+                  {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                  {% assign class = 'img-fluid' %}
+                  {%- capture sizes -%}
+                    (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                    (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                  {%- endcapture -%}
+                  {{
+                    block.settings.selling_img
+                    | image_url: width: 1500
+                    | image_tag: sizes: sizes, widths: widths, class: class
+                  }}
+                </div>
+                <div class="review_content">
+                  <div class="rating_star">
+                    <img src="https://cdn.shopify.com/s/files/1/0606/9773/9516/files/rating_star.svg?v=1726744783">
+                  </div>
+                  {% if block.settings.selling_desc != blank %}
+                    <div class="design_content">
+                      <p>{{ block.settings.selling_desc }}</p>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.selling_title != blank %}
+                    <div class="design_title">
+                      {{ block.settings.selling_title }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="slider__controls slider_dots slider__pagination"></div>
+
+      </div>
+      {%- if section.settings.show_slider_arrow -%}
+        <div class="swiper-arrow-button swiper-button-prev-unique">
+          <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="17" cy="17" r="17" transform="matrix(-1 0 0 1 34.2383 0)" fill="#000000"></circle>
+            <path d="M18.9961 11.1379L13.134 17L18.9961 22.8621" stroke="#FFFFFF" stroke-width="1.17241"></path>
+          </svg>
+        </div>
+        <div class="swiper-arrow-button swiper-button-next-unique">
+          <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="17.2383" cy="17" r="17" fill="#000000"></circle>
+            <path d="M15.4805 11.1379L21.3425 17L15.4805 22.8621" stroke="#FFFFFF" stroke-width="1.17241"></path>
+          </svg>
+        </div>
+      {%- endif -%}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "We keep selling section",
+  "tag": "section",
+  "class": "keep-selling-sec",
+  "settings": [
+      {
+        "type": "color",
+        "id": "bgcolor",
+        "label": "Background Color"
+      },
+      {
+        "type": "color",
+        "id": "textcolor",
+        "label": "Text Color"
+      },
+      {
+        "type": "text",
+        "id": "sectitle",
+        "label": "Section Heading"
+      },
+      {
+        "type": "header",
+        "content": "Enable slider arrow"
+      },
+      {
+      "type": "checkbox",
+      "id": "show_slider_arrow",
+      "label": "Show slider arrow",
+      "default": false
+      },
+      {
+        "type": "header",
+        "content": "Desktop Padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Mobile Padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      }
+  ],
+  "blocks": [
+    {
+      "type": "selling_slider",
+      "name": "Selling Slider",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Selling Image",
+          "id": "selling_img"
+        },
+        {
+          "type": "richtext",
+          "label": "Review text",
+          "id": "selling_desc"
+        },
+        {
+          "type": "text",
+          "label": "User name",
+          "id": "selling_title"
+        }
+        
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "We keep selling section"
+    }
+  ]
+}
+{% endschema %}

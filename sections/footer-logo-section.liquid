@@ -1,0 +1,44 @@
+<section class="footer-logo-section">
+  <div class="footer-logo-container">
+    {% if section.settings.footer-logo != blank %}
+      {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+      {% assign class = 'img-fluid' %}
+      {%- capture sizes -%}
+        (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+        (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+      {%- endcapture -%}
+      {{
+        section.settings.footer-logo
+        | image_url: width: 1500
+        | image_tag: sizes: sizes, widths: widths, class: class
+      }}
+    {% endif %}
+  </div>
+</section>
+
+{% style %}
+  .footer-logo-section {
+    padding: 37px 0;
+    border-top: 1px solid #161616;
+    border-bottom: 1px solid #161616;
+  }
+  .footer-logo-container {
+    max-width: 1290px;
+    padding: 0 50px;
+    margin: 0 auto;
+  }
+{% endstyle %}
+
+
+{% schema %}
+  {
+    "name": "Footer Logo",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "footer-logo",
+        "label": "Footer Logo"
+      }
+    ]
+  }
+{% endschema %}

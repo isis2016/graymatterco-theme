@@ -1,0 +1,171 @@
+<section class="coffee-section" id="section-{{ section.id }}">
+  <div class="overlay-block"></div>
+  <div class="stack-container">
+    <div class="row">
+      {% if section.settings.title != blank %}
+        <div class="col-md-6 setion-title how-it-title"><h2>{{ section.settings.title }}</h2></div>
+      {% endif %}
+      {% if section.settings.sub-title != blank %}
+        <div class="col-md-6 bg-text">
+          <div class="dummy-text"><p>{{ section.settings.sub-title }}</p></div>
+        </div>
+      {% endif %}
+      
+    </div>
+  </div>
+
+  <div class="coffee-section-swiper-container">
+      
+    {% for block in section.blocks %}
+      <div class="swiper-slide-center">
+        <div class="slider-box d-flex align-items-center gap-3">
+          <div class="icon-box">
+            {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+            {% assign class = 'img-fluid' %}
+            {%- capture sizes -%}
+              (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+              (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+            {%- endcapture -%}
+            {{
+              block.settings.image
+              | image_url: width: 1500
+              | image_tag: sizes: sizes, widths: widths, class: class
+            }}
+          </div>
+          <div class="content-box">
+            <h3>{{ block.settings.title }}</h3>
+            <div class="content-block">{{ block.settings.content }}</div>
+            <div class="content-block-content-1">{{ block.settings.content-1 }}</div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    
+  </div>
+
+  {% if section.settings.button-title != blank %}
+    <div class="btn-block"><a href="{{ section.settings.btn-link }}" class="slider-btn-block">{{ section.settings.button-title }}</a></div>
+  {% endif %}
+</section>
+
+{% style %}
+  #section-{{ section.id }} {
+    {% if section.settings.bg-image != blank %}
+      background-image: url({{ section.settings.bg-image | img_url: 'master' }});
+    {% endif %}
+    padding-top: {{ section.settings.padding-top }}px;
+    padding-bottom: {{ section.settings.padding-bottom }}px;
+  }
+  #section-{{ section.id }} .slider-btn-block {
+    background-color: {{ section.settings.bg-color }};
+    color: {{ section.settings.color }};
+  }
+  @media only screen and (max-width: 768px) {
+    #section-{{ section.id }} {
+      {% if section.settings.bg-image-mobile != blank %}
+        background-image: url({{ section.settings.bg-image-mobile | img_url: 'master' }});
+      {% endif %}
+      padding-top: {{ section.settings.padding-top | divided_by: 1.5 }}px;
+      padding-bottom: {{ section.settings.padding-bottom | divided_by: 1.5 }}px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Image with Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "sub-title",
+      "label": "Sub Title"
+    },
+    {
+      "type": "text",
+      "id": "button-title",
+      "label": "Button Title"
+    },
+    {
+      "type": "url",
+      "id": "btn-link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg-image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg-image-mobile",
+      "label": "Mobile Background Image"
+    },
+    {
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "bg-color",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Lable Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slider",
+      "name": "Slider",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "richtext",
+          "id": "content-1",
+          "label": "Content 1"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Slider"
+    }
+  ]
+}
+{% endschema %}

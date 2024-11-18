@@ -1,0 +1,126 @@
+{%- liquid
+  assign product = all_products[section.settings.product]
+  assign current_variant = product.first_available_variant
+  assign has_preorder_meta = false
+  assign has_preorder_tag = false
+  assign sibling_property_name = 'general.siblings.label' | t | strip_html | escape
+  assign sibling_property_value = ''
+
+  if siblings_html != blank and product.variants.size == 1
+    assign title_down = product.title | downcase
+    assign sibling = product.metafields.theme.sibling_color.value | default: product.metafields.theme.sibling_colour.value | default: product.metafields.theme.siblings_color.value | default: product.metafields.theme.siblings_colour.value | default: product.metafields.theme.siblings_colors.value | default: product.metafields.theme.siblings_colours.value
+    assign sibling_down = sibling | downcase
+    unless title_down contains sibling_down
+      assign sibling_property_value = sibling | strip_html | escape
+    endunless
+  endif
+
+  if current_variant.available and product.metafields.theme.preorder.type == 'boolean' and product.metafields.theme.preorder.value == true
+    assign has_preorder_meta = true
+  endif
+
+  if current_variant.available and product.tags contains '_preorder'
+    assign has_preorder_tag = true
+  endif
+
+  if has_preorder_meta or has_preorder_tag
+    assign preorder_name = 'products.product.sale_type' | t | strip_html | escape
+    assign preorder_value = 'products.product.pre_order' | t | strip_html | escape
+  endif
+
+  assign unique = section.id | append: '-' | append: product.id
+-%}
+
+<quick-add-product>
+  <div class="quick-add__holders" data-quick-add-holder="{{ product.id }}">
+    {%- if product.variants.size == 1 -%}
+      {%- assign product_form_id = 'ProductForm--' | append: unique -%}
+      {%- form 'product', product, id: product_form_id -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+        {%- if sibling_property_value != blank -%}
+          <input
+            type="hidden"
+            name="properties[{{ sibling_property_name }}]"
+            value="{{ sibling_property_value }}">
+        {%- endif -%}
+
+        {%- if preorder_value != blank -%}
+          <input
+            type="hidden"
+            name="properties[{{ preorder_name }}]"
+            value="{{ preorder_value }}">
+        {%- endif -%}
+
+        <button class="quick-add__buttons caps"
+          type="submit"
+          name="add"
+          aria-label="{{ 'products.general.quick_add' | t }}"
+          data-add-to-cart
+        >
+          <span class="btn__text">
+            {%- if preorder -%}
+              {{ 'products.product.pre_order' | t }}
+            {%- else -%}
+              {{ 'products.general.quick_add' | t }}
+            {%- endif -%}
+          </span>
+          <span class="btn__plus"></span>
+          <span class="btn__added">&nbsp;</span>
+          <span class="btn__loader">
+            <svg height="18" width="18" class="svg-loader">
+              <circle r="7" cx="9" cy="9" />
+              <circle stroke-dasharray="87.96459430051421 87.96459430051421" r="7" cx="9" cy="9" />
+            </svg>
+          </span>
+          <span class="btn__error" data-message-error>&nbsp;</span>
+        </button>
+      {%- endform -%}
+    {%- else -%}
+      <button class="quick-add__buttons caps"
+        type="button"
+        aria-label="{{ 'products.general.quick_add' | t }}"
+        data-quick-add-btn
+        data-quick-add-modal-handle="{{ product.handle }}"
+      >
+        <span class="btn__text">
+          {%- if preorder -%}
+            {{ 'products.product.pre_order' | t }}
+          {%- else -%}
+            {{ 'products.general.quick_add' | t }}
+          {%- endif -%}
+        </span>
+        <span class="btn__plus"></span>
+        <span class="btn__added">&nbsp;</span>
+        <span class="btn__loader">
+          <svg height="18" width="18" class="svg-loader">
+            <circle r="7" cx="9" cy="9" />
+            <circle stroke-dasharray="87.96459430051421 87.96459430051421" r="7" cx="9" cy="9" />
+          </svg>
+        </span>
+      </button>
+    {%- endif -%}
+
+    {%- unless product.has_only_default_variant -%}
+      {%- render 'product-quick-add-modal-template', product_id: product.id, unique: unique -%}
+    {%- endunless -%}
+  </div>
+</quick-add-product>
+
+{% schema %}
+  {
+    "name": "New Featured Products",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+      }
+    ],
+    "presets": [
+      {
+        "name": "New Featured Products"
+      }
+    ]
+  }
+{% endschema %}

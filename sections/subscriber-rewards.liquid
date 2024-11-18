@@ -1,0 +1,410 @@
+{% style %}
+  #section-{{ section.id }} {
+    padding-top: {{ section.settings.padding-top-mobile }}px;
+    padding-bottom: {{ section.settings.padding-bottom-mobile }}px;
+  }
+  #section-{{ section.id }} .main_subscriber .subscriber,
+  #section-{{ section.id }} .subscriber_month .month-data {
+    background-color: {{ section.settings.box_bg_color }};
+
+  }
+  #section-{{ section.id }} .main_subscriber .subscriber, #section-{{ section.id }}{
+       color: {{ section.settings.box_text_color }};
+  }
+
+  @media only screen and (min-width: 750px) {
+    #section-{{ section.id }} {
+      padding-top: {{ section.settings.padding-top }}px;
+      padding-bottom: {{ section.settings.padding-bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<section class="section-subscriber-rewards" id="section-{{ section.id }}">
+  <div class="container">
+    {% if section.settings.main_title != blank %}
+      <h4 class="subscriber_main_title text-center">{{ section.settings.main_title }}</h4>
+    {% endif %}
+    <div class="subscriber_details">
+      <div class="month">
+        <div class="border-top"></div>
+        <div class="subscriber_month">
+          {% for block in section.blocks %}
+            {% if block.type == 'subscriber' %}
+              <div class="month-subscribe">
+                <div class="month-data show-desktop">
+                  {% if block.settings.month_text != blank %}
+                    <div class="month-title">{{ block.settings.month_text }}</div>
+                  {% endif %}
+                  {% if block.settings.month_number != blank %}
+                    <div class="month-number">{{ block.settings.month_number }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="main_subscriber subscriber_month">
+        {% for block in section.blocks %}
+          {% if block.type == 'subscriber' %}
+            <div class="month-data-wrapper">
+              <div class="month-data show-mobile">
+                {% if block.settings.month_text != blank %}
+                  <div class="month-title">{{ block.settings.month_text }}</div>
+                {% endif %}
+                {% if block.settings.month_number != blank %}
+                  <div class="month-number">{{ block.settings.month_number }}</div>
+                {% endif %}
+              </div>
+              <div class="subscriber">
+                <div class="subscriber-wrap">
+                  {% if block.settings.title != blank %}
+                    <div class="subscriber_title">{{ block.settings.title }}</div>
+                  {% endif %}
+                  {% if block.settings['sub-title'] != blank %}
+                    <p class="subscriber_subtitle">{{ block.settings['sub-title'] }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="shipping">
+      {% if section.settings.shipping_label != blank %}
+        <div class="shipping_label"><img src="https://cdn.shopify.com/s/files/1/0606/9773/9516/files/box.png">{{ section.settings.shipping_label }}</div>
+      {% endif %}
+      <div class="border-bottom"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+     .section-subscriber-rewards .subscriber_main_title {
+       margin-bottom: 50px;
+     }
+     .section-subscriber-rewards .main_subscriber {
+       display: flex;
+       align-items: stretch;
+       gap: 20px;
+     }
+    .main_subscriber .month-data-wrapper {
+      width: 20%;
+    }
+    .section-subscriber-rewards .main_subscriber .subscriber {
+       width: 100%;
+      height: 100%;
+       border-radius: 15px;
+       padding: 15px 20px;
+       text-align: center;
+       position: relative;
+     }
+     .section-subscriber-rewards .main_subscriber .subscriber .subscriber_title {
+       margin: 0 0 10px;
+       font-size: 21px;
+       line-height: 1.2;
+     }
+     .subscriber_month {
+       display: flex;
+       gap: 20px;
+     }
+     .subscriber_month .month-subscribe {
+       width: 100%;
+       text-align: center;
+       padding-bottom: 35px;
+       position: relative;
+     }
+     .subscriber_month  .month-number {
+       font-size: 16px;
+       line-height: 22px;
+       text-transform: uppercase;
+     }
+     .subscriber_month  .month-data {
+       display: inline-block;
+       border-radius: 50%;
+       padding: 10px;
+       max-width: 68px;
+       width: 100%;
+       position: relative;
+     }
+     .subscriber_month  .month-title {
+       font-size: 12px;
+       line-height: 16px;
+       margin: 0;
+       padding-top: 10px;
+       text-transform: uppercase;
+     }
+     .subscriber_month  .month-number {
+       font-size: 16px;
+       line-height: 22px;
+       text-transform: uppercase;
+     }
+     .border-top {
+       border-top: 1px dashed;
+       position: absolute;
+       top: 40%;
+       width: calc(100% - 250px);
+       left: 50%;
+       transform: translate(-50%, -50%);
+     }
+     .subscriber_details .month {
+       position: relative;
+     }
+     .subscriber_month .month-subscribe:before {
+       content: '';
+       width: 2px;
+       height: 100%;
+       border-right: 1px dashed #000;
+       display: inline-block;
+       position: absolute;
+       left: 50%;
+       top: 50%;
+       transform: translate(-50%, -50%);
+     }
+     .subscriber-rewards .subscriber {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+     .subscriber:after {
+        content: '';
+        width: 2px;
+        height: 56px;
+        border-right: 1px dashed #000;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: -80px;
+        transform: translateY(-40%);
+      }
+     .shipping_label {
+       margin-top: 30px;
+       background: #242424;
+       color: #fff;
+       text-align: center;
+       display: inline-block;
+       padding: 12px 40px;
+       border-radius: 50px;
+       text-transform: uppercase;
+       font-size: 20px;
+       line-height: 28px;
+       z-index: 1;
+     }
+     .shipping {
+       display: flex;
+       justify-content: center;
+       position: relative;
+     }
+     .show-mobile {display: none;}
+     .subscriber-rewards .border-bottom {
+       border-bottom: 1px dashed;
+       position: absolute;
+       top: 70%;
+       width: calc(100% - 225px);
+       /* width: 100%; */
+     }
+    .main_subscriber .month-data.show-mobile {
+      display: none;
+    }
+    .shipping_label img {
+      width: 100%;
+      max-width: 32px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+     @media only screen and (max-width: 1024px) {
+       .shipping_label {
+         font-size: 14px;
+         line-height: 18px;
+         padding: 10px 24px;
+       }
+       /* .border-bottom {width: calc(100% - 185px);} */
+       .subscriber:after {
+         height: 22%;
+         bottom: -32%;
+       }
+       .shipping_label img {
+          max-width: 26px;
+        }
+       .subscriber_subtitle {font-size: 14px;}
+     }
+     @media only screen and (max-width: 989px) {
+       /* .border-bottom {width: calc(100% - 175px);} */
+       .subscriber_details .month,
+       .section-subscriber-rewards .shipping .border-bottom{
+         display:none;
+       }
+       .main_subscriber .month-data.show-mobile {
+            display: flex;
+            position: relative;
+            z-index: 1;
+        }
+       .subscriber_details .main_subscriber {
+          display: flex;
+          flex-direction: column;
+      }
+
+      .subscriber_details .main_subscriber .month-data-wrapper {
+          width: 100%;
+          display: flex;
+          align-items: stretch;
+          gap: 40px;
+          position: relative;
+      }
+       .subscriber_month  .month-data {
+          width: 100%;
+          min-width: 100px;
+          height: 100px;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+      }
+       .section-subscriber-rewards .main_subscriber .subscriber {
+          width: 100%;
+          position: relative;
+          height: auto;
+      }
+       .section-subscriber-rewards .main_subscriber .subscriber:after {
+          content: '';
+            display:none;
+        }
+       .main_subscriber .month-data-wrapper:before {
+          content: "";
+          width: 100%;
+          height: 1px;
+          border-bottom: 1px dashed #000;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translate(0%, 50%);
+      }
+       .section-subscriber-rewards .main_subscriber .subscriber .subscriber_title,
+       .section-subscriber-rewards .main_subscriber .subscriber .subscriber_subtitle{
+          text-align: left;
+      }
+     }
+   @media only screen and (max-width: 767px) {
+    .subscriber_month  .month-data {
+        min-width: 80px;
+        height: 80px;
+    }
+    .subscriber_details .main_subscriber .month-data-wrapper {
+      gap: 20px;
+    }
+     .section-subscriber-rewards .main_subscriber .subscriber .subscriber_title {
+      font-size: 18px;
+    }
+     .subscriber_details .main_subscriber .month-data-wrapper {
+      align-items: center;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Subscriber Rewards",
+  "class": "subscriber-rewards",
+  "settings": [
+    {
+      "type": "color",
+      "id": "box_bg_color",
+      "label": "Box Background Color"
+    },
+    {
+      "type": "color",
+      "id": "box_text_color",
+      "label": "Box Text Color"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "shipping_label",
+      "label": "Shipping Label"
+    },
+    {
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 74
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 74
+    },
+    {
+      "type": "range",
+      "id": "padding-top-mobile",
+      "label": "Padding Top Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom-mobile",
+      "label": "Padding Bottom Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 34
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subscriber",
+      "name": "Subscriber Icon with Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "sub-title",
+          "label": "Sub Title"
+        },
+        {
+          "type": "text",
+          "id": "month_text",
+          "label": "Subscribe Text"
+        },
+        {
+          "type": "text",
+          "id": "month_number",
+          "label": "Date Of Month Number"
+        },
+        {
+          "type": "html",
+          "id": "month_icon",
+          "label": "Date Of Month"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subscriber Rewards"
+    }
+  ]
+}
+{% endschema %}

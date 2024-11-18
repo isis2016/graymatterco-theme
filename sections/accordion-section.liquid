@@ -1,0 +1,137 @@
+<section class="sc_scientifically section-{{ section.id }}" data-header-height data-aos="fade">
+  <div class="tackling-sec">
+    <div class="container">
+      <div class="row">
+        <div class="tackling-title" data-aos-order="1">
+          {% if section.settings.acc-title != blank %}
+            <div class="acc-title">{{ section.settings.acc-title }} 
+              {% if section.settings.acc-title-subtitle != blank %}
+                <span>{{ section.settings.acc-title-subtitle }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+          {% if section.settings.acc-subtitle != blank %}
+            <p>{{ section.settings.acc-subtitle }}</p>
+          {% endif %}
+          {% if section.settings.tackling-img != blank %}
+            {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+            {% assign class = 'tackling-img' %}
+            {%- capture sizes -%}
+              (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+              (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+            {%- endcapture -%}
+            {{
+              section.settings.tackling-img
+              | image_url: width: 1500
+              | image_tag: sizes: sizes, widths: widths, class: class
+            }}
+          {% endif %}
+        </div>
+        <div class="accordion" data-aos-order="2">
+          {% for block in section.blocks %}
+            <div class="acc-flex">
+              <div class="acc-block-number">
+                <div class="acc-number">{{ forloop.index }}</div>
+              </div>
+              <div class="acc-content-block{% if forloop.first %} tab-active{% endif %}">
+                <div class="acc-title">
+                  {{ block.settings.acc-titel }}
+                  <span class="acc-icon acc-icon-plus">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8.24052 13.6948H6.21965V7.97378H0.583984V6.06676H6.21965V0.345703H8.24052V6.06676H13.8762V7.97378H8.24052V13.6948Z" fill="#242424"/>
+                    </svg>
+                  </span>
+                  <span class="acc-icon acc-icon-minus">
+                    <svg width="10" height="4" viewBox="0 0 10 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.43896 3.2804H-0.00976562V0.760742H9.43896V3.2804Z" fill="#242424"/>
+                    </svg>
+                  </span>
+                </div>
+                <div class="acc-content{% if forloop.first %} active{% endif %}">{{ block.settings.acc-content }}</div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  
+</script>
+
+{% style %}
+  @media (max-width: 1920px) and (min-width: 750px) {
+    .section-{{ section.id }} {
+      background-image: url({{ section.settings.bg_image | img_url: 'master' }});
+    }
+  }
+  @media (max-width: 749px) {
+    .section-{{ section.id }} {
+      background-image: url({{ section.settings.bg_image_mobile | img_url: 'master' }});
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "New Accordian",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_image_mobile",
+        "label": "Background Image Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "tackling-img",
+        "label": "Tacking Image"
+      },
+      {
+        "type": "textarea",
+        "id": "acc-title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "acc-title-subtitle",
+        "label": "Title Highlight Content"
+      },
+      {
+        "type": "text",
+        "id": "acc-subtitle",
+        "label": "Subtitle"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "accordian",
+        "name": "Accordian",
+        "settings": [
+          {
+            "type": "text",
+            "id": "acc-titel",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "acc-content",
+            "label": "Content",
+            "info": "Green Heighlight Text use 'Heading 6'"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "New Accordian"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,128 @@
+<section class="about-section section-{{ section.id }}" data-aos="fade">
+  <div class="image-container">
+    <div class="row align-center {% if section.settings.image-position == 'right' %}flex-direction-row-reverse{% endif %}">
+      <div class="col-md-6 text-col">
+        <div class="child-col">
+          {% if section.settings.content-block %}
+            <div class="dummy-content">{{ section.settings.content-block }}</div>
+          {% endif %}
+          <div class="siganature-bar">
+            {% if section.settings.siganature %}
+              {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+              {% assign class = 'img-fluid' %}
+              {%- capture sizes -%}
+                (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+              {%- endcapture -%}
+              {{
+                section.settings.siganature
+                | image_url: width: 1500
+                | image_tag: sizes: sizes, widths: widths, class: class
+              }}
+            {% endif %}
+            {% if section.settings.siganature-label %}
+              <p>{{ section.settings.siganature-label }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        {% if section.settings.image %}
+          {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+          {% assign class = 'img-fluid about-section-desktop-img' %}
+          {%- capture sizes -%}
+            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+          {%- endcapture -%}
+          {{
+            section.settings.image
+            | image_url: width: 1500
+            | image_tag: sizes: sizes, widths: widths, class: class
+          }}
+        {% endif %}
+        {% if section.settings.mobile-image %}
+          {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+          {% assign class = 'img-fluid about-section-mobile-img' %}
+          {%- capture sizes -%}
+            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+          {%- endcapture -%}
+          {{
+            section.settings.mobile-image
+            | image_url: width: 1500
+            | image_tag: sizes: sizes, widths: widths, class: class
+          }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-{{ section.id }} .dummy-content p, 
+  .section-{{ section.id }} .siganature-bar p {
+    font-size: {{ section.settings.font-size }}px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "New Image with Text",
+  "settings": [
+    {
+      "type": "select",
+      "id": "image-position",
+      "label": "Image Position",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "content-block",
+      "label": "Content Block"
+    },
+    {
+      "type": "image_picker",
+      "id": "siganature",
+      "label": "Siganature"
+    },
+    {
+      "type": "text",
+      "id": "siganature-label",
+      "label": "Siganature Label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile-image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "range",
+      "id": "font-size",
+      "label": "Font Size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 18
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Image with Text"
+    }
+  ]
+}
+{% endschema %}

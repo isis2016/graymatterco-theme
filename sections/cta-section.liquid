@@ -1,0 +1,201 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    {% if section.settings.bgcolor != blank %}
+      background-color:{{section.settings.bgcolor}};
+    {% endif %}
+    {% if section.settings.textcolor != blank %}
+      color:{{section.settings.textcolor}};
+    {% endif %}
+  }
+  
+  {% if section.settings.textcolor != blank %}
+    #shopify-section-{{ section.id }} .sectitle,
+    #shopify-section-{{ section.id }} .secdesc{
+      color:{{section.settings.textcolor}};
+    }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} .sitebtn{
+    background-color: {{section.settings.btnbgcolor}};
+    color: {{section.settings.btntextcolor}};
+  }
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+    .cta-content-head .sectitle {font-size: 18px;}
+    .cta-sec .sitebtn {font-size: 14px; padding: 6px 27px;}
+  }
+
+/* CTA Section CSS */
+.cta-sec {
+    border-bottom: 1px solid #000000;
+    border-top: 1px solid #000000;
+}
+.cta-sec .container {
+    background: transparent;
+}
+.cta-content-head {
+    max-width: 666px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+    margin: 0 auto;
+}
+.cta-content-head .sectitle {
+    font-family: 'Exposure[+40]';
+    font-size: 27px;
+    line-height: normal;
+    margin: 0;
+    font-weight: 500;
+}
+.cta-content-head .secdesc {
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+.cta-sec .sitebtn {
+    font-family: "ABC Monument Grotesk Mono Unlicensed Trial";
+    text-transform: uppercase;
+    padding: 8px 36px;
+    border-radius: 50px;
+    display: inline-block;
+    font-size: 18px;
+}
+.cta-sec .sitebtn:hover{
+  opacity:0.9;
+}
+
+{% endstyle %}
+
+<div class="container">
+    {% if section.settings.sectitle != blank or section.settings.secdesc != blank or section.settings.btntext != blank %}
+      <div class="cta-content-head">
+        {% if section.settings.sectitle != blank %}
+          <h2 class="sectitle">{{ section.settings.sectitle }}</h2>
+        {% endif %}
+        {% if section.settings.secdesc != blank %}
+          <div class="secdesc">{{ section.settings.secdesc }}</div>
+        {% endif %}
+        {% if section.settings.btntext != blank %}
+          <div class="btn_container">
+            <a class="sitebtn" href="{{ section.settings.btnlink }}">{{ section.settings.btntext }}</a>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "CTA Section",
+  "tag": "section",
+  "class": "cta-sec",
+  "settings": [
+      {
+        "type": "color",
+        "id": "bgcolor",
+        "label": "Background Color"
+      },
+      {
+        "type": "color",
+        "id": "textcolor",
+        "label": "Text Color"
+      },
+      {
+        "type": "text",
+        "id": "sectitle",
+        "label": "Section Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "secdesc",
+        "label": "Section Description"
+      },
+      {
+        "type": "header",
+        "content": "Button Settings"
+      },
+      {
+        "type": "text",
+        "id": "btntext",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "btnlink",
+        "label": "Button Link"
+      },
+      {
+        "type": "color",
+        "id": "btnbgcolor",
+        "label": "Button Background Color",
+        "default": "#161616"
+      },
+      {
+        "type": "color",
+        "id": "btntextcolor",
+        "label": "Button Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Desktop Padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Mobile Padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      }
+  ],
+  "presets": [
+    {
+      "name": "CTA Section"
+    }
+  ]
+}
+{% endschema %}

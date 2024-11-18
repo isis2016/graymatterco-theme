@@ -1,0 +1,137 @@
+{% style %}
+  #section-{{ section.id }} {
+    padding-top: {{ section.settings.padding-top-mobile }}px;
+    padding-bottom: {{ section.settings.padding-bottom-mobile }}px;
+    background-image: url(https://cdn.shopify.com/s/files/1/0606/9773/9516/files/dots-left.png);
+    background-position: left bottom;
+    background-size: 600px;
+    background-repeat: no-repeat;
+  }
+  @media only screen and (min-width: 750px) {
+    #section-{{ section.id }} {
+      padding-top: {{ section.settings.padding-top }}px;
+      padding-bottom: {{ section.settings.padding-bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<section class="icon-with-benefits-section" id="section-{{ section.id }}">
+  <div class="container">
+    
+    <div class="icon-with-text-benefits benefits-pb-40">
+      {% if section.settings.title != blank %}
+        <div class="icon-benefits-size">
+          <h2 class="icon-title">{{ section.settings.title }}</h2>
+        </div>
+      {% endif %}
+      {% if section.settings.sub-title != blank %}
+        <div class="icon-benefits-size">
+          <div class="icon-sub-title">{{ section.settings.sub-title }}</div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="icon-with-text-benefits justify-content-center row-gap-40">
+      {% for block in section.blocks %}
+        <div class="icon-text-blocks-size">
+          {% if block.settings.icon-image != blank %}
+            <div class="icon-block">
+              {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+              {% assign class = 'img-fluid' %}
+              {%- capture sizes -%}
+                  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                  (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+              {%- endcapture -%}
+              {{
+                  block.settings.icon-image
+                  | image_url: width: 1500
+                  | image_tag: sizes: sizes, widths: widths, class: class
+              }}
+            </div>
+          {% endif %}
+          {% if block.settings.icon-text-label != blank %}
+            <div class="icon-text-label text-center">{{ block.settings.icon-text-label }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "New Benefits PDP",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "sub-title",
+        "label": "Sub Title"
+      },
+      {
+        "type": "range",
+        "id": "padding-top",
+        "label": "Padding Top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "default": 86
+      },
+      {
+        "type": "range",
+        "id": "padding-bottom",
+        "label": "Padding Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "default": 86
+      },
+      {
+        "type": "range",
+        "id": "padding-top-mobile",
+        "label": "Padding Top Mobile",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "padding-bottom-mobile",
+        "label": "Padding Bottom Mobile",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "default": 40
+      }
+    ],
+    "blocks": [
+      {
+        "type": "icon-text",
+        "name": "Icon Text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon-image",
+            "label": "Image Icon"
+          },
+          {
+            "type": "text",
+            "id": "icon-text-label",
+            "label": "Icon label"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "New Benefits PDP"
+      }
+    ]
+  }
+{% endschema %}

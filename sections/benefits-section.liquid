@@ -1,0 +1,176 @@
+{% style %}
+   img {
+      width: 100%;
+  }
+  .benefits-section {
+      padding: {{ section.settings.padding_top }}px 0px {{ section.settings.padding_bottom }}px;
+      background: url({{ section.settings.bg-image | img_url: 'master' }});
+      border-top: 1px solid #161616;
+      border-bottom: 1px solid #161616;
+      background-position: center;
+  }
+  .benefits-icon ul {
+      padding: 0px;
+      list-style: none;
+      display: flex;
+      gap: 59px;
+      margin: 0px;
+  }
+    .benefits-icon ul li {
+      margin: 0px;
+  }
+  .benefits-section .container {
+      max-width: 866px;
+      width: 100%;
+      background-color: transparent;
+  }
+  .benefits-section h3 {
+      font-family: "Exposure[0]";
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 52px;
+      text-align: center;
+      color: #242424;
+      margin: 0px;
+  }
+  .benefits-icon {
+      padding: 35px 0 40px;
+  }
+  .benefits-section p {
+      font-family: ABC Monument Grotesk Mono Unlicensed Trial;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+      margin: 0px;
+  }
+
+
+
+  @media only screen and (max-width: 991px) {
+
+    .benefits-section {
+      padding: 80px 0px;
+  }
+  }
+  @media only screen and (max-width: 600px) {
+  .benefits-icon ul {
+      gap: 43px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+  }
+    .benefits-icon ul li {
+      width: calc(50% - 45px);
+      justify-content: center;
+      align-items: center;
+      display: flex;
+  }
+  .benefits-icon ul li img {
+      width: 100%;
+      max-width: 110px;
+      margin: 0 auto;
+  }
+  }
+  @media only screen and (max-width: 475px) {
+
+    /* .benefits-icon ul li {
+      width: unset;
+  } */
+  .benefits-section p {
+      width: 100%;
+      max-width: 71%;
+      margin: 0 auto;
+  }
+  }
+{% endstyle %}
+
+<div class="benefits-section">
+  <div class="container">
+    {% if section.settings.section-title != blank %}
+      <h3>{{ section.settings.section-title }}</h3>
+    {% endif %}
+    <div class="benefits-icon">
+      <ul>
+        {% for block in section.blocks %}
+          <li>
+            {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+            {% assign class = 'img-fluid' %}
+            {%- capture sizes -%}
+              (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+              (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+            {%- endcapture -%}
+            {{
+              block.settings.logo
+              | image_url: width: 1500
+              | image_tag: sizes: sizes, widths: widths, class: class
+            }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% if section.settings.section-subtitle != blank %}
+      <p>{{ section.settings.section-subtitle }}</p>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Benefits",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg-image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "section-title",
+      "label": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "section-subtitle",
+      "label": "Section Sub Title"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "default": 70,
+      "step": 2
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "default": 70,
+      "step": 2
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"benefits-section"
+    }
+  ],
+}
+{% endschema %}

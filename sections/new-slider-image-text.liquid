@@ -1,0 +1,196 @@
+<section class="slide-image-section" id="section-{{ section.id }}">
+  <div class="slide-content overflow-hidden">
+    <div class="content-image-slider">
+      <div class="swiper-wrapper">
+        
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            <div class="row{% if section.settings.image-text-position == "image-first" %} flex-direction-row-reverse{% endif %}">
+              <div class="col-md-6">
+                <div class="slide-content-spacing">
+                  {% if block.settings['slider-title'] %}
+                    <div class="slider-title-block label-color">{{ block.settings['slider-title'] }}</div>
+                  {% endif %}
+                  {% if block.settings['block-image-mobile'] != blank %}
+                    <div class="block-image-block mobile-image">
+                      {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                      {% assign class = 'img-fluid' %}
+                      {%- capture sizes -%}
+                            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                          {%- endcapture -%}
+                      {{
+                        block.settings['block-image-mobile']
+                        | image_url: width: 1500
+                        | image_tag: sizes: sizes, widths: widths, class: class
+                      }}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.content %}
+                    <div class="content-block label-color">{{ block.settings.content }}</div>
+                  {% endif %}
+                  {% if block.settings.signature %}
+                    <div class="signature-block label-color">{{ block.settings.signature }}</div>
+                  {% endif %}
+                  {% if block.settings['sign-image'] %}
+                    <div class="sign-image-block">
+                      {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                      {% assign class = 'img-fluid' %}
+                      {%- capture sizes -%}
+                            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                          {%- endcapture -%}
+                      {{
+                        block.settings['sign-image']
+                        | image_url: width: 1500
+                        | image_tag: sizes: sizes, widths: widths, class: class
+                      }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-md-6">
+                {% if block.settings['block-image'] != blank %}
+                  <div class="block-image-block desktop-image">
+                    {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                    {% assign class = 'img-fluid' %}
+                    {%- capture sizes -%}
+                          (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                          (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                        {%- endcapture -%}
+                    {{
+                      block.settings['block-image']
+                      | image_url: width: 1500
+                      | image_tag: sizes: sizes, widths: widths, class: class
+                    }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="content-button-block">
+        <div class="content-button-next">
+          <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="17" cy="17" r="17" transform="matrix(-1 0 0 1 34.2383 0)" fill="white"/>
+            <path d="M18.9961 11.1379L13.134 17L18.9961 22.8621" stroke="#161616" stroke-width="1.17241"/>
+          </svg>
+        </div>
+        <div class="content-button-prev">
+          <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="17.2383" cy="17" r="17" fill="white"/>
+            <path d="M15.4805 11.1379L21.3425 17L15.4805 22.8621" stroke="#161616" stroke-width="1.17241"/>
+          </svg>
+        </div>
+      </div>
+              
+    </div>
+  </div>
+</section>
+
+{% style %}
+  #section-{{ section.id }} {
+    background: {{ section.settings.bg-color }};
+    padding-top: {{ section.settings.padding-top }}px;
+    padding-bottom: {{ section.settings.padding-bottom }}px;
+  }
+  #section-{{ section.id }} .label-color {
+    color: {{ section.settings.label-color }};
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Slider Image Text",
+  "settings": [
+    {
+      "type": "select",
+      "id": "image-text-position",
+      "label": "Image Position",
+      "options": [
+        {
+          "label": "Image First",
+          "value": "image-first"
+        },
+        {
+          "label": "Image Secound",
+          "value": "image-secound"
+        }
+      ]
+    },
+    {
+      "type": "color_background",
+      "id": "bg-color",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "label-color",
+      "label": "Color"
+    },
+    {
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding Top",
+      "min": 0,
+      "step": 2,
+      "max": 100,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "step": 2,
+      "max": 100,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slider",
+      "name": "Slider",
+      "settings": [
+        {
+          "type": "text",
+          "id": "slider-title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "text",
+          "id": "signature",
+          "label": "Signature"
+        },
+        {
+          "type": "image_picker",
+          "id": "sign-image",
+          "label": "Sign Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block-image",
+          "label": "Block Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block-image-mobile",
+          "label": "Block Image Mobile"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Slider Image Text"
+    }
+  ]
+}
+{% endschema %}

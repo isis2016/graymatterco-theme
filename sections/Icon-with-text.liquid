@@ -1,0 +1,161 @@
+{% style %}
+  #section-{{ section.id }} {
+    padding-top: {{ section.settings.padding-top-mobile }}px;
+    padding-bottom: {{ section.settings.padding-bottom-mobile }}px;
+  }
+  #section-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+  }
+  #section-{{ section.id }} .content-label-color {
+    color: {{ section.settings.label_color }};
+  }
+  #section-{{ section.id }} .icon-label-bg-block { 
+    background-color: {{ section.settings.box-bg_color }};
+  }
+  @media only screen and (min-width: 750px) {
+    #section-{{ section.id }} {
+      padding-top: {{ section.settings.padding-top }}px;
+      padding-bottom: {{ section.settings.padding-bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<section class="icon-with-text-section" id="section-{{ section.id }}">
+  <div class="container">
+    <div class="icon-with-text-block">
+      {% for block in section.blocks %}
+        <div class="col-size-25">
+          <div class="icon-label-bg-block">
+            {% if block.settings.svg-icon != blank %}
+              <div class="svg-icon-block">
+                {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                {% assign class = 'img-fluid' %}
+                {%- capture sizes -%}
+                    (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                    (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                {%- endcapture -%}
+                {{
+                    block.settings.svg-icon
+                    | image_url: width: 1500
+                    | image_tag: sizes: sizes, widths: widths, class: class
+                }}</div>
+            {% endif %}
+            {% if block.settings.icon-title != blank %}
+              <div class="icon-title-block content-label-color">{{ block.settings.icon-title }}</div>
+            {% endif %}
+            {% if block.settings.icon-label != blank %}
+              <div class="icon-label-block content-label-color">{{ block.settings.icon-label }}</div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% if section.settings.bottom-title != blank or section.settings.bottom-subtitle %}
+      <div class="footer-block-section">
+        {% if section.settings.bottom-title != blank %}
+          <div class="footer-bottom-title">{{ section.settings.bottom-title }}</div>
+        {% endif %}
+        {% if section.settings.bottom-subtitle != blank %}
+          <div class="footer-bottom-subtitle">{{ section.settings.bottom-subtitle }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Icon With Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "bottom-title",
+      "label": "Bottom Label"
+    },
+    {
+      "type": "richtext",
+      "id": "bottom-subtitle",
+      "label": "Bottom Sublabel"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background Color"
+    },
+    {
+      "type": "color",
+      "id": "box-bg_color",
+      "label": "Box Background Color"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label Color"
+    },
+    {
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 74
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 74
+    },
+    {
+      "type": "range",
+      "id": "padding-top-mobile",
+      "label": "Padding Top Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom-mobile",
+      "label": "Padding Bottom Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 34
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon-text",
+      "name": "Icon text Content",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "svg-icon",
+          "label": "SVG Icon"
+        },
+        {
+          "type": "text",
+          "id": "icon-title",
+          "label": "Icon Title"
+        },
+        {
+          "type": "text",
+          "id": "icon-label",
+          "label": "Icon Label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon With Text",
+    }
+  ]
+}
+{% endschema %}

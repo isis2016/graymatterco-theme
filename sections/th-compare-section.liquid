@@ -1,0 +1,315 @@
+{% assign last_column = false %}
+{% for block in section.blocks %}
+  {% if block.settings.label4 != blank %}
+    {% assign last_column = true %}
+  {% endif %}
+{% endfor %}
+<section class="table-section compare-section-{{ section.id }}">
+  <div class="table-container">
+    {% if section.settings.title %}
+      <div class="table-setion-title">{{ section.settings.title }}</div>
+    {% endif %}
+    <div class="scroll-table">
+      <div class="table-block{% if last_column %} last-column-block{% endif %}">
+        <div class="table-header">
+          <div class="frist-col blank-block"></div>
+          {% for block in section.blocks %}
+            {% if block.type == 'table-header' %}
+              {% if block.settings.image != blank %}
+                <div class="secound-col">
+                  <div class="check-block">
+                    {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                    {% assign class = 'img-fluid product-image' %}
+                    {%- capture sizes -%}
+                      (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                      (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                    {%- endcapture -%}
+                    {{
+                      block.settings.image
+                      | image_url: width: 1500
+                      | image_tag: sizes: sizes, widths: widths, class: class
+                    }}
+                  </div>
+                </div>
+              {% endif %}
+              {% if block.settings.title-1 != blank %}
+                <div class="therd-col">{{ block.settings.title-1 }}</div>
+              {% endif %}
+              {% if block.settings.title-2 != blank %}
+                <div class="forth-col">{{ block.settings.title-2 }}</div>
+              {% endif %}
+              {% if block.settings.title-3 != blank %}
+                <div class="last-col">{{ block.settings.title-3 }}</div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'table-content' %}
+              <div class="table-body{% if forloop.last %} table-bottom-part{% endif %}">
+                {% if block.settings.title != blank %}
+                  <div class="frist-col blank-block">{{ block.settings.title }}</div>
+                {% endif %}
+                {% if block.settings.label1 != blank %}
+                  <div class="secound-col">{{ block.settings.label1 }}</div>
+                {% endif %}
+                {% if block.settings.label2 != blank %}
+                  <div class="therd-col">{{ block.settings.label2 }}</div>
+                {% endif %}
+                {% if block.settings.label3 != blank %}
+                  <div class="forth-col">{{ block.settings.label3 }}</div>
+                {% endif %}
+                {% if block.settings.label4 != blank %}
+                  <div class="last-col">{{ block.settings.label4 }}</div>
+                {% endif %}
+              </div>
+
+            {% when 'table-true-false' %}
+              <div class="table-body{% if forloop.last %} table-bottom-part{% endif %}">
+                {% if block.settings.title != blank %}
+                  <div class="frist-col blank-block">{{ block.settings.title }}</div>
+                {% endif %}
+                {% if block.settings.icon-1 != blank or block.settings.icon-title-1 != blank  %}
+                  <div class="secound-col">
+                    {% if block.settings.icon-1 != blank %}
+                      <div class="icon-block">{{ block.settings.icon-1 }}</div>
+                    {% endif %}
+                    {% if block.settings.icon-title-1 != blank %}
+                      <div class="icon-title">{{ block.settings.icon-title-1 }}</div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {% if block.settings.icon-2 != blank or block.settings.icon-title-2 != blank  %}
+                  <div class="therd-col">
+                    {% if block.settings.icon-2 != blank %}
+                      <div class="icon-block">{{ block.settings.icon-2 }}</div>
+                    {% endif %}
+                    {% if block.settings.icon-title-2 != blank %}
+                      <div class="icon-title">{{ block.settings.icon-title-2 }}</div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {% if block.settings.icon-3 != blank or block.settings.icon-title-3 != blank  %}
+                  <div class="forth-col">
+                    {% if block.settings.icon-3 != blank %}
+                      <div class="icon-block">{{ block.settings.icon-3 }}</div>
+                    {% endif %}
+                    {% if block.settings.icon-title-3 != blank %}
+                      <div class="icon-title">{{ block.settings.icon-title-3 }}</div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {% if block.settings.icon-4 != blank or block.settings.icon-title-4 != blank  %}
+                  <div class="last-col">
+                    {% if block.settings.icon-4 != blank %}
+                      <div class="icon-block">{{ block.settings.icon-4 }}</div>
+                    {% endif %}
+                    {% if block.settings.icon-title-4 != blank %}
+                      <div class="icon-title">{{ block.settings.icon-title-4 }}</div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+          {% endcase %}
+        {% endfor %}
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+{% style %}
+  .compare-section-{{ section.id }} {
+    background-color: {{ section.settings.bg-color }};
+    padding-top: {{ section.settings.padding-top }}px;
+    padding-bottom: {{ section.settings.padding-bottom }}px;
+  }
+  .compare-section-{{ section.id }} .secound-col {background-color: {{ section.settings.table-bg-color }}; color: {{ section.settings.table-color }};}
+  @media (max-width: 749px) {
+    .compare-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding-top-mobile }}px;
+      padding-bottom: {{ section.settings.padding-bottom-mobile }}px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Compare Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title"
+    },
+    {
+      "type": "color",
+      "id": "bg-color",
+      "label": "Section Background Color"
+    },
+    {
+      "type": "color",
+      "id": "table-bg-color",
+      "label": "Table Background Color"
+    },
+    {
+      "type": "color",
+      "id": "table-color",
+      "label": "Table Label Color"
+    },
+    {
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 154
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding-top-mobile",
+      "label": "Padding Top Mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 76
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom-mobile",
+      "label": "Padding Bottom Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 76
+    }
+  ],
+  "blocks": [
+    {
+      "type": "table-header",
+      "name": "Tabel Header",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Brand Image"
+        },
+        {
+          "type": "text",
+          "id": "title-1",
+          "label": "Title 1"
+        },
+        {
+          "type": "text",
+          "id": "title-2",
+          "label": "Title 2"
+        },
+        {
+          "type": "text",
+          "id": "title-3",
+          "label": "Title 3"
+        }
+      ]
+    },
+    {
+      "type": "table-content",
+      "name": "Table Body Content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "label1",
+          "label": "Label 1"
+        },
+        {
+          "type": "text",
+          "id": "label2",
+          "label": "Label 2"
+        },
+        {
+          "type": "text",
+          "id": "label3",
+          "label": "Label 3"
+        },
+        {
+          "type": "text",
+          "id": "label4",
+          "label": "Label 4"
+        }
+      ]
+    },
+    {
+      "type": "table-true-false",
+      "name": "Table Body True/False",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "icon-1",
+          "label": "True/False SVG Icon 1"
+        },
+        {
+          "type": "textarea",
+          "id": "icon-title-1",
+          "label": "True/False SVG Label 1"
+        },
+        {
+          "type": "textarea",
+          "id": "icon-2",
+          "label": "True/False SVG Icon 2"
+        },
+        {
+          "type": "textarea",
+          "id": "icon-title-2",
+          "label": "True/False SVG Label 2"
+        },
+        {
+          "type": "textarea",
+          "id": "icon-3",
+          "label": "True/False SVG Icon 3"
+        },
+        {
+          "type": "textarea",
+          "id": "icon-title-3",
+          "label": "True/False SVG Label 3"
+        },
+        {
+          "type": "textarea",
+          "id": "icon-4",
+          "label": "True/False SVG Icon 4"
+        },
+        {
+          "type": "textarea",
+          "id": "icon-title-4",
+          "label": "True/False SVG Label 4"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Compare Section"
+    }
+  ]
+}
+{% endschema %}

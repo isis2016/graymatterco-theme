@@ -1,0 +1,648 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "subheading_size": 3,
+        "show_title": true,
+        "heading_size": 8,
+        "show_content": true,
+        "text_size": 4,
+        "align_text": "text-left",
+        "width": "wrapper",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "science_hero_section_X8y8KP": {
+      "type": "science-hero-section",
+      "blocks": {
+        "productinfobox_wFkqKa": {
+          "type": "Productinfobox",
+          "settings": {
+            "info_title": "27%",
+            "info_desc": "<p>increased risk of cardiovascular disease from 3-5 years of Rx Stimulant use.<\/p>",
+            "font-size": 18
+          }
+        },
+        "productinfobox_NMeUFz": {
+          "type": "Productinfobox",
+          "settings": {
+            "info_title": "58%",
+            "info_desc": "<p>increase in ADHD stimulant prescriptions over the last decade.<\/p>",
+            "font-size": 18
+          }
+        },
+        "productinfobox_ThfGLa": {
+          "type": "Productinfobox",
+          "settings": {
+            "info_title": "",
+            "info_desc": "",
+            "font-size": 18
+          }
+        },
+        "third_row_infobox_XwPbNT": {
+          "type": "ThirdRowInfobox",
+          "settings": {
+            "info_title": "7 hours",
+            "info_desc": "<p>or more is the daily average screen time in the US. We need to reclaim our attention.<\/p>",
+            "font-size": 18
+          }
+        }
+      },
+      "block_order": [
+        "productinfobox_wFkqKa",
+        "productinfobox_NMeUFz",
+        "productinfobox_ThfGLa",
+        "third_row_infobox_XwPbNT"
+      ],
+      "settings": {
+        "bgcolor": "",
+        "textcolor": "#242424",
+        "sub_title": "Science",
+        "sectitle": "Natural Alternative to Prescription Stimulants",
+        "sec_description": "<p>Developed with PhD Molecular Biologists, our<strong> plant-based <\/strong>formula <strong>supports mental nourishment <\/strong>and<strong> cognitive stamina<\/strong>. We use the latest scientific research to provide effective, <strong>natural<\/strong> alternatives to prescription stimulants.<\/p>",
+        "product_info_title": "The Need for Healthy Alternatives is Real",
+        "science_img": "shopify:\/\/shop_images\/Group_1000004293_1_e31a3d9b-3eaa-4333-b0d0-cd41493d3934.png",
+        "science_img_ingredients": "shopify:\/\/shop_images\/ingredients.png",
+        "padding_top": 40,
+        "padding_bottom": 100,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "cta_section_pmmxCd": {
+      "type": "cta-section",
+      "settings": {
+        "bgcolor": "#dbe5f4",
+        "textcolor": "#242424",
+        "sectitle": "Say Goodbye to Brain Fog.",
+        "secdesc": "",
+        "btntext": "Get yours now",
+        "btnlink": "shopify:\/\/products\/brightmind-1",
+        "btnbgcolor": "#161616",
+        "btntextcolor": "#ffffff",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "mobile_padding_top": 56,
+        "mobile_padding_bottom": 56
+      }
+    },
+    "ingredients_block_8mp66C": {
+      "type": "ingredients-block",
+      "blocks": {
+        "ingredient_dKnimY": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/product-img-1.jpg",
+            "ingredient_title": "What are nootropics?",
+            "ingredient_tag": "",
+            "popup_title": "What are nootropics?",
+            "popup_desc": "<p>Also known as “smart drugs” are powerful natural compounds that boost cognition by increasing acetylcholine and other helpful neurotransmitters. They can enhance mood, motivation, clear brain fog, increase focus, and improve reaction time.<\/p><p>Long term nootropic supplementation improves composition of brain health by providing the building blocks needed for increased synapse connections. <\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Enhance Mood<\/li><li>Motivation<\/li><li>Clear Brain Fog<\/li><li>Increase Focus<\/li><li>Improve reaction time<\/li><\/ul>"
+          }
+        },
+        "ingredient_CNCj7E": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/product-img-2.jpg",
+            "ingredient_title": "Why plant based energy?",
+            "ingredient_tag": "",
+            "popup_title": "Why plant based energy?",
+            "popup_desc": "<p>If you're looking for a boost of energy without a crash or negative side effects you have come to the right place.<\/p><p>Bright Mind contains only natural sources of energy like maca, guarana, matcha, and green tea. These powerful plants deliver a pick-me-up while also providing you with important nutrients that are good for your body. You'll experience a sustained smooth energy without a crash.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Sustained Energy<\/li><li>Plant-based<\/li><li>No Crash<\/li><li>No Jitters<\/li><li>Improved Sleep<\/li><\/ul>"
+          }
+        },
+        "ingredient_3EQrb7": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/product-img-3.jpg",
+            "ingredient_title": "What are adaptogens?",
+            "ingredient_tag": "",
+            "popup_title": "What are adaptogens?",
+            "popup_desc": "<p>Adaptogens are herbs, mushrooms, and roots that help the body adapt to stress and improve overall physical and mental performance. They work by regulating hormones like cortisol. Adaptogens can reduce stress, improve attention, increase endurance, and fight fatigue to help achieve FLOW State.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Enhance Mood<\/li><li>Reduce Stress<\/li><li>Increase Stamina<\/li><li>Boost Immunity<\/li><li>Induce Flow State<\/li><\/ul>"
+          }
+        },
+        "ingredient_pGmt6Q": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/product-img-4.jpg",
+            "ingredient_title": "Why Vision Support?",
+            "ingredient_tag": "",
+            "popup_title": "Why Vision Support?",
+            "popup_desc": "<p>Screens are a big part of our daily lives. Whether it's laptops, phones, or TVs, we're constantly staring at blue light that strain our eyes. Supplementing with plant pigment carotenoids lutein, astaxanthin, and zeaxanthin help block blue light from your retinas. These powerful nutrients can help keep your eyes healthy and strong.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Block Blue Light<\/li><li>Reduce Eye Strain<\/li><li>Protect Vision<\/li><li>Limit Distractions<\/li><\/ul>"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_dKnimY",
+        "ingredient_CNCj7E",
+        "ingredient_3EQrb7",
+        "ingredient_pGmt6Q"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#242424",
+        "box_bg_color": "#dbe5f4",
+        "tag_text_color": "",
+        "tag_bg_color": "",
+        "popup_bg_color": "#f5f5f5",
+        "loadmore_btn_text": "",
+        "padding-top": 90,
+        "padding-bottom": 90,
+        "mobile-padding-top": 40,
+        "mobile-padding-bottom": 64,
+        "ingredient_main_title": ""
+      }
+    },
+    "ingredients_block_4NNUHL": {
+      "type": "ingredients-block",
+      "blocks": {
+        "ingredient_9EKJYL": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_1.jpg",
+            "ingredient_title": "Alpha GPC",
+            "ingredient_tag": "Brain-x",
+            "popup_title": "Alpha GPC",
+            "popup_desc": "<p>L-Alpha glycerylphosphorylcholine is a natural choline compound found in the brain.<\/p><p>What it does:<\/p><p>Increases brain levels of the neurotransmitter acetylcholine that is essential for memory and learning. Acetylcholine requires Vitamin B1 (thiamine), and Vitamin B5 (pantothenic acid) for synthesis. Vitamin C also induces the release of acetylcholine from synaptic vesicles on neurons. Which means Vitamin C (included) is required for neuronal signaling transmission.<\/p><p><\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Memory<\/li><li>Clarity<\/li><li>Cognitive Decline<\/li><li>Increase Focus<\/li><\/ul>"
+          }
+        },
+        "ingredient_mRUVEL": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_2.jpg",
+            "ingredient_title": "Phosphatidylserine",
+            "ingredient_tag": "Brain-x",
+            "popup_title": "Phosphatidylserine",
+            "popup_desc": "<p>Fatty substance that covers and protects the cells in your brain and carries messages between them.<\/p><p>What it does:<\/p><p>Phosphatidylserine plays an important role in regulating cortisol levels and keeping your mind and memory sharp. It is well established that PS is required for healthy nerve cell membranes and myelin, the fat layer that connects & protects your neurons.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Memory<\/li><li>Reaction Time<\/li><li>Cognitive Decline<\/li><li>Increase Focus<\/li><\/ul>"
+          }
+        },
+        "ingredient_jG3TND": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_3.jpg",
+            "ingredient_title": "L-Tyrosine",
+            "ingredient_tag": "Brain-x",
+            "popup_title": "Phosphatidylserine",
+            "popup_desc": "<p>a nonessential amino acid the body makes from another amino acid called phenylalanine.<\/p><p>What it does:<\/p><p>L-Tyrosine is the precusor to dopamine and is an essential component to produce several important brain chemicals called neurotransmitters, including epinephrine, norepinephrine, and dopamine. Dopamine regulates your reward and motivation centers. It is an important brain chemical for memory, fine motor skills, and reducing the symptoms of ADHD.<\/p><p><\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Calm<\/li><li>Anxiety<\/li><li>Focus<\/li><li>Flow State<\/li><\/ul>"
+          }
+        },
+        "ingredient_AXmRD9": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/Huperzine_moss_eb43244e-085b-47b2-a2bb-81fc4c3600c1.jpg",
+            "ingredient_title": "Huperzine A",
+            "ingredient_tag": "BRAIN-X",
+            "popup_title": "Huperzine A",
+            "popup_desc": "<p>an alkaloid compound extracted from a club moss called Huperzia serrata.<\/p><p>What it does:<\/p><p>It increases levels of a chemical called acetylcholine, which is important for memory and thinking. People use huperzine A to improve memory and mental function as it has been touted to have a number of neuroprotective and “nootropic” cognitive-enhancing properties.<\/p><p><\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Cognitive Decline<\/li><li>Memory<\/li><li>Neuroprotection<\/li><li>Learning<\/li><\/ul>"
+          }
+        },
+        "ingredient_DbUTjj": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image.jpg",
+            "ingredient_title": "Nitrosigine",
+            "ingredient_tag": "Brain-x",
+            "popup_title": "Nitrosigine",
+            "popup_desc": "<p>Nitrosigine® is a patented complex of Bonded Arginine Silicate. It is a powerful and safe non-stimulant ingredient that has been clinically proven for safety and efficacy in 30 studies.<\/p><p>What it does:<\/p><p>Accelerates ingestion and increases blood flow to help the entire Bright Mind stack with absorption and utilization within the body & mind. Nitrosignine is also a powerful nootropic. A recent study found that it supported cognitive health and memory.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Energy<\/li><li>Focus<\/li><li>Absorption<\/li><li>Increased Blood Flow<\/li><\/ul>"
+          }
+        },
+        "ingredient_Hta3gN": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_2e13baeb-9d1e-4dc8-b8df-94d2949a3db8.jpg",
+            "ingredient_title": "Lion’s Mane",
+            "ingredient_tag": "FLOW BLEND",
+            "popup_title": "Lion's Mane",
+            "popup_desc": "<p>(Hericium erinaceus) is a mushroom that has been used in East Asian medicine for thousands of years.<\/p><p>What it does:<\/p><p>Improves cognition and reduces anxiety. It also has strong anti-inflammatory, antioxidant, and immune-boosting abilities. Studies show Lion's Mane improves nerve function and also protects nerves from damage.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Immune Support<\/li><li>Anxiety<\/li><li>Focus<\/li><li>Calm<\/li><\/ul>"
+          }
+        },
+        "ingredient_BUT9TK": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_1.png",
+            "ingredient_title": "Ashwagandha",
+            "ingredient_tag": "FLOW BLEND",
+            "popup_title": "Ashwagandha",
+            "popup_desc": "<p>An evergreen shrub that grows in Asia and Africa.<\/p><p>What it does:<\/p><p>Widely used adaptogen to reduce stress and increase executive function, reaction time, attention, and memory. One study demonstrated that adults who took 300 milligrams of ashwagandha daily for 8 weeks had lower levels of anxiety and fatigue.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Cortisol Regulation<\/li><li>Anxiety Reduction<\/li><li>Focus<\/li><li>Calm<\/li><\/ul>"
+          }
+        },
+        "ingredient_z9czw6": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_eecfe40f-c84e-4940-8f50-f6d9eb3a13e9.jpg",
+            "ingredient_title": "Rhodiola",
+            "ingredient_tag": "FLOW BLEND",
+            "popup_title": "Rhodiola",
+            "popup_desc": "<p>(Rhodiola rosea) is a plant that grows in cold parts of Europe and Asia. The root has a long history of use in traditional medicine.<\/p><p>What it does:<\/p><p>It is widely used to stimulate the nervous system, reduce anxiety, enhance work performance, relieve fatigue, and prevent high altitude sickness. Studies report that Rhodiola improves learning and memory function.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Energy<\/li><li>Stress Relief<\/li><li>Antioxidant<\/li><li>Mood Enhancement<\/li><\/ul>"
+          }
+        },
+        "ingredient_Uf4bfr": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_1_2af776fe-5bae-49fb-8753-0673b8d096f7.jpg",
+            "ingredient_title": "Red Panax Ginseng",
+            "ingredient_tag": "FLOW BLEND",
+            "popup_title": "Red Panax Ginseng",
+            "popup_desc": "<p>a plant that grows in Korea, China, and Siberia and is an adaptogen, a natural substance that stimulate resistance to stressors.<\/p><p>What it does:<\/p><p>Improves brain functions like memory and mood. It is also known to reduce oxidative stress and mental fatigue. It has been shown that taking Panax ginseng improves cognitive function and reaction times in healthy people.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Stamina<\/li><li>Immune Support<\/li><li>Antioxidant<\/li><li>Heart Health<\/li><\/ul>"
+          }
+        },
+        "ingredient_6a6PTQ": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_2_6c7f0da7-26e8-430b-a6f0-0c576e4cfc60.jpg",
+            "ingredient_title": "Cordyceps",
+            "ingredient_tag": "FLOW BLEND",
+            "popup_title": "Cordyceps",
+            "popup_desc": "<p>a mushroom fungus that lives on certain caterpillars in the high mountain regions of China. Most cordyceps supplements are made in a lab.<\/p><p>What it does:<\/p><p>Cordyceps have been shown to improve many aspects of cognitive performance including learning capacity and memory. In alternative medicine, cordyceps is seen as a natural energy booster.<\/p>",
+            "popup_bottom_title": "",
+            "popup_bottom_desc": ""
+          }
+        },
+        "ingredient_WdXK44": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_1_a8ae3cf1-e7f6-46d2-978d-e02520913638.png",
+            "ingredient_title": "Vitamin C & B Complex",
+            "ingredient_tag": "GO BLEND",
+            "popup_title": "Vitamin C & B Complex",
+            "popup_desc": "<p>Vitamin C is a nutrient your body needs to form blood vessels, cartilage, muscle and collagen in bones. Vitamin C is also vital to your body's healing process. B vitamins are a group of water-soluble vitamins that are essential for the body's energy and metabolism<\/p><p>What it does:<\/p><p>Vitamin C is needed for energy yielding metabolism. It aids in the conversion of fat into energy, helping fight fatigue and keep you awake and alert. B vitamins help the body convert food into energy. They are essential for the prolonged stamina Bright Mind delivers.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Absorption<\/li><li>Immune Support<\/li><li>Antioxidant<\/li><li>Antioxidant<\/li><\/ul>"
+          }
+        },
+        "ingredient_WTxLQ9": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_2.png",
+            "ingredient_title": "Korean Matcha",
+            "ingredient_tag": "GO BLEND",
+            "popup_title": "Korean Matcha",
+            "popup_desc": "<p>Finely ground tea known for its calm stimulant effects. It is a high antioxidant that help prevent chronic disease and cell damage.<\/p><p>What it does:<\/p><p>Matcha is known to enhance brain function. It contains natural caffeine and L-Theanine known to improve brain function and helps with concentration, relaxation and focus. Matcha is better than synthetic caffeine because it does not lead to a crash in energy often associated with synthetic caffeine.<\/p><p><\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Energy<\/li><li>Immune Support<\/li><li>Antioxidant<\/li><li>Detoxification<\/li><\/ul>"
+          }
+        },
+        "ingredient_gB3qBg": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_3.png",
+            "ingredient_title": "Guarana",
+            "ingredient_tag": "GO BLEND",
+            "popup_title": "Guarana",
+            "popup_desc": "<p>Guarana (Paullinia cupana) is a plant that is from the Amazon.<\/p><p>What it does:<\/p><p>a natural source of caffeine known to reduce fatigue, boost energy, and aid learning and memory. The molecular mechanisms underlying the effects of Guarana is not clear yet and likely involves many cross-reacting pathways. The Guarana seeds contain 4 times the amount of caffeine of a coffee bean. Other guarana components, such as saponins and tannins, provide extra stimulant effects.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Clarity<\/li><li>Cognition<\/li><li>Energy<\/li><li>Stamina<\/li><\/ul>"
+          }
+        },
+        "ingredient_Dd4bk3": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_4.png",
+            "ingredient_title": "Maca Root",
+            "ingredient_tag": "GO BLEND",
+            "popup_title": "Maca Root",
+            "popup_desc": "<p>Maca is a Peruvian plant grown in the Andes mountains. It is a cruciferous vegetable, meaning that it is related to broccoli, cabbage, and kale.<\/p><p>What it does:<\/p><p>The most well-known benefit of maca root is increased endurance. Maca provides Stamina and is also known to uplift mood.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Energy<\/li><li>Libido Support<\/li><li>Mood Enhancement<\/li><li>Stress Relief<\/li><\/ul>"
+          }
+        },
+        "ingredient_BraYDJ": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_5.png",
+            "ingredient_title": "Green Tea",
+            "ingredient_tag": "GO BLEND",
+            "popup_title": "Green Tea Extract",
+            "popup_desc": "<p>a type of tea that is made from the leaves of the plant Camellia sinensis and widely consumed across the world for it's positive effects on longevity.<\/p><p>What it does:<\/p><p>Provides natural caffeine and L-Theanine for a calm alert feeling. It improves brain function and protects against age-related cognitive decline. The ECGC polyphenol compounds in green tea are potent antioxidants that protect against cellular damage caused by free radicals.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Calm Energy<\/li><li>Metabolism Support<\/li><li>Antioxidant<\/li><li>Focus<\/li><\/ul>"
+          }
+        },
+        "ingredient_hb8qYp": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_3_b1ac6f89-87ec-4fe9-a0cc-d96f6e7b1cc2.jpg",
+            "ingredient_title": "Lutein",
+            "ingredient_tag": "VISION DEFENSE",
+            "popup_title": "Lutein",
+            "popup_desc": "<p>Lutein is one of two major carotenoids found in the human eye (macula and retina).<\/p><p>What it does:<\/p><p>It is thought to function as a light filter, protecting the eye tissues from blue light and sunlight damage.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Vision Support<\/li><li>Skin Health<\/li><li>Cognition<\/li><li>Antioxidant<\/li><\/ul>"
+          }
+        },
+        "ingredient_UekG3z": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_e0da06d7-4257-4a71-b8da-0c2b49550843.png",
+            "ingredient_title": "Astaxanthin",
+            "ingredient_tag": "VISION DEFENSE",
+            "popup_title": "Astaxanthin",
+            "popup_desc": "<p>a red pigment that belongs to a group of chemicals called carotenoids. It occurs in certain algae and causes the pink-red color in salmon.<\/p><p>What it does:<\/p><p>Astaxanthin is an antioxidant that protects cells from damage. Astaxanthin nutritional supplements can decrease blurred vision, eye strain, and visual acuity. The benefits of astaxanthin for combatting eye fatigue may actually be due to its ability to relax the certain eye muscles and increase blood flow to the retinal capillaries.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Vision Support<\/li><li>Skin Health<\/li><li>Endurance<\/li><li>Antioxidant<\/li><\/ul>"
+          }
+        },
+        "ingredient_J4G47N": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_4.jpg",
+            "ingredient_title": "Vitamin E",
+            "ingredient_tag": "VISION DEFENSE",
+            "popup_title": "Vitamin E",
+            "popup_desc": "<p>a fat-soluble vitamin main role is to act as an antioxidant, scavenging loose electrons—so-called “free radicals”—that can damage cells.<\/p><p>What it does:<\/p><p>Vitamin E helps protect your eyes against damaging free radicals. It's used in a daily supplements and high amounts in your diet may be associated with a reduced risk of cataracts.<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Vision Support<\/li><li>Skin Health<\/li><li>Immune Support<\/li><li>Antioxidant<\/li><\/ul>"
+          }
+        },
+        "ingredient_7c98QK": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_img": "shopify:\/\/shop_images\/image_5.jpg",
+            "ingredient_title": "Zeaxanthin",
+            "ingredient_tag": "VISION DEFENSE",
+            "popup_title": "Zeaxanthin",
+            "popup_desc": "<p>is a common carotenoid, a pigment found in high levels in dark green vegetables, orange and yellow fruits, and egg yolks.<\/p><p>What it does:<\/p><p>It builds a yellow-colored pigment shield to protect eye cells from the harmful effects of certain light sources, such as blue light and the sun. It protects the eyes from dangerous free radicals, unstable molecules that steal electrons from healthy cells, causing damage (what's known as oxidation).<\/p>",
+            "popup_bottom_title": "Key Focus Areas",
+            "popup_bottom_desc": "<ul><li>Vision Support<\/li><li>Blue Light Protection<\/li><li>Skin Health<\/li><li>Antioxidant<\/li><\/ul>"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_9EKJYL",
+        "ingredient_mRUVEL",
+        "ingredient_jG3TND",
+        "ingredient_AXmRD9",
+        "ingredient_DbUTjj",
+        "ingredient_Hta3gN",
+        "ingredient_BUT9TK",
+        "ingredient_z9czw6",
+        "ingredient_Uf4bfr",
+        "ingredient_6a6PTQ",
+        "ingredient_WdXK44",
+        "ingredient_WTxLQ9",
+        "ingredient_gB3qBg",
+        "ingredient_Dd4bk3",
+        "ingredient_BraYDJ",
+        "ingredient_hb8qYp",
+        "ingredient_UekG3z",
+        "ingredient_J4G47N",
+        "ingredient_7c98QK"
+      ],
+      "settings": {
+        "bg_color": "#dbe5f4",
+        "text_color": "#242424",
+        "box_bg_color": "#ffffff",
+        "tag_text_color": "#8aa665",
+        "tag_bg_color": "#ffffff",
+        "popup_bg_color": "#f5f5f5",
+        "loadmore_btn_text": "view more +",
+        "padding-top": 54,
+        "padding-bottom": 98,
+        "mobile-padding-top": 32,
+        "mobile-padding-bottom": 60,
+        "ingredient_main_title": "Ingredients"
+      }
+    },
+    "th_compare_section_DgGN4D": {
+      "type": "th-compare-section",
+      "blocks": {
+        "table_header_E6w6QH": {
+          "type": "table-header",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Jar_Packaging_copy_1_2.png",
+            "title-1": "Magic Mind",
+            "title-2": "ONNIT",
+            "title-3": "Thesis"
+          }
+        },
+        "table_content_Vq6dwg": {
+          "type": "table-content",
+          "settings": {
+            "title": "Daily Vision Support",
+            "label1": "27",
+            "label2": "12",
+            "label3": "11",
+            "label4": "4-7"
+          }
+        },
+        "table_true_false_FQMj8c": {
+          "type": "table-true-false",
+          "settings": {
+            "title": "Energy",
+            "icon-1": "<svg width=\"28\" height=\"21\" viewbox=\"0 0 28 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.29894\" y1=\"10.9091\" x2=\"10.2989\" y2=\"19.9091\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<line x1=\"8.17762\" y1=\"19.9091\" x2=\"26.1776\" y2=\"1.90907\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-1": "Plant Based",
+            "icon-2": "<svg width=\"28\" height=\"21\" viewbox=\"0 0 28 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.29894\" y1=\"10.9091\" x2=\"10.2989\" y2=\"19.9091\" stroke=\"#000\" stroke-width=\"3\"><\/line>\n<line x1=\"8.17762\" y1=\"19.9091\" x2=\"26.1776\" y2=\"1.90907\" stroke=\"#000\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-2": "Plant Based",
+            "icon-3": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-3": "N\/A",
+            "icon-4": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-4": "N\/A"
+          }
+        },
+        "table_true_false_GAVYPd": {
+          "type": "table-true-false",
+          "settings": {
+            "title": "Effective Dosage",
+            "icon-1": "<svg width=\"28\" height=\"21\" viewbox=\"0 0 28 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.29894\" y1=\"10.9091\" x2=\"10.2989\" y2=\"19.9091\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<line x1=\"8.17762\" y1=\"19.9091\" x2=\"26.1776\" y2=\"1.90907\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-1": "3.95 Grams",
+            "icon-2": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-2": "Not Disclosed",
+            "icon-3": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-3": "1.3 Grams",
+            "icon-4": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-4": "1.6 Grams"
+          }
+        },
+        "table_true_false_GtNXpH": {
+          "type": "table-true-false",
+          "settings": {
+            "title": "Adaptogen + Nootropic Blend",
+            "icon-1": "<svg width=\"28\" height=\"21\" viewbox=\"0 0 28 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.29894\" y1=\"10.9091\" x2=\"10.2989\" y2=\"19.9091\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<line x1=\"8.17762\" y1=\"19.9091\" x2=\"26.1776\" y2=\"1.90907\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-1": "",
+            "icon-2": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-2": "",
+            "icon-3": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-3": "",
+            "icon-4": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-4": ""
+          }
+        },
+        "table_true_false_Dh8R6D": {
+          "type": "table-true-false",
+          "settings": {
+            "title": "Vision Support",
+            "icon-1": "<svg width=\"28\" height=\"21\" viewbox=\"0 0 28 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.29894\" y1=\"10.9091\" x2=\"10.2989\" y2=\"19.9091\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<line x1=\"8.17762\" y1=\"19.9091\" x2=\"26.1776\" y2=\"1.90907\" stroke=\"#FCFAF0\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-1": "",
+            "icon-2": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-2": "",
+            "icon-3": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-3": "",
+            "icon-4": "<svg width=\"22\" height=\"21\" viewbox=\"0 0 22 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<line x1=\"1.17762\" y1=\"19.9091\" x2=\"19.1776\" y2=\"1.90907\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<line x1=\"2.29894\" y1=\"1.90907\" x2=\"20.2989\" y2=\"19.9091\" stroke=\"#161616\" stroke-width=\"3\"><\/line>\n<\/svg>",
+            "icon-title-4": ""
+          }
+        },
+        "table_content_p7786Y": {
+          "type": "table-content",
+          "settings": {
+            "title": "Cost Per Dose",
+            "label1": "$1.49",
+            "label2": "$4.95",
+            "label3": "$2.00",
+            "label4": "$3.97"
+          }
+        }
+      },
+      "block_order": [
+        "table_header_E6w6QH",
+        "table_content_Vq6dwg",
+        "table_true_false_FQMj8c",
+        "table_true_false_GAVYPd",
+        "table_true_false_GtNXpH",
+        "table_true_false_Dh8R6D",
+        "table_content_p7786Y"
+      ],
+      "settings": {
+        "title": "Us vs Leading Nootropics",
+        "bg-color": "#f5f5f5",
+        "table-bg-color": "#7197c3",
+        "table-color": "#ffffff",
+        "padding-top": 64,
+        "padding-bottom": 84,
+        "padding-top-mobile": 76,
+        "padding-bottom-mobile": 76
+      }
+    },
+    "cta_section_aPQBXV": {
+      "type": "cta-section",
+      "settings": {
+        "bgcolor": "#dbe5f4",
+        "textcolor": "#000000",
+        "sectitle": "Say Goodbye to Procrastination.",
+        "secdesc": "",
+        "btntext": "Try Bright Mind",
+        "btnlink": "shopify:\/\/products\/brightmind-1",
+        "btnbgcolor": "#161616",
+        "btntextcolor": "#ffffff",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "mobile_padding_top": 50,
+        "mobile_padding_bottom": 50
+      }
+    },
+    "section_double_bMG9AA": {
+      "type": "section-double",
+      "blocks": {
+        "heading_4gKAEt": {
+          "type": "heading",
+          "settings": {
+            "title": "Bundle and <span>Save<\/span> 20%",
+            "text_size": 7,
+            "padding_bottom": 26
+          }
+        },
+        "text_aXVXdx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Multi-Pack Savings for Maximum Productivity.<\/p>",
+            "text_size": 4,
+            "text_style": "font-body",
+            "padding_bottom": 26
+          }
+        },
+        "buttons_H8qq7z": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Bundle up",
+            "button_url": "shopify:\/\/collections\/bundles",
+            "button_type": "btn--black",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "heading_4gKAEt",
+        "text_aXVXdx",
+        "buttons_H8qq7z"
+      ],
+      "settings": {
+        "layout": "",
+        "height": "screen-height-three-quarters",
+        "mobile_height": "screen-height-one-half--mobile",
+        "width": "wrapper--full",
+        "image_1": "shopify:\/\/shop_images\/Group_1000004283.png",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "reverse_blocks": false,
+        "bg_color": "",
+        "color": "",
+        "show_placeholder": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "cta_section_rttnCg": {
+      "type": "cta-section",
+      "custom_css": [
+        ".cta-sec:last-child {border-bottom: 0;}"
+      ],
+      "settings": {
+        "bgcolor": "#dbe5f4",
+        "textcolor": "#000000",
+        "sectitle": "",
+        "secdesc": "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any diseaase.",
+        "btntext": "",
+        "btnlink": "",
+        "btnbgcolor": "#161616",
+        "btntextcolor": "#ffffff",
+        "padding_top": 34,
+        "padding_bottom": 34,
+        "mobile_padding_top": 34,
+        "mobile_padding_bottom": 34
+      }
+    }
+  },
+  "order": [
+    "main",
+    "science_hero_section_X8y8KP",
+    "cta_section_pmmxCd",
+    "ingredients_block_8mp66C",
+    "ingredients_block_4NNUHL",
+    "th_compare_section_DgGN4D",
+    "cta_section_aPQBXV",
+    "section_double_bMG9AA",
+    "cta_section_rttnCg"
+  ]
+}

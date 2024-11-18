@@ -1,0 +1,460 @@
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "text_e9UYcn": {
+          "type": "text",
+          "settings": {
+            "title": "{{ product.metafields.custom.subtitle.value }}",
+            "text": "",
+            "layout": "left",
+            "padding_bottom": 16
+          }
+        },
+        "tag_WWHzBK": {
+          "type": "tag",
+          "settings": {
+            "title": "{{ product.metafields.custom.tag | metafield_text }}"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "subheading_option": "none",
+            "text_size": 6,
+            "padding_bottom": 0
+          }
+        },
+        "judge_me_reviews_preview_badge_geRzAh": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "flewer_N49iqE": {
+          "type": "flewer",
+          "settings": {
+            "flewer": "{{ product.metafields.custom.flavour_name.value }}",
+            "flewer-color": "#8aa665"
+          }
+        },
+        "description_Dk8wKn": {
+          "type": "description",
+          "settings": {
+            "show_read_more": false,
+            "padding_bottom": 0
+          }
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {
+            "padding_bottom": 16
+          }
+        },
+        "variants": {
+          "type": "variants",
+          "settings": {
+            "info_page": "",
+            "size_chart_style": "text",
+            "subscriptions_enable_selectors": false,
+            "padding_bottom": 0
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "show_quantity": true,
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
+            "padding_bottom": 18
+          }
+        },
+        "meta_accordion_KAEJDB": {
+          "type": "meta-accordion",
+          "disabled": true,
+          "settings": {
+            "acc_title_1": "Graymatter 101",
+            "acc_description_1": "<p>Everyone can strengthen their cognitive stamina with the right mental nourishment.<\/p><p>Our proprietary formula combines 27 active ingredients selected by science-backed research to improve your mental function.<\/p>",
+            "acc_title_2": "Natural ADHD Alternative",
+            "acc_description_2": "<p>Prescribed stimulants, or feel symptoms of ADHD? You came to the right place. Bright Mind contains  natural pre-cursors to dopamine production to mimic the effects of prescription stimulants. Drink Bright Mind as an alternative to harsh and harmful prescription stimulants.<\/p>",
+            "acc_title_3": "Backed by Science",
+            "acc_description_3": "<p>Formulated with rigorous research over the course of 2 years by PhD Molecular Biologists. Every ingredient in Bright Mind is backed by thousands of peer reviewed research studies. We harness the power of plants and nootropics to help you reach your full potential.<\/p>",
+            "acc_title_4": "Shipping & Returns",
+            "acc_description_4": "<p>Fast Free Shipping for subscriber members. Ships within 1 business day. 30 day returns.<\/p>",
+            "acc_title_5": "",
+            "acc_description_5": "",
+            "acc_title_6": "",
+            "acc_description_6": "",
+            "acc_title_7": "",
+            "acc_description_7": "",
+            "acc_title_8": "",
+            "acc_description_8": "",
+            "acc_title_9": "",
+            "acc_description_9": "",
+            "acc_title_10": "",
+            "acc_description_10": ""
+          }
+        },
+        "ingredients_accordion_gNPW9T": {
+          "type": "ingredients-accordion",
+          "disabled": true,
+          "settings": {
+            "acc_title": "Ingredients",
+            "heading": "Nutritional information",
+            "right_label": "Per 100g",
+            "information": "<p><strong>Vitamin Complex<\/strong><\/p><p>Vitamin C, 90mg<\/p><p>Vitamin D3, 12.5mcg<\/p><p>Vitamin B1, 600mcg<\/p><p>Vitamin B2, 65mcg<\/p><p>Vitamin B3, 2.5mg<\/p><p>Vitamin B6, 7.5mg<\/p><p>Vitamin B12, 375mcg<\/p><p>Vitamin B5, 7.5mg<\/p><p><strong>BrainX Blend <\/strong><\/p><p>(Nitrosigine\/ Alpha GPC\/ Phosphatidylserine\/ LTyrosine\/ HuperzineA), 925mg<\/p><p><strong>Go Blend <\/strong><\/p><p>(Organic Korean Matcha\/ Maca Root\/ Green Tea Extract\/ Guarana), 674mg<\/p><p><strong>Flow Blend<\/strong> <\/p><p>(Red Panax Ginseng\/ Cordyceps\/ Lion's Mane\/ Ashwagandha\/ Rhodiola), 575mg<\/p><p><strong>VisionDefense<\/strong> <\/p><p>(Lutein\/ Marigold Extract\/ Astaxanthin), 12mg<\/p><p>Vitamin E, 3.75mg<\/p>"
+          }
+        },
+        "tabs": {
+          "type": "tab_richtext",
+          "disabled": true,
+          "settings": {
+            "show_description": true,
+            "show_read_more": false,
+            "title_1": "Tab",
+            "raw_content_1": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "title_2": "Info",
+            "raw_content_2": "<p>You can use product metafields to assign content to this tab that is unique to an individual product.  Use tabs to highlight unique features, sizing information, or other sales information.<\/p>",
+            "title_3": "",
+            "raw_content_3": "",
+            "title_4": "",
+            "raw_content_4": "",
+            "title_5": "",
+            "raw_content_5": "",
+            "padding_bottom": 0
+          }
+        },
+        "divider_1": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 16
+          }
+        },
+        "upsell": {
+          "type": "upsell",
+          "disabled": true,
+          "settings": {
+            "upsell_product": "",
+            "upsell_product_list": [],
+            "show_avaialable_upsell_only": false,
+            "bg_color": "",
+            "padding_bottom": 16
+          }
+        },
+        "icon_1": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "icon-email",
+            "icon_size": 20,
+            "icon_color": "#545454",
+            "title": "Free 30 Days Returns",
+            "text_size": 3,
+            "width": "full",
+            "padding_bottom": 16
+          }
+        },
+        "icon_2": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "icon-truck",
+            "icon_size": 20,
+            "icon_color": "#545454",
+            "title": "Free subscription shipping",
+            "text_size": 3,
+            "width": "full",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "text_e9UYcn",
+        "tag_WWHzBK",
+        "title",
+        "judge_me_reviews_preview_badge_geRzAh",
+        "flewer_N49iqE",
+        "description_Dk8wKn",
+        "price",
+        "variants",
+        "buttons",
+        "meta_accordion_KAEJDB",
+        "ingredients_accordion_gNPW9T",
+        "tabs",
+        "divider_1",
+        "upsell",
+        "icon_1",
+        "icon_2"
+      ],
+      "settings": {
+        "product_sticky_enable": true,
+        "variant_image_scroll": true,
+        "image_layout": "thumbnails-left",
+        "image_size": "stretch",
+        "show_cart_bar": true,
+        "enable_zoom": true,
+        "enable_video_looping": false,
+        "mobile_image_style": "slider",
+        "padding_top": 25,
+        "padding_bottom": 30
+      }
+    },
+    "related": {
+      "type": "related",
+      "blocks": {
+        "related": {
+          "type": "related",
+          "settings": {
+            "product_recommendations_heading": "Related products",
+            "limit": 4
+          }
+        },
+        "recent": {
+          "type": "recent",
+          "settings": {
+            "product_recently_heading": "Recently viewed",
+            "product_recently_limit": 4
+          }
+        }
+      },
+      "block_order": [
+        "related",
+        "recent"
+      ],
+      "settings": {
+        "enable_tabs": true,
+        "heading_alignment": "text-center",
+        "heading_size": 4,
+        "layout_mobile": "slider",
+        "bg_color": "",
+        "color": "",
+        "border_color": "",
+        "padding_top": 30,
+        "padding_bottom": 0
+      }
+    },
+    "we_keep_selling_section_R6NrRH": {
+      "type": "we-keep-selling-section",
+      "blocks": {
+        "selling_slider_8gVbxJ": {
+          "type": "selling_slider",
+          "settings": {
+            "selling_img": "shopify:\/\/shop_images\/sachet__bottle_2_bf610f07-7683-4c1b-ae82-f363ddb5286d.jpg",
+            "selling_desc": "<p>I take half a scoop before the gym every morning. My workouts have been great and I haven’t noticed my self crashing at all during the work day. Definitely recommend!<\/p>",
+            "selling_title": "Griffin A. | La Grange, IL"
+          }
+        },
+        "selling_slider_tRAD9m": {
+          "type": "selling_slider",
+          "settings": {
+            "selling_img": "shopify:\/\/shop_images\/IMG_0514.jpg",
+            "selling_desc": "<p>Replaced my 2nd cup of coffee<br\/>Bright Mind instead of more coffee in the afternoon gives me a longer period of sustained productivity and doesn’t affect my sleep. <\/p>",
+            "selling_title": "George P. | Miami, FL"
+          }
+        },
+        "selling_slider_3aYdP7": {
+          "type": "selling_slider",
+          "settings": {
+            "selling_img": "shopify:\/\/shop_images\/IMG_0731.jpg",
+            "selling_desc": "<p>It provides the same focus and energy boost as adderall but without any of the harsh side effects or crash. You feel amazing throughout the day, sharp and productive, but in a natural, healthy way.<\/p>",
+            "selling_title": "Olivia P. | Austin, TX"
+          }
+        },
+        "selling_slider_P4CjmB": {
+          "type": "selling_slider",
+          "settings": {
+            "selling_img": "shopify:\/\/shop_images\/slider-3.jpg",
+            "selling_desc": "<p>No More Coffee! My fiancé just said “now that I’ve been doing this Bright Mind in the morning, coffee doesn’t even sound appealing anymore” ...We love Graymatter!<\/p>",
+            "selling_title": "Laura K. | Louisville, KY"
+          }
+        },
+        "selling_slider_GN7b7U": {
+          "type": "selling_slider",
+          "settings": {
+            "selling_img": "shopify:\/\/shop_images\/IMG_6542.jpg",
+            "selling_desc": "<p>Amazing!! This is the real deal guys! It has absolutely replaced coffee & energy drinks for me. I’m blown away, as an ADHD sufferer this really helps me get through my days without feeling like crap in a few hours.<\/p>",
+            "selling_title": "Mandy T. | Mahopec, NY"
+          }
+        },
+        "selling_slider_8DHVff": {
+          "type": "selling_slider",
+          "settings": {
+            "selling_img": "shopify:\/\/shop_images\/sample_ugc.jpg",
+            "selling_desc": "<p><strong>Skeptical, but results speak for themselves. <\/strong>Always struggled with Adderall being too much and coffee making me crash. Took Bright Mind and felt completely in the zone mentally. Didn't take it the next day and was probably 50% as productive. IDK what the secret is, but this stuff works.<\/p>",
+            "selling_title": "Sarah S. | Chicago, IL"
+          }
+        }
+      },
+      "block_order": [
+        "selling_slider_8gVbxJ",
+        "selling_slider_tRAD9m",
+        "selling_slider_3aYdP7",
+        "selling_slider_P4CjmB",
+        "selling_slider_GN7b7U",
+        "selling_slider_8DHVff"
+      ],
+      "settings": {
+        "bgcolor": "#ffffff",
+        "textcolor": "#242424",
+        "sectitle": "We keep selling out",
+        "show_slider_arrow": false,
+        "padding_top": 16,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "new_benefits_section_air37x": {
+      "type": "new-benefits-section",
+      "blocks": {
+        "icon_text_KNRBCr": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Group_9db99fca-5450-41de-959f-6e3e8e038933.png",
+            "icon-text-label": "Pre-cursor to dopamine increases working memory and attention"
+          }
+        },
+        "icon_text_PUahaX": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Group_ab687dc7-4cbf-4c43-adb2-56898be78c31.png",
+            "icon-text-label": "Calm Energy with matcha green tea extract guarana and maca"
+          }
+        },
+        "icon_text_p688mp": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Vector_663ac200-4e7b-4dc5-b44a-ad7bc771bd83.png",
+            "icon-text-label": "Focused flow state with adaptogenic mushrooms"
+          }
+        },
+        "icon_text_pEbD98": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Vector_7ecb0147-60f1-44c5-a2fb-b7f69418009e.png",
+            "icon-text-label": "Enhance Brain Function & Memory with nootropics"
+          }
+        },
+        "icon_text_QVF6rM": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Group_1000003943_7a555573-588e-40e1-8ba0-3209dfdd3de9.png",
+            "icon-text-label": "Vision Support"
+          }
+        },
+        "icon_text_NAAtkT": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Vector_35235c94-8360-45d7-9d1c-6d4eab75f610.png",
+            "icon-text-label": "Decrease Stress"
+          }
+        },
+        "icon_text_4VhypW": {
+          "type": "icon-text",
+          "settings": {
+            "icon-image": "shopify:\/\/shop_images\/Vector_3bb37ca7-8461-4e86-bce4-90707c639eb4.png",
+            "icon-text-label": "Cognitive Control"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_KNRBCr",
+        "icon_text_PUahaX",
+        "icon_text_p688mp",
+        "icon_text_pEbD98",
+        "icon_text_QVF6rM",
+        "icon_text_NAAtkT",
+        "icon_text_4VhypW"
+      ],
+      "settings": {
+        "title": "Benefits you can feel",
+        "sub-title": "All ingredients backed by thousands of peer reviewed scientific studies.",
+        "padding-top": 44,
+        "padding-bottom": 86,
+        "padding-top-mobile": 20,
+        "padding-bottom-mobile": 40
+      }
+    },
+    "bright_slider_TRfBGR": {
+      "type": "bright-slider",
+      "blocks": {
+        "slider_VfLThd": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2024-10-13_at_5.26.26_AM.png",
+            "title": "Tear open or scoop (half or one) serving of Bright Mind",
+            "subtitle": ""
+          }
+        },
+        "slider_HrkCGa": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2024-10-13_at_5.29.05_AM.png",
+            "title": "Pour pouch or scoop into 10-12oz of ice-cold water.",
+            "subtitle": ""
+          }
+        },
+        "slider_KhFcQT": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2024-10-13_at_5.30.02_AM.png",
+            "title": "Shake or stir thoroughly.",
+            "subtitle": ""
+          }
+        },
+        "slider_nTaXfV": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2024-10-13_at_5.33.00_AM.png",
+            "title": "Enjoy a clear calm focus for hours.",
+            "subtitle": ""
+          }
+        },
+        "slider_78BJQX": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/New_Project_1.png",
+            "title": "Always take a break after 5 consecutive days for recovery and maximum effect",
+            "subtitle": ""
+          }
+        }
+      },
+      "block_order": [
+        "slider_VfLThd",
+        "slider_HrkCGa",
+        "slider_KhFcQT",
+        "slider_nTaXfV",
+        "slider_78BJQX"
+      ],
+      "settings": {
+        "title": "How Bright  Mind Works",
+        "bg_image": "shopify:\/\/shop_images\/Radius_1.png"
+      }
+    },
+    "172675028918469e2b": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_8XRXhe": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_8XRXhe"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related",
+    "we_keep_selling_section_R6NrRH",
+    "new_benefits_section_air37x",
+    "bright_slider_TRfBGR",
+    "172675028918469e2b"
+  ]
+}

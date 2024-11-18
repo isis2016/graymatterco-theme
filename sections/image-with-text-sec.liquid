@@ -1,0 +1,299 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    {% if section.settings.bgcolor != blank %}
+      background-color:{{section.settings.bgcolor}};
+    {% endif %}
+    {% if section.settings.textcolor != blank %}
+      color:{{section.settings.textcolor}};
+    {% endif %}
+  }
+  
+  {% if section.settings.textcolor != blank %}
+    #shopify-section-{{ section.id }} .sectitle,
+    #shopify-section-{{ section.id }} .secdesc{
+      color:{{section.settings.textcolor}};
+    }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} .sitebtn{
+    background-color: {{section.settings.btnbgcolor}};
+    color: {{section.settings.btntextcolor}};
+  }
+
+/* Image with text Section CSS */
+
+.image-with-text-sec .row {
+    margin: 0;
+}
+.image-with-text-sec .row .col-12 {
+    padding: 0;
+}
+.sectionimgblock {
+    display: flex;
+    height: 100%;
+}
+.sectionimgblock img {
+    object-fit: cover;
+}
+.imageonright {
+    flex-direction: row-reverse;
+}
+.image-with-text-sec .row .contentcol {
+    display: flex;
+    align-items: center;
+    padding:60px;
+}
+.image-with-text-sec .contentcol.contentonleft {
+    justify-content: flex-end;
+}
+.image-with-content-head {
+    max-width: 533px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width:100%;
+}
+.image-with-content-head .secsubtitle {
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin: 0;
+}
+.image-with-content-head .sectitle {
+    font-family: 'Exposure[+40]';
+    /* font-size: 50px;
+    line-height: 58px; */
+     font-size: 45px;
+    line-height: 53px;
+    margin: 0;
+    font-weight: 500;
+}
+.image-with-content-head .sectitle span {
+    font-family: 'Exposure[+40]' !important;
+    color: #8AA665;
+}
+.image-with-content-head .secdesc {
+    font-family: 'ABC Monument Grotesk Mono Unlicensed Trial';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+}
+.image-with-text-sec .sitebtn {
+    font-family: "ABC Monument Grotesk Mono Unlicensed Trial";
+    text-transform: uppercase;
+    padding: 8px 36px;
+    border-radius: 50px;
+    display: inline-block;
+    font-size: 18px;
+}
+.image-with-text-sec .sitebtn:hover{
+  opacity:0.9;
+}
+
+.section-{{ section.id }} .image-with-content-head .secsubtitle {
+  font-size: {{ section.settings.subtitle-font }}px;
+}
+
+.section-{{ section.id }} .image-with-content-head .sectitle {
+  font-size: {{ section.settings.title-font }}px;
+}
+  
+.section-{{ section.id }} .image-with-content-head .secdesc {
+  font-size: {{ section.settings.content-font }}px;
+}
+  
+@media screen and (max-width:991px){
+  .image-with-text-sec .row .contentcol {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width:767px){
+  .image-with-text-sec .col-12 {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+  .image-with-text-sec .contentcol {
+    justify-content: center !important;
+  }
+  .image-with-text-sec .row .contentcol {
+    padding: 50px 20px;
+  }
+  .section-{{ section.id }} .image-with-content-head .sectitle {
+    font-size: {{ section.settings.title-font | divided_by: 1.8 }}px;
+    line-height: normal;
+  }
+  .section-{{ section.id }} .image-with-content-head .secdesc {
+    font-size: {{ section.settings.content-font | divided_by: 1.2 }}px;
+    line-height: normal;
+  }
+  .high-performers .high-performers-title {
+    font-size: 35px;
+    line-height: 46px;
+  }
+}
+  
+  
+{% endstyle %}
+
+<section class="section-{{ section.id }}" id="shopify-section-{{ section.id }}">
+  <div class="container-fluid">
+    <div class="row {% if section.settings.image_alignment == 'right' %}imageonright{% endif %}">
+      <div class="col-md-6 col-12">
+        {% if section.settings.sectionimg != blank %}
+          <div class="sectionimgblock">
+            {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+              {% assign class = 'img-fluid' %}
+              {%- capture sizes -%}
+                (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+              {%- endcapture -%}
+              {{
+                section.settings.sectionimg
+                | image_url: width: 1500
+                | image_tag: sizes: sizes, widths: widths, class: class
+              }}
+          </div>
+        {% endif %}
+      </div>
+    
+      <div class="col-md-6 col-12 contentcol {% if section.settings.image_alignment == 'right' %}contentonleft{% endif %}">
+        {% if section.settings.secsubtitle != blank or section.settings.sectitle != blank or section.settings.secdesc != blank or section.settings.btntext != blank %}
+          <div class="image-with-content-head">
+            {% if section.settings.secsubtitle != blank %}
+              <div class="secsubtitle">{{ section.settings.secsubtitle }}</div>
+            {% endif %}
+            {% if section.settings.sectitle != blank %}
+              <h2 class="sectitle">{{ section.settings.sectitle }}</h2>
+            {% endif %}
+            {% if section.settings.secdesc != blank %}
+              <div class="secdesc">{{ section.settings.secdesc }}</div>
+            {% endif %}
+            {% if section.settings.btntext != blank %}
+              <div class="btn_container">
+                <a class="sitebtn" href="{{ section.settings.btnlink }}">{{ section.settings.btntext }}</a>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image With Text Section",
+  "tag": "section",
+  "class": "image-with-text-sec",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bgcolor",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "textcolor",
+      "label": "Text Color"
+    },
+    {
+      "type": "select",
+      "id": "image_alignment",
+      "label": "Image alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "image_picker",
+      "id": "sectionimg",
+      "label": "Section Image"
+    },
+    {
+      "type": "text",
+      "id": "secsubtitle",
+      "label": "Section Sub Heading"
+    },
+    {
+      "type": "html",
+      "id": "sectitle",
+      "label": "Section Heading",
+      "info": "Highlight Word Use '<span></span>' tag"
+    },
+    {
+      "type": "richtext",
+      "id": "secdesc",
+      "label": "Section Description"
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "text",
+      "id": "btntext",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "btnlink",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "btnbgcolor",
+      "label": "Button Background Color",
+      "default": "#161616"
+    },
+    {
+      "type": "color",
+      "id": "btntextcolor",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "subtitle-font",
+      "label": "Subtitle Font",
+      "min": 10,
+      "max": 25,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "title-font",
+      "label": "Title Font",
+      "min": 20,
+      "max": 50,
+      "step": 1,
+      "default": 45
+    },
+    {
+      "type": "range",
+      "id": "content-font",
+      "label": "Content Font",
+      "min": 10,
+      "max": 25,
+      "step": 1,
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image With Text Section"
+    }
+  ]
+}
+{% endschema %}
